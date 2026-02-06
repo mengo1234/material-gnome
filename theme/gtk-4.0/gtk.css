@@ -1,0 +1,2858 @@
+/* =============================================================================
+ * Material 3 Expressive Theme for GTK4 / libadwaita
+ * Color: Orange Dark Mode
+ * ============================================================================= */
+
+/* Color Definitions */
+@define-color accent_color #ffb86c;
+@define-color accent_bg_color #6a3c00;
+@define-color accent_fg_color #efe0db;
+@define-color destructive_color #ffb4ab;
+@define-color destructive_bg_color #93000a;
+@define-color destructive_fg_color #efe0db;
+@define-color success_color #8cd48c;
+@define-color success_bg_color #1b5e20;
+@define-color success_fg_color #efe0db;
+@define-color warning_color #ffcc80;
+@define-color warning_bg_color #e65100;
+@define-color warning_fg_color #1a1110;
+@define-color error_color #ffb4ab;
+@define-color error_bg_color #93000a;
+@define-color error_fg_color #efe0db;
+@define-color window_bg_color #1a1110;
+@define-color window_fg_color #efe0db;
+@define-color view_bg_color #1a1110;
+@define-color view_fg_color #efe0db;
+@define-color headerbar_bg_color #1a1110;
+@define-color headerbar_fg_color #efe0db;
+@define-color headerbar_border_color transparent;
+@define-color headerbar_backdrop_color #141010;
+@define-color headerbar_shade_color transparent;
+@define-color sidebar_bg_color #141010;
+@define-color sidebar_fg_color #efe0db;
+@define-color sidebar_backdrop_color #141010;
+@define-color sidebar_shade_color rgba(0, 0, 0, 0.25);
+@define-color secondary_sidebar_bg_color #241a18;
+@define-color secondary_sidebar_fg_color #efe0db;
+@define-color secondary_sidebar_backdrop_color #241a18;
+@define-color secondary_sidebar_shade_color rgba(0, 0, 0, 0.25);
+@define-color card_bg_color #2d2220;
+@define-color card_fg_color #efe0db;
+@define-color card_shade_color rgba(0, 0, 0, 0.36);
+@define-color dialog_bg_color #2d2220;
+@define-color dialog_fg_color #efe0db;
+@define-color popover_bg_color #2d2220;
+@define-color popover_fg_color #efe0db;
+@define-color popover_shade_color rgba(0, 0, 0, 0.25);
+@define-color shade_color transparent;
+@define-color scrollbar_outline_color rgba(0, 0, 0, 0.5);
+
+@define-color blue_1 #99c1f1; @define-color blue_2 #62a0ea; @define-color blue_3 #3584e4; @define-color blue_4 #1c71d8; @define-color blue_5 #1a5fb4;
+@define-color green_1 #8ff0a4; @define-color green_2 #57e389; @define-color green_3 #33d17a; @define-color green_4 #2ec27e; @define-color green_5 #26a269;
+@define-color yellow_1 #f9f06b; @define-color yellow_2 #f8e45c; @define-color yellow_3 #f6d32d; @define-color yellow_4 #f5c211; @define-color yellow_5 #e5a50a;
+@define-color orange_1 #ffbe6f; @define-color orange_2 #ffa348; @define-color orange_3 #ff7800; @define-color orange_4 #e66100; @define-color orange_5 #c64600;
+@define-color red_1 #f66151; @define-color red_2 #ed333b; @define-color red_3 #e01b24; @define-color red_4 #c01c28; @define-color red_5 #a51d2d;
+@define-color purple_1 #dc8add; @define-color purple_2 #c061cb; @define-color purple_3 #9141ac; @define-color purple_4 #813d9c; @define-color purple_5 #613583;
+@define-color brown_1 #cdab8f; @define-color brown_2 #b5835a; @define-color brown_3 #986a44; @define-color brown_4 #865e3c; @define-color brown_5 #63452c;
+@define-color light_1 #ffffff; @define-color light_2 #f6f5f4; @define-color light_3 #deddda; @define-color light_4 #c0bfbc; @define-color light_5 #9a9996;
+@define-color dark_1 #77767b; @define-color dark_2 #5e5c64; @define-color dark_3 #3d3846; @define-color dark_4 #241f31; @define-color dark_5 #000000;
+
+/* Material You palette */
+@define-color primary #ffb86c;
+@define-color on_primary #4a2800;
+@define-color primary_container #6a3c00;
+@define-color on_primary_container #ffdcbe;
+@define-color secondary #e4bfa8;
+@define-color on_secondary #422b1b;
+@define-color secondary_container #5b412f;
+@define-color on_secondary_container #ffdcbe;
+@define-color tertiary #c8bfff;
+@define-color on_tertiary #2f2d5e;
+@define-color tertiary_container #464490;
+@define-color on_tertiary_container #e4dfff;
+@define-color surface #1a1110;
+@define-color surface_dim #141010;
+@define-color surface_bright #3d3230;
+@define-color surface_container_lowest #140f0e;
+@define-color surface_container_low #231a18;
+@define-color surface_container #2d2220;
+@define-color surface_container_high #3d312e;
+@define-color surface_container_highest #494240;
+@define-color surface_tint #ffb86c;
+@define-color on_surface #efe0db;
+@define-color on_surface_variant #d4c4bd;
+@define-color outline #a08c84;
+@define-color outline_variant #524540;
+@define-color inverse_surface #efe0db;
+@define-color inverse_on_surface #362a28;
+@define-color inverse_primary #8a5100;
+@define-color scrim rgba(0, 0, 0, 0.5);
+
+/* =============================================================================
+ * GLOBALS
+ * ============================================================================= */
+
+window.background {
+    background-color: @window_bg_color;
+    color: @window_fg_color;
+}
+
+/* DING desktop icons - keep transparent */
+window.desktopwindow,
+window.desktopwindow.background {
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+
+/* =============================================================================
+ * HEADERBAR
+ * ============================================================================= */
+
+headerbar {
+    background-color: #141010;
+    color: @on_surface;
+    border-bottom: none;
+    box-shadow: none;
+    min-height: 46px;
+    padding: 4px 8px;
+}
+
+headerbar:backdrop {
+    background-color: #141010;
+}
+
+
+headerbar .title {
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+headerbar .subtitle {
+    font-size: 0.8em;
+    color: @on_surface_variant;
+}
+
+/* Window controls - match Ptyxis terminal style */
+windowcontrols {
+    margin: 0 4px;
+    background: none !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+windowcontrols > button,
+windowcontrols > button.titlebutton,
+windowcontrols > button.image-button,
+windowcontrols > button.image-button.titlebutton {
+    border-radius: 50% !important;
+    background: none !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    outline: none !important;
+    min-width: 24px !important;
+    min-height: 24px !important;
+    max-width: 24px !important;
+    max-height: 24px !important;
+    padding: 0 !important;
+    margin: 0 3px !important;
+    -gtk-icon-shadow: none;
+    opacity: 0.7;
+}
+
+windowcontrols > button:hover,
+windowcontrols > button.titlebutton:hover {
+    opacity: 1;
+    background-color: alpha(@on_surface, 0.1) !important;
+    border-radius: 50% !important;
+}
+
+windowcontrols > button.close:hover,
+windowcontrols > button.close.titlebutton:hover {
+    background-color: alpha(@error_color, 0.2) !important;
+    border-radius: 50% !important;
+}
+
+windowcontrols > button:active,
+windowcontrols > button.titlebutton:active {
+    background-color: alpha(@on_surface, 0.2) !important;
+    border-radius: 50% !important;
+}
+
+/* =============================================================================
+ * BUTTONS - Scoped properly to avoid bleeding into window controls
+ * ============================================================================= */
+
+/* Text buttons (with label) */
+button.text-button,
+button.suggested-action,
+button.destructive-action,
+button.pill,
+button.outlined {
+    border-radius: 20px;
+    padding: 8px 20px;
+    min-height: 20px;
+    font-weight: 500;
+    transition: all 250ms cubic-bezier(0.2, 0.0, 0, 1.0);
+}
+
+/* Icon-only buttons - always circular (exclude window controls) */
+button.image-button:not(.titlebutton) {
+    border-radius: 9999px;
+    padding: 8px;
+    transition: all 250ms cubic-bezier(0.2, 0.0, 0, 1.0);
+}
+
+button.circular {
+    border-radius: 9999px;
+    padding: 8px;
+}
+
+/* Default button appearance */
+button:not(.titlebutton) {
+    background-color: @surface_container_high;
+    color: @on_surface;
+    border: none;
+    box-shadow: none;
+    font-weight: 500;
+    transition: all 250ms cubic-bezier(0.2, 0.0, 0, 1.0);
+}
+
+button:not(.titlebutton):hover {
+    background-color: alpha(@primary, 0.15);
+}
+
+button:not(.titlebutton):active {
+    background-color: alpha(@primary, 0.25);
+}
+
+button:not(.titlebutton):checked {
+    background-color: @primary;
+    color: @on_primary;
+}
+
+button:not(.titlebutton):disabled {
+    background-color: alpha(@surface_container_high, 0.38);
+    color: alpha(@on_surface, 0.38);
+}
+
+/* Suggested Action (M3 Filled) */
+button.suggested-action {
+    background-color: @primary;
+    color: @on_primary;
+    font-weight: 600;
+}
+
+button.suggested-action:hover {
+    background-color: shade(@primary, 1.08);
+}
+
+button.suggested-action:active {
+    background-color: shade(@primary, 0.92);
+}
+
+/* Destructive Action */
+button.destructive-action {
+    background-color: @destructive_bg_color;
+    color: @destructive_color;
+    font-weight: 600;
+}
+
+button.destructive-action:hover {
+    background-color: shade(@destructive_bg_color, 1.15);
+}
+
+/* Flat Button */
+button.flat {
+    background-color: transparent;
+    color: @primary;
+    font-weight: 600;
+}
+
+button.flat:hover {
+    background-color: alpha(@primary, 0.08);
+}
+
+button.flat:active {
+    background-color: alpha(@primary, 0.16);
+}
+
+/* Outlined */
+button.outlined {
+    background-color: transparent;
+    color: @primary;
+    border: 1px solid @outline;
+}
+
+button.outlined:hover {
+    background-color: alpha(@primary, 0.08);
+}
+
+/* Pill */
+button.pill {
+    border-radius: 28px;
+    padding: 10px 24px;
+    font-weight: 600;
+}
+
+/* Image button background for headerbar icons (exclude window controls) */
+headerbar button.image-button:not(.titlebutton) {
+    background-color: @surface_container;
+}
+
+headerbar button.image-button:not(.titlebutton):hover {
+    background-color: alpha(@primary, 0.15);
+}
+
+/* Linked Buttons (Segmented) */
+.linked > button {
+    border-radius: 0;
+    border: 1px solid @outline_variant;
+    background-color: transparent;
+    color: @on_surface;
+    box-shadow: none;
+}
+
+.linked > button:first-child {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.linked > button:last-child {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.linked > button:only-child {
+    border-radius: 20px;
+}
+
+.linked > button:checked {
+    background-color: @secondary_container;
+    color: @on_secondary_container;
+    border-color: @secondary_container;
+}
+
+/* Link Button */
+button.link {
+    background: none;
+    color: @primary;
+    font-weight: 600;
+    box-shadow: none;
+}
+
+/* =============================================================================
+ * ENTRY FIELDS
+ * ============================================================================= */
+
+entry {
+    background-color: @surface_container;
+    color: @on_surface;
+    border: none;
+    border-bottom: 2px solid @outline;
+    border-radius: 16px 16px 0 0;
+    padding: 12px 16px;
+    caret-color: @primary;
+    transition: all 250ms cubic-bezier(0.2, 0.0, 0, 1.0);
+}
+
+entry:hover {
+    background-color: @surface_container_high;
+}
+
+entry:focus {
+    border-bottom: 3px solid @primary;
+    outline: none;
+}
+
+entry:disabled {
+    color: alpha(@on_surface, 0.38);
+    border-bottom-color: alpha(@outline, 0.38);
+}
+
+entry selection {
+    background-color: alpha(@primary, 0.3);
+}
+
+entry placeholder {
+    color: @outline;
+}
+
+entry image {
+    color: @outline;
+}
+
+entry image:hover {
+    color: @primary;
+}
+
+/* Search Entry - M3 pill */
+entry.search {
+    border-radius: 28px;
+    border: none;
+    border-bottom: none;
+    background-color: @surface_container_high;
+    padding: 12px 24px;
+}
+
+entry.search:focus {
+    background-color: @surface_container_highest;
+    border: none;
+    border-bottom: none;
+}
+
+/* Search bar container */
+searchbar, .search-bar {
+    padding: 4px 16px;
+    background-color: transparent;
+}
+
+/* =============================================================================
+ * LABELS
+ * ============================================================================= */
+
+label { color: @on_surface; }
+label.title { font-weight: 700; }
+label.heading { font-weight: 600; letter-spacing: 0.2px; }
+label.caption { font-size: 0.8em; color: @on_surface_variant; letter-spacing: 0.4px; }
+label.dim-label { color: @outline; }
+label.accent { color: @primary; font-weight: 600; }
+label.success { color: @success_color; }
+label.warning { color: @warning_color; }
+label.error { color: @error_color; }
+
+link, label link, button.link > label { color: @primary; font-weight: 500; }
+link:hover, label link:hover { color: shade(@primary, 1.15); }
+
+/* =============================================================================
+ * LISTS & ROWS
+ * ============================================================================= */
+
+listview, list { background-color: transparent; }
+
+listview > row, list > row {
+    background-color: transparent;
+    padding: 10px 14px;
+    border-radius: 14px;
+    margin: 2px 0;
+    min-height: 28px;
+    transition: background-color 200ms ease;
+}
+
+listview > row:hover, list > row:hover { background-color: alpha(@primary, 0.08); }
+listview > row:active, list > row:active { background-color: alpha(@primary, 0.15); }
+listview > row:selected, list > row:selected { background-color: alpha(@primary, 0.2); }
+
+row.activatable { border-radius: 14px; }
+row.activatable:hover { background-color: alpha(@primary, 0.08); }
+row.activatable:active { background-color: alpha(@primary, 0.15); }
+
+/* Row internal layout */
+row .title { font-weight: 500; color: @on_surface; }
+row .subtitle { font-size: 0.85em; color: @on_surface_variant; }
+row .prefixes { margin-right: 12px; }
+row .suffixes { margin-left: 12px; }
+
+/* =============================================================================
+ * BOXED LIST - M3 Expressive separated cards
+ * ============================================================================= */
+
+.boxed-list {
+    background-color: transparent;
+}
+
+.boxed-list > row {
+    background-color: @card_bg_color;
+    border-radius: 4px;
+    margin: 3px 0;
+    padding: 14px 16px;
+    min-height: 32px;
+    border: none;
+}
+
+.boxed-list > row:first-child {
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    margin-top: 0;
+}
+
+.boxed-list > row:last-child {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+    margin-bottom: 0;
+}
+
+.boxed-list > row:only-child {
+    border-radius: 28px;
+    margin: 0;
+}
+
+/* =============================================================================
+ * PREFERENCES GROUPS - M3 Expressive
+ * ============================================================================= */
+
+preferencespage { padding: 8px 0; }
+
+preferencespage > scrolledwindow > viewport > clamp > box {
+    padding: 8px 0;
+}
+
+preferencesgroup { margin: 8px 16px; }
+
+/* Group title - outside the card */
+preferencesgroup > box > label:first-child {
+    font-weight: 600;
+    font-size: 0.8em;
+    letter-spacing: 0.5px;
+    color: @primary;
+    margin-bottom: 10px;
+    padding: 0 8px;
+}
+
+preferencesgroup > box > label.dim-label {
+    font-size: 0.8em;
+    color: @on_surface_variant;
+    margin-bottom: 10px;
+    padding: 0 8px;
+}
+
+/* Remove background from wrapper box */
+preferencesgroup > box > box {
+    background-color: transparent;
+}
+
+/* Card background only on list */
+preferencesgroup > box > box > list,
+preferencesgroup > box > list,
+preferencesgroup list.boxed-list {
+    background-color: transparent;
+}
+
+/* Rows as individual cards */
+preferencesgroup list > row {
+    background-color: @card_bg_color;
+    border-radius: 4px;
+    margin: 3px 0;
+    padding: 14px 16px;
+    min-height: 32px;
+    border: none;
+}
+
+preferencesgroup list > row:first-child {
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    margin-top: 0;
+}
+
+preferencesgroup list > row:last-child {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+    margin-bottom: 0;
+}
+
+preferencesgroup list > row:only-child {
+    border-radius: 28px;
+    margin: 0;
+}
+
+/* =============================================================================
+ * CARDS
+ * ============================================================================= */
+
+.card {
+    background-color: @card_bg_color;
+    border-radius: 20px;
+    padding: 16px;
+}
+
+/* =============================================================================
+ * SIDEBAR / NAVIGATION - M3 Expressive pills
+ * ============================================================================= */
+
+.sidebar, .navigation-sidebar {
+    background-color: @sidebar_bg_color;
+    color: @sidebar_fg_color;
+    padding: 8px;
+}
+
+.sidebar row, .navigation-sidebar row {
+    border-radius: 28px;
+    margin: 2px 4px;
+    padding: 10px 16px;
+    min-height: 28px;
+    transition: all 250ms cubic-bezier(0.2, 0.0, 0, 1.0);
+}
+
+.sidebar row:hover, .navigation-sidebar row:hover { background-color: alpha(@primary, 0.08); }
+
+.sidebar row:selected, .navigation-sidebar row:selected {
+    background-color: @primary_container;
+    color: @on_primary_container;
+}
+
+.sidebar row:selected label, .navigation-sidebar row:selected label {
+    color: @on_primary_container;
+    font-weight: 600;
+}
+
+.sidebar row:selected image, .navigation-sidebar row:selected image {
+    color: @on_primary_container;
+}
+
+.navigation-sidebar row label { font-weight: 500; }
+
+/* =============================================================================
+ * SWITCHES - M3 Expressive pill with growing thumb
+ * ============================================================================= */
+
+switch {
+    background-color: @surface_container_highest;
+    border: 2px solid @outline;
+    border-radius: 9999px;
+    min-width: 52px;
+    min-height: 32px;
+    transition: all 300ms cubic-bezier(0.2, 0.0, 0, 1.0);
+}
+
+switch:checked {
+    background-color: @primary;
+    border-color: @primary;
+}
+
+switch:checked:hover {
+    background-color: shade(@primary, 1.08);
+    border-color: shade(@primary, 1.08);
+}
+
+switch slider {
+    background-color: @outline;
+    border-radius: 9999px;
+    min-width: 16px;
+    min-height: 16px;
+    margin: 8px;
+    transition: all 300ms cubic-bezier(0.2, 0.0, 0, 1.0);
+}
+
+switch:checked slider {
+    background-color: @on_primary;
+    min-width: 24px;
+    min-height: 24px;
+    margin: 4px;
+}
+
+switch:disabled {
+    background-color: alpha(@surface_container_high, 0.12);
+    border-color: alpha(@outline, 0.12);
+}
+
+/* =============================================================================
+ * CHECKBOXES & RADIO - M3 Expressive
+ * ============================================================================= */
+
+checkbutton, radiobutton {
+    border-radius: 8px;
+    padding: 4px;
+}
+
+checkbutton:hover, radiobutton:hover {
+    background-color: alpha(@primary, 0.08);
+}
+
+check, radio {
+    background-color: transparent;
+    border: 2px solid @outline;
+    min-width: 16px;
+    min-height: 16px;
+    transition: all 250ms cubic-bezier(0.2, 0.0, 0, 1.0);
+}
+
+check { border-radius: 4px; }
+radio { border-radius: 50%; }
+
+check:hover, radio:hover { border-color: @primary; }
+
+check:checked, radio:checked {
+    background-color: @primary;
+    border-color: @primary;
+    color: @on_primary;
+}
+
+/* =============================================================================
+ * SCALES (SLIDERS) - M3 Expressive
+ * ============================================================================= */
+
+scale { padding: 14px 0; }
+
+scale trough {
+    background-color: @surface_container_highest;
+    border-radius: 10px;
+    min-height: 16px;
+}
+
+scale highlight {
+    background-color: @primary;
+    border-radius: 10px;
+}
+
+scale slider {
+    background-color: @primary;
+    border-radius: 50%;
+    min-width: 20px;
+    min-height: 20px;
+    margin: -2px;
+    box-shadow: 0 1px 4px alpha(black, 0.25);
+    transition: all 250ms cubic-bezier(0.2, 0.0, 0, 1.0);
+}
+
+scale slider:hover {
+    min-width: 24px;
+    min-height: 24px;
+    margin: -4px;
+}
+
+scale slider:active {
+    min-width: 28px;
+    min-height: 28px;
+    margin: -6px;
+}
+
+/* =============================================================================
+ * SCROLLBARS - M3 thin with expand
+ * ============================================================================= */
+
+scrollbar { background-color: transparent; }
+
+scrollbar slider {
+    background-color: alpha(@outline, 0.3);
+    border-radius: 9999px;
+    min-width: 4px;
+    min-height: 4px;
+    margin: 4px 2px;
+    transition: all 250ms ease;
+}
+
+scrollbar slider:hover {
+    background-color: alpha(@primary, 0.5);
+    min-width: 8px;
+}
+
+scrollbar slider:active {
+    background-color: @primary;
+}
+
+scrollbar.vertical slider { min-height: 40px; }
+scrollbar.horizontal slider { min-width: 40px; }
+
+/* =============================================================================
+ * PROGRESS BARS
+ * ============================================================================= */
+
+progressbar trough {
+    background-color: @surface_container_highest;
+    border-radius: 10px;
+    min-height: 8px;
+}
+
+progressbar progress {
+    background-color: @primary;
+    border-radius: 10px;
+    min-height: 8px;
+}
+
+/* =============================================================================
+ * POPOVERS & MENUS - M3 Expressive
+ * ============================================================================= */
+
+popover, popover.background {
+    background-color: @surface_container;
+    color: @on_surface;
+    border-radius: 20px;
+    padding: 4px;
+    box-shadow: 0 8px 24px alpha(black, 0.3);
+}
+
+popover.menu, popover.menu.background {
+    background-color: @surface_container;
+    border-radius: 16px;
+    padding: 4px;
+    border: none;
+}
+
+popover.menu > contents, popover.menu.background > contents {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+popover.menu menu, popover.menu .menu {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+popover separator { background-color: @outline_variant; margin: 4px 16px; }
+
+popover modelbutton {
+    border-radius: 12px;
+    padding: 10px 16px;
+    margin: 2px 4px;
+}
+
+popover modelbutton:hover { background-color: alpha(@primary, 0.08); }
+
+menu, .menu {
+    background-color: @surface_container;
+    border-radius: 16px;
+    padding: 4px;
+}
+
+menuitem {
+    border-radius: 12px;
+    padding: 10px 16px;
+    margin: 2px 4px;
+    transition: all 200ms ease;
+}
+
+menuitem:hover { background-color: alpha(@primary, 0.08); }
+menuitem:disabled { color: alpha(@on_surface, 0.38); }
+menuitem accelerator { color: @outline; }
+menu separator { background-color: @outline_variant; margin: 4px 16px; }
+
+/* =============================================================================
+ * DIALOGS - M3 Expressive
+ * ============================================================================= */
+
+dialog, messagedialog, window.dialog {
+    background-color: @surface_container_high;
+    color: @on_surface;
+    border-radius: 28px;
+}
+
+messagedialog .message-area { padding: 28px 28px 16px; }
+messagedialog .response-area { padding: 8px 28px 28px; }
+messagedialog .response-area button { min-width: 80px; }
+
+/* =============================================================================
+ * TOAST / SNACKBAR - M3 Inverse Surface
+ * ============================================================================= */
+
+toast {
+    background-color: @inverse_surface;
+    color: @inverse_on_surface;
+    border-radius: 16px;
+    padding: 14px 24px;
+    margin: 12px;
+}
+
+toast button {
+    background-color: transparent;
+    color: @inverse_primary;
+    font-weight: 600;
+}
+
+.app-notification {
+    background-color: @inverse_surface;
+    color: @inverse_on_surface;
+    border-radius: 16px;
+    padding: 14px 20px;
+    margin: 12px;
+}
+
+/* =============================================================================
+ * TOOLTIPS - M3 Inverse
+ * ============================================================================= */
+
+tooltip, tooltip.background {
+    background-color: @inverse_surface;
+    color: @inverse_on_surface;
+    border-radius: 12px;
+    padding: 8px 16px;
+}
+
+/* =============================================================================
+ * TABS & VIEW SWITCHER - M3 Expressive
+ * ============================================================================= */
+
+tabbar, .tab-bar { background-color: @surface; }
+
+tabbar tab, .tab-bar .tab {
+    background-color: transparent;
+    padding: 12px 24px;
+    border-bottom: 3px solid transparent;
+    transition: all 250ms ease;
+}
+
+tabbar tab:hover { background-color: alpha(@primary, 0.08); }
+
+tabbar tab:checked {
+    border-bottom-color: @primary;
+    color: @primary;
+}
+
+tabbar tab:checked label { font-weight: 700; color: @primary; }
+
+/* View Switcher - M3 Navigation with pill */
+viewswitcher button {
+    border-radius: 16px;
+    padding: 8px 20px;
+    margin: 4px 2px;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+viewswitcher button:checked {
+    background-color: @secondary_container;
+    color: @on_secondary_container;
+    border-radius: 28px;
+}
+
+/* Stack Switcher */
+stackswitcher button { border-radius: 20px; }
+stackswitcher button:checked { background-color: @primary; color: @on_primary; }
+
+/* =============================================================================
+ * INFO BARS - M3 Expressive Banners
+ * ============================================================================= */
+
+infobar { border-radius: 20px; padding: 12px 16px; margin: 8px 12px; }
+infobar.info { background-color: alpha(@primary, 0.12); border-left: 4px solid @primary; }
+infobar.warning { background-color: alpha(@warning_color, 0.12); border-left: 4px solid @warning_color; }
+infobar.error { background-color: alpha(@error_color, 0.12); border-left: 4px solid @error_color; }
+
+/* =============================================================================
+ * EXPANDER ROW
+ * ============================================================================= */
+
+row.expander { padding: 0; }
+row.expander .header { padding: 14px 16px; min-height: 32px; }
+
+row.expander image.expander-row-arrow {
+    color: @on_surface_variant;
+    transition: all 200ms ease;
+}
+
+row.expander:checked image.expander-row-arrow { color: @primary; }
+
+row.expander list {
+    background-color: alpha(@surface, 0.5);
+    margin: 0;
+    padding: 0;
+}
+
+row.expander list > row {
+    padding: 10px 16px 10px 32px;
+    min-height: 28px;
+}
+
+/* =============================================================================
+ * MISC WIDGETS
+ * ============================================================================= */
+
+separator { background-color: @outline_variant; min-width: 1px; min-height: 1px; }
+spinner { color: @primary; }
+
+levelbar trough { background-color: alpha(@primary, 0.15); border-radius: 8px; min-height: 8px; }
+levelbar block.filled { background-color: @primary; border-radius: 8px; }
+levelbar block.low { background-color: @error_color; }
+levelbar block.full { background-color: @success_color; }
+
+avatar { border-radius: 50%; background-color: @primary_container; color: @on_primary_container; font-weight: 700; }
+
+dropdown {
+    background-color: @surface_container;
+    border-radius: 12px;
+    padding: 8px 12px;
+}
+
+dropdown:hover { background-color: @surface_container_high; }
+dropdown button { background-color: transparent; }
+
+dropdown popover { background-color: @popover_bg_color; border-radius: 12px; }
+dropdown popover listview { background-color: transparent; }
+dropdown popover listview > row { padding: 8px 12px; border-radius: 8px; margin: 2px 4px; }
+dropdown popover listview > row:selected { background-color: alpha(@primary, 0.2); }
+
+spinbutton { background-color: @surface_container; border-radius: 12px; }
+spinbutton entry { background-color: transparent; border: none; }
+spinbutton button { background-color: transparent; border-radius: 8px; }
+
+frame { border: none; }
+frame > border { border: none; }
+
+.about-window { background-color: @surface; }
+.about-window .app-name { font-weight: 700; font-size: 1.4em; }
+
+textview { background-color: @view_bg_color; color: @view_fg_color; }
+textview text selection { background-color: alpha(@primary, 0.3); }
+
+calendar { background-color: @surface_container; border-radius: 16px; padding: 12px; }
+calendar:selected { background-color: @primary; color: @on_primary; border-radius: 50%; }
+
+/* Status Page */
+statuspage { padding: 24px; }
+statuspage .title { font-size: 1.3em; font-weight: 700; margin-bottom: 8px; }
+statuspage .description { color: @on_surface_variant; }
+
+/* Banner */
+.banner {
+    background-color: @primary_container;
+    color: @on_primary_container;
+    padding: 14px 20px;
+    border-radius: 16px;
+    margin: 8px 16px;
+}
+
+/* Focus ring */
+*:focus-visible { outline: 2px solid @primary; outline-offset: 2px; }
+
+/* FAB */
+button.fab {
+    background-color: @primary_container;
+    color: @on_primary_container;
+    border-radius: 16px;
+    padding: 16px;
+    min-width: 56px;
+    min-height: 56px;
+    box-shadow: 0 3px 8px alpha(black, 0.25);
+}
+
+button.fab:hover {
+    box-shadow: 0 4px 12px alpha(black, 0.3);
+}
+
+/* Chip */
+.chip {
+    background-color: transparent;
+    border: 1px solid @outline;
+    border-radius: 8px;
+    padding: 8px 16px;
+}
+
+.chip:checked {
+    background-color: @secondary_container;
+    border-color: transparent;
+    color: @on_secondary_container;
+}
+
+/* Selection mode */
+headerbar.selection-mode { background-color: @primary_container; color: @on_primary_container; }
+
+/* Navigation drawer */
+placessidebar {
+    background-color: @surface_container_low;
+    padding: 8px;
+}
+
+placessidebar row {
+    border-radius: 28px;
+    padding: 10px 16px;
+    margin: 1px 4px;
+}
+
+placessidebar row:selected {
+    background-color: @secondary_container;
+    color: @on_secondary_container;
+}
+
+placessidebar row:selected label { color: @on_secondary_container; font-weight: 700; }
+placessidebar row:selected image { color: @on_secondary_container; }
+placessidebar row:hover:not(:selected) { background-color: alpha(@on_surface, 0.08); }
+
+/* =============================================================================
+ * SETTINGS WINDOW
+ * ============================================================================= */
+
+window.preferences { background-color: @surface; }
+
+window.preferences .navigation-sidebar {
+    background-color: @sidebar_bg_color;
+    padding: 8px;
+}
+
+window.preferences .navigation-sidebar row {
+    border-radius: 28px;
+    margin: 2px 4px;
+    padding: 10px 16px;
+}
+
+window.preferences .navigation-sidebar row:selected {
+    background-color: @primary_container;
+    color: @on_primary_container;
+}
+
+/* Row types */
+row.combo image.dropdown-arrow { color: @on_surface_variant; }
+row.combo:hover image.dropdown-arrow { color: @primary; }
+
+row.entry entry { background-color: transparent; border: none; }
+
+row.spin spinbutton { background-color: transparent; }
+row.spin spinbutton entry { background-color: transparent; border: none; }
+
+row switch { margin: 2px 0; }
+
+/* Shortcut label */
+shortcutlabel > box > label {
+    background-color: @surface_container_high;
+    border-radius: 6px;
+    padding: 2px 8px;
+    font-weight: 600;
+}
+
+/* =============================================================================
+ * NAUTILUS (Files) - M3 Expressive
+ * ============================================================================= */
+
+/* Path bar pills */
+pathbar button, .path-bar button, .path-bar-box button {
+    background-color: @surface_container;
+    border-radius: 28px;
+    padding: 6px 14px;
+    margin: 2px;
+}
+
+pathbar button:checked, .path-bar button:checked, .path-bar-box button:checked {
+    background-color: @secondary_container;
+    color: @on_secondary_container;
+    font-weight: 600;
+}
+
+/* Content area */
+.view, gridview, columnview, listview, iconview {
+    background-color: @surface;
+}
+
+/* Grid view items */
+gridview { padding: 12px; }
+
+gridview > child {
+    border-radius: 20px;
+    padding: 8px;
+    margin: 4px;
+    transition: all 200ms ease;
+}
+
+gridview > child:hover { background-color: alpha(@on_surface, 0.06); }
+gridview > child:selected { background-color: alpha(@primary, 0.12); }
+
+gridview > child picture, gridview > child .thumbnail { border-radius: 16px; }
+
+/* List view */
+columnview > header > button {
+    background-color: @surface;
+    color: @on_surface_variant;
+    font-weight: 600;
+    font-size: 0.85em;
+    border-bottom: 1px solid @outline_variant;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+columnview > listview > row {
+    min-height: 40px;
+    border-bottom: 1px solid alpha(@outline_variant, 0.3);
+}
+
+columnview > listview > row:hover { background-color: alpha(@on_surface, 0.05); }
+columnview > listview > row:selected { background-color: alpha(@primary, 0.14); }
+
+/* Rubber band */
+rubberband, .rubberband {
+    background-color: alpha(@primary, 0.12);
+    border: 1px solid alpha(@primary, 0.5);
+}
+
+/* Floating bar */
+.floating-bar {
+    background-color: @surface_container_high;
+    color: @on_surface;
+    border-radius: 16px;
+    padding: 8px 20px;
+    margin: 8px 12px;
+}
+
+/* File operations FAB */
+.nautilus-operations-button {
+    background-color: @primary_container;
+    color: @on_primary_container;
+    border-radius: 50%;
+    padding: 8px;
+}
+
+/* Nautilus tabs */
+.nautilus-window tabbar tab {
+    border-radius: 12px 12px 0 0;
+    padding: 8px 20px;
+    border-bottom: 3px solid transparent;
+}
+
+.nautilus-window tabbar tab:checked {
+    background-color: @surface_container;
+    border-bottom-color: @primary;
+}
+
+.nautilus-window tabbar tab:checked label { color: @primary; font-weight: 700; }
+
+/* Nautilus sidebar */
+.nautilus-window placessidebar { background-color: #141010; }
+
+/* Nautilus headerbar buttons (exclude window controls) */
+.nautilus-window headerbar button.image-button:not(.titlebutton) {
+    background-color: @surface_container;
+}
+
+/* Location entry (Ctrl+L) */
+.nautilus-window .location-entry {
+    border-radius: 28px;
+    background-color: @surface_container_high;
+    padding: 8px 20px;
+    border: none;
+    border-bottom: none;
+}
+
+.nautilus-window .location-entry:focus {
+    border: 2px solid @primary;
+    border-bottom: 2px solid @primary;
+}
+
+/* Rename popover */
+.nautilus-window popover.rename entry {
+    border-radius: 12px;
+    border: 2px solid @outline;
+    border-bottom: 2px solid @outline;
+}
+
+.nautilus-window popover.rename entry:focus {
+    border-color: @primary;
+    border-bottom-color: @primary;
+}
+
+/* Trash banner */
+.nautilus-window infobar {
+    border-radius: 20px;
+    margin: 8px 16px;
+}
+
+/* Properties */
+.nautilus-properties-window { background-color: @surface_container; }
+
+/* Context menu */
+.nautilus-window popover.menu { border-radius: 16px; }
+
+/* Drop target */
+.nautilus-window .drop-target {
+    background-color: alpha(@primary, 0.16);
+    border: 2px solid @primary;
+    border-radius: 16px;
+}
+
+/* =============================================================================
+ * GNOME TEXT EDITOR - M3 Expressive
+ * ============================================================================= */
+
+/* Main text area */
+.text-editor textview {
+    background-color: @surface;
+    color: @on_surface;
+    font-size: 1.05em;
+}
+
+.text-editor textview text {
+    background-color: @surface;
+    color: @on_surface;
+}
+
+.text-editor textview text selection {
+    background-color: alpha(@primary, 0.3);
+}
+
+.text-editor textview border {
+    background-color: @surface_container_low;
+    color: @outline;
+}
+
+/* Line numbers */
+.text-editor textview border.left {
+    background-color: @surface_container_low;
+    color: alpha(@on_surface_variant, 0.5);
+    padding-right: 8px;
+}
+
+/* Open / recent documents */
+.text-editor .open-document-selector {
+    background-color: @surface_container;
+    border-radius: 20px;
+    padding: 8px;
+}
+
+.text-editor .open-document-selector row {
+    border-radius: 14px;
+    padding: 10px 14px;
+    margin: 2px 4px;
+}
+
+.text-editor .open-document-selector row:hover {
+    background-color: alpha(@primary, 0.08);
+}
+
+.text-editor .open-document-selector row:selected {
+    background-color: alpha(@primary, 0.16);
+}
+
+/* Tab bar */
+.text-editor tabbar tab {
+    border-radius: 12px 12px 0 0;
+    padding: 8px 20px;
+    border-bottom: 3px solid transparent;
+}
+
+.text-editor tabbar tab:checked {
+    background-color: @surface_container;
+    border-bottom-color: @primary;
+}
+
+.text-editor tabbar tab:checked label {
+    color: @primary;
+    font-weight: 700;
+}
+
+/* Modified indicator */
+.text-editor tabbar tab .indicator {
+    color: @primary;
+}
+
+/* Search bar */
+.text-editor searchbar {
+    background-color: @surface_container;
+    border-radius: 0 0 20px 20px;
+    padding: 8px 16px;
+}
+
+.text-editor searchbar entry {
+    border-radius: 28px;
+    border: none;
+    border-bottom: none;
+    background-color: @surface_container_high;
+    padding: 8px 16px;
+}
+
+.text-editor searchbar entry:focus {
+    background-color: @surface_container_highest;
+    border: none;
+    border-bottom: none;
+}
+
+/* Map / minimap */
+.text-editor .map {
+    background-color: @surface_container_low;
+    border-left: 1px solid @outline_variant;
+}
+
+/* Status bar */
+.text-editor actionbar {
+    background-color: @surface;
+    border-top: none;
+    padding: 4px 12px;
+}
+
+.text-editor actionbar button {
+    background-color: transparent;
+    color: @on_surface_variant;
+    font-size: 0.85em;
+}
+
+/* =============================================================================
+ * GNOME CONSOLE / TERMINAL - M3 Expressive
+ * ============================================================================= */
+
+/* Terminal window */
+.terminal-window,
+window.org-gnome-Console {
+    background-color: @surface_dim;
+}
+
+.terminal-window headerbar,
+window.org-gnome-Console headerbar {
+    background-color: @surface_dim;
+}
+
+/* Terminal tab bar */
+.terminal-window tabbar,
+window.org-gnome-Console tabbar {
+    background-color: @surface_dim;
+}
+
+.terminal-window tabbar tab,
+window.org-gnome-Console tabbar tab {
+    border-radius: 12px 12px 0 0;
+    padding: 6px 16px;
+    border-bottom: 3px solid transparent;
+}
+
+.terminal-window tabbar tab:checked,
+window.org-gnome-Console tabbar tab:checked {
+    background-color: alpha(@surface_container, 0.5);
+    border-bottom-color: @primary;
+}
+
+/* Terminal content */
+vte-terminal {
+    padding: 8px 12px;
+}
+
+/* =============================================================================
+ * GNOME CALCULATOR - M3 Expressive
+ * ============================================================================= */
+
+/* Calculator buttons */
+window.org-gnome-Calculator button {
+    border-radius: 16px;
+    margin: 3px;
+    font-size: 1.2em;
+    font-weight: 500;
+    min-height: 48px;
+}
+
+window.org-gnome-Calculator button.math {
+    background-color: @surface_container_high;
+    color: @on_surface;
+}
+
+window.org-gnome-Calculator button.math:hover {
+    background-color: alpha(@primary, 0.15);
+}
+
+window.org-gnome-Calculator button.suggested-action {
+    background-color: @primary;
+    color: @on_primary;
+    font-weight: 700;
+}
+
+/* Display area */
+window.org-gnome-Calculator .display-container {
+    background-color: @surface_container;
+    border-radius: 28px;
+    padding: 24px 20px;
+    margin: 12px;
+}
+
+window.org-gnome-Calculator .history-view {
+    background-color: @surface;
+    color: @on_surface_variant;
+}
+
+window.org-gnome-Calculator .history-view row {
+    padding: 8px 16px;
+    border-radius: 12px;
+}
+
+window.org-gnome-Calculator .history-view row:hover {
+    background-color: alpha(@primary, 0.08);
+}
+
+/* =============================================================================
+ * GNOME SOFTWARE (Software Center) - M3 Expressive
+ * ============================================================================= */
+
+/* App tiles / cards */
+.app-tile,
+.application-details-infobar {
+    border-radius: 20px;
+}
+
+.featured-carousel {
+    border-radius: 28px;
+    margin: 12px 16px;
+}
+
+.featured-carousel > widget {
+    border-radius: 28px;
+}
+
+/* Category tiles */
+.category-tile {
+    border-radius: 20px;
+    padding: 16px;
+    margin: 6px;
+    transition: all 200ms ease;
+}
+
+.category-tile:hover {
+    background-color: alpha(@primary, 0.1);
+}
+
+/* App page */
+.details-page .app-title {
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+.details-page .app-developer {
+    color: @on_surface_variant;
+}
+
+/* Star ratings */
+.star-image {
+    color: @primary;
+}
+
+/* Screenshots */
+.screenshot-image {
+    border-radius: 20px;
+    margin: 8px;
+}
+
+/* Install / update buttons */
+.details-page button.suggested-action {
+    border-radius: 28px;
+    padding: 12px 32px;
+    font-weight: 700;
+    font-size: 1em;
+}
+
+/* Review cards */
+.review-row {
+    background-color: @card_bg_color;
+    border-radius: 20px;
+    padding: 16px;
+    margin: 8px 0;
+}
+
+/* Update row */
+.update-row {
+    padding: 14px 16px;
+    border-radius: 14px;
+}
+
+/* =============================================================================
+ * GNOME CALENDAR - M3 Expressive
+ * ============================================================================= */
+
+/* Calendar main */
+.calendar-view {
+    background-color: @surface;
+}
+
+/* Day cell */
+.calendar-view .day-cell {
+    border-radius: 12px;
+    padding: 4px;
+    margin: 2px;
+}
+
+.calendar-view .day-cell:hover {
+    background-color: alpha(@primary, 0.08);
+}
+
+.calendar-view .day-cell.today {
+    background-color: @primary;
+    color: @on_primary;
+    border-radius: 50%;
+    font-weight: 700;
+}
+
+.calendar-view .day-cell.other-month {
+    color: alpha(@on_surface, 0.38);
+}
+
+/* Event dots */
+.calendar-view .event-dot {
+    background-color: @primary;
+    border-radius: 50%;
+}
+
+/* Event list */
+.event-list row {
+    border-radius: 14px;
+    padding: 10px 14px;
+    margin: 2px 4px;
+}
+
+.event-list row:hover {
+    background-color: alpha(@primary, 0.08);
+}
+
+/* Event widget */
+.event-widget {
+    background-color: @primary_container;
+    color: @on_primary_container;
+    border-radius: 12px;
+    padding: 8px 12px;
+    margin: 2px;
+}
+
+/* Header */
+.calendar-view .header {
+    font-weight: 700;
+    color: @on_surface;
+}
+
+/* =============================================================================
+ * GNOME CLOCKS - M3 Expressive
+ * ============================================================================= */
+
+/* Clock face */
+.clocks-analog-face {
+    background-color: @surface_container;
+    border-radius: 50%;
+}
+
+/* World clock tiles */
+.clocks-tile {
+    background-color: @card_bg_color;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 8px;
+}
+
+/* Timer / Stopwatch display */
+.clocks-timer-label,
+.clocks-stopwatch-label,
+.clocks-large-label {
+    font-weight: 300;
+    color: @on_surface;
+}
+
+/* Alarm row */
+.clocks-alarm-row {
+    border-radius: 14px;
+    padding: 14px 16px;
+}
+
+/* Lap list */
+.clocks-laps-list row {
+    border-radius: 12px;
+    padding: 10px 16px;
+    margin: 2px 0;
+}
+
+/* =============================================================================
+ * GNOME WEATHER - M3 Expressive
+ * ============================================================================= */
+
+/* Weather card */
+.weather-card,
+.weather-page {
+    background-color: @surface;
+}
+
+/* Forecast row */
+.forecast-row {
+    background-color: @card_bg_color;
+    border-radius: 20px;
+    padding: 16px 20px;
+    margin: 6px 12px;
+}
+
+/* Temperature */
+.weather-temp-label {
+    font-weight: 300;
+    font-size: 3em;
+    color: @on_surface;
+}
+
+/* Hourly forecast */
+.hourly-forecast {
+    padding: 8px;
+}
+
+.hourly-forecast > child {
+    border-radius: 16px;
+    padding: 12px 8px;
+    margin: 2px;
+}
+
+/* =============================================================================
+ * GNOME CONTACTS - M3 Expressive
+ * ============================================================================= */
+
+/* Contact list */
+.contacts-contact-list row {
+    border-radius: 14px;
+    padding: 10px 14px;
+    margin: 2px 4px;
+}
+
+.contacts-contact-list row:hover {
+    background-color: alpha(@primary, 0.08);
+}
+
+.contacts-contact-list row:selected {
+    background-color: alpha(@primary, 0.16);
+}
+
+/* Contact avatar */
+.contacts-avatar {
+    border-radius: 50%;
+    background-color: @primary_container;
+    color: @on_primary_container;
+}
+
+/* Contact details */
+.contacts-details {
+    padding: 20px;
+}
+
+.contacts-details .contact-name {
+    font-weight: 700;
+    font-size: 1.5em;
+}
+
+/* Property row */
+.contacts-property-row {
+    border-radius: 14px;
+    padding: 12px 16px;
+    margin: 4px 0;
+}
+
+/* =============================================================================
+ * GNOME MAPS - M3 Expressive
+ * ============================================================================= */
+
+/* Map overlay controls */
+.maps-sidebar {
+    background-color: @surface_container;
+    border-radius: 20px;
+    padding: 8px;
+    margin: 8px;
+}
+
+.maps-search-entry {
+    border-radius: 28px;
+    background-color: @surface_container_high;
+    padding: 12px 20px;
+}
+
+/* Place bubble */
+.maps-place-bubble {
+    background-color: @surface_container;
+    border-radius: 20px;
+    padding: 16px;
+}
+
+/* Route panel */
+.maps-route-entry {
+    border-radius: 28px;
+    background-color: @surface_container_high;
+    padding: 10px 18px;
+    margin: 4px 0;
+}
+
+/* =============================================================================
+ * GNOME DISK USAGE / BAOBAB - M3 Expressive
+ * ============================================================================= */
+
+/* Ring chart */
+.baobab-chart {
+    background-color: @surface;
+}
+
+/* Location list */
+.baobab-window .location-list row {
+    border-radius: 14px;
+    padding: 12px 16px;
+    margin: 2px 4px;
+}
+
+/* =============================================================================
+ * EVINCE / DOCUMENT VIEWER - M3 Expressive
+ * ============================================================================= */
+
+/* Sidebar (thumbnails / bookmarks) */
+.ev-sidebar {
+    background-color: @surface_container_low;
+    padding: 4px;
+}
+
+.ev-sidebar row {
+    border-radius: 12px;
+    margin: 2px;
+    padding: 4px;
+}
+
+/* Toolbar */
+.ev-toolbar {
+    background-color: @surface;
+}
+
+/* Page controls */
+.ev-page-action-widget entry {
+    border-radius: 12px;
+    border: 1px solid @outline_variant;
+    border-bottom: 1px solid @outline_variant;
+    background-color: @surface_container;
+    padding: 4px 8px;
+}
+
+/* Annotations */
+.ev-annotation {
+    background-color: @tertiary_container;
+    color: @on_tertiary_container;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+/* =============================================================================
+ * EYE OF GNOME / IMAGE VIEWER (LOUPE) - M3 Expressive
+ * ============================================================================= */
+
+/* Image background */
+.image-viewer-window,
+window.org-gnome-Loupe {
+    background-color: @surface_dim;
+}
+
+window.org-gnome-Loupe headerbar {
+    background-color: transparent;
+}
+
+/* Fullscreen controls */
+window.org-gnome-Loupe .osd {
+    background-color: alpha(@surface_container, 0.85);
+    border-radius: 28px;
+    padding: 4px 12px;
+    margin: 12px;
+}
+
+/* Properties sidebar */
+window.org-gnome-Loupe .properties {
+    background-color: @surface_container;
+    border-radius: 20px;
+    padding: 16px;
+    margin: 8px;
+}
+
+/* =============================================================================
+ * GNOME SYSTEM MONITOR / RESOURCES - M3 Expressive
+ * ============================================================================= */
+
+/* Process list */
+.process-list row {
+    padding: 8px 14px;
+    border-radius: 12px;
+    margin: 1px 0;
+}
+
+.process-list row:hover {
+    background-color: alpha(@primary, 0.06);
+}
+
+.process-list row:selected {
+    background-color: alpha(@primary, 0.14);
+}
+
+/* Graph cards */
+.graph-card {
+    background-color: @card_bg_color;
+    border-radius: 20px;
+    padding: 16px;
+    margin: 8px;
+}
+
+/* Performance graphs */
+.cpu-graph, .memory-graph, .network-graph {
+    border-radius: 16px;
+}
+
+/* =============================================================================
+ * GNOME LOGS / JOURNAL - M3 Expressive
+ * ============================================================================= */
+
+/* Log list */
+.logs-listbox row {
+    padding: 10px 14px;
+    border-radius: 12px;
+    margin: 1px 2px;
+}
+
+/* Priority colors */
+.logs-listbox row.emergency,
+.logs-listbox row.alert,
+.logs-listbox row.critical {
+    background-color: alpha(@error_color, 0.1);
+}
+
+.logs-listbox row.warning {
+    background-color: alpha(@warning_color, 0.08);
+}
+
+/* =============================================================================
+ * GNOME DISKS - M3 Expressive
+ * ============================================================================= */
+
+/* Disk panel */
+.gnome-disks .drive-list row {
+    border-radius: 14px;
+    padding: 12px 16px;
+    margin: 2px 4px;
+}
+
+/* Volume list */
+.gnome-disks .volume-list row {
+    border-radius: 14px;
+    padding: 10px 14px;
+    margin: 2px 4px;
+}
+
+/* =============================================================================
+ * GNOME FONTS / FONT VIEWER - M3 Expressive
+ * ============================================================================= */
+
+/* Font tiles */
+.font-tile {
+    background-color: @card_bg_color;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 6px;
+}
+
+.font-tile:hover {
+    background-color: alpha(@primary, 0.08);
+}
+
+/* =============================================================================
+ * GNOME CHARACTERS - M3 Expressive
+ * ============================================================================= */
+
+/* Character grid */
+.character-grid > child {
+    border-radius: 12px;
+    padding: 8px;
+    margin: 2px;
+}
+
+.character-grid > child:hover {
+    background-color: alpha(@primary, 0.1);
+}
+
+/* Character detail popup */
+.character-details {
+    background-color: @surface_container;
+    border-radius: 28px;
+    padding: 24px;
+}
+
+/* =============================================================================
+ * GNOME PHOTOS / SHOTWELL - M3 Expressive
+ * ============================================================================= */
+
+/* Photo tile */
+.photos-tile, .shotwell-tile {
+    border-radius: 16px;
+    margin: 3px;
+    transition: all 200ms ease;
+}
+
+.photos-tile:hover, .shotwell-tile:hover {
+    border-radius: 20px;
+}
+
+/* =============================================================================
+ * GNOME MUSIC - M3 Expressive
+ * ============================================================================= */
+
+/* Song row */
+.song-row {
+    border-radius: 14px;
+    padding: 8px 14px;
+    margin: 2px 4px;
+}
+
+.song-row:hover {
+    background-color: alpha(@primary, 0.08);
+}
+
+.song-row:selected {
+    background-color: alpha(@primary, 0.14);
+}
+
+/* Album art */
+.album-art {
+    border-radius: 16px;
+}
+
+/* Player bar */
+.player-toolbar {
+    background-color: @surface_container;
+    padding: 8px 16px;
+    min-height: 64px;
+}
+
+/* Album card */
+.album-tile {
+    border-radius: 20px;
+    padding: 8px;
+    margin: 4px;
+    transition: all 200ms ease;
+}
+
+.album-tile:hover {
+    background-color: alpha(@on_surface, 0.06);
+}
+
+/* =============================================================================
+ * GNOME VIDEOS / TOTEM / CLAPPER - M3 Expressive
+ * ============================================================================= */
+
+/* Video controls bar */
+.video-controls, .clapper-controls {
+    background-color: alpha(@surface_container, 0.85);
+    border-radius: 28px;
+    padding: 8px 16px;
+    margin: 12px;
+}
+
+/* Volume/seek slider */
+.video-controls scale trough,
+.clapper-controls scale trough {
+    background-color: alpha(@on_surface, 0.2);
+    border-radius: 10px;
+    min-height: 6px;
+}
+
+.video-controls scale highlight,
+.clapper-controls scale highlight {
+    background-color: @primary;
+}
+
+/* =============================================================================
+ * GNOME BOXES / VIRTUAL MACHINES - M3 Expressive
+ * ============================================================================= */
+
+/* VM tile */
+.boxes-tile {
+    background-color: @card_bg_color;
+    border-radius: 20px;
+    padding: 8px;
+    margin: 6px;
+}
+
+.boxes-tile:hover {
+    background-color: alpha(@primary, 0.08);
+}
+
+/* =============================================================================
+ * GNOME CONNECTIONS / REMOTE DESKTOP - M3 Expressive
+ * ============================================================================= */
+
+.connections-tile {
+    background-color: @card_bg_color;
+    border-radius: 20px;
+    padding: 16px;
+    margin: 6px;
+}
+
+/* =============================================================================
+ * GENERIC LIBADWAITA PATTERNS - M3 Expressive
+ * ============================================================================= */
+
+/* AdwAboutWindow */
+.about-window .app-icon {
+    border-radius: 28px;
+    margin: 12px;
+}
+
+.about-window .about-group {
+    background-color: transparent;
+    margin: 8px 16px;
+}
+
+.about-window .about-group list > row {
+    background-color: @card_bg_color;
+    border-radius: 4px;
+    margin: 3px 0;
+    padding: 14px 16px;
+}
+
+.about-window .about-group list > row:first-child {
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+}
+
+.about-window .about-group list > row:last-child {
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+}
+
+.about-window .about-group list > row:only-child {
+    border-radius: 28px;
+}
+
+/* AdwClamp content */
+clamp { padding: 0 4px; }
+
+/* AdwFlap (sidebar panel) */
+flap > separator {
+    background-color: @outline_variant;
+    min-width: 1px;
+}
+
+flap > .sidebar {
+    background-color: @sidebar_bg_color;
+}
+
+/* AdwSplitButton */
+splitbutton {
+    border-radius: 28px;
+}
+
+splitbutton > button:first-child {
+    border-top-left-radius: 28px;
+    border-bottom-left-radius: 28px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: 8px 14px;
+}
+
+splitbutton > menubutton > button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 28px;
+    border-bottom-right-radius: 28px;
+    padding: 8px 10px;
+}
+
+splitbutton > separator {
+    background-color: alpha(@outline, 0.3);
+    min-width: 1px;
+    margin: 6px 0;
+}
+
+/* AdwToolbarView */
+toolbarview > .top-bar {
+    background-color: #141010;
+    border-bottom: none;
+    box-shadow: none;
+    outline: none;
+}
+
+toolbarview > .top-bar::after {
+    background: none;
+    box-shadow: none;
+    border: none;
+    opacity: 0;
+    min-height: 0;
+}
+
+toolbarview > .top-bar headerbar {
+    border-bottom: none;
+    box-shadow: none;
+    outline: none;
+}
+
+toolbarview > .bottom-bar {
+    background-color: @surface;
+    border-top: none;
+    box-shadow: none;
+}
+
+/* AdwBottomSheet */
+bottomsheet > .sheet {
+    background-color: @surface_container;
+    border-radius: 28px 28px 0 0;
+}
+
+/* OSD controls (floating) */
+.osd {
+    background-color: alpha(@surface_container, 0.85);
+    color: @on_surface;
+    border-radius: 20px;
+    padding: 4px;
+}
+
+.osd button {
+    background-color: transparent;
+    color: @on_surface;
+}
+
+.osd button:hover {
+    background-color: alpha(@primary, 0.15);
+}
+
+/* Empty state / welcome pages */
+.empty-page, .welcome-page, statuspage {
+    padding: 24px;
+}
+
+.empty-page .icon, statuspage .icon {
+    color: alpha(@on_surface_variant, 0.5);
+    margin-bottom: 16px;
+}
+
+.empty-page .title, .welcome-page .title {
+    font-weight: 700;
+    font-size: 1.3em;
+    margin-bottom: 8px;
+}
+
+.empty-page .description, .welcome-page .description {
+    color: @on_surface_variant;
+}
+
+/* Notification / in-app notification */
+.app-notification {
+    background-color: @inverse_surface;
+    color: @inverse_on_surface;
+    border-radius: 16px;
+    padding: 14px 20px;
+    margin: 12px;
+}
+
+/* AdwNavigationView */
+navigationview > .background {
+    background-color: @surface;
+}
+
+/* AdwOverlaySplitView */
+overlaysplitview > .sidebar {
+    background-color: @sidebar_bg_color;
+}
+
+overlaysplitview > separator {
+    background-color: @outline_variant;
+    min-width: 1px;
+}
+
+/* Drag overlay */
+.drag-overlay {
+    background-color: alpha(@primary, 0.12);
+    border: 2px dashed @primary;
+    border-radius: 20px;
+}
+
+/* Emoji picker */
+.emoji-picker {
+    background-color: @surface_container;
+    border-radius: 20px;
+}
+
+.emoji-picker button {
+    border-radius: 12px;
+    padding: 6px;
+    margin: 2px;
+}
+
+.emoji-picker button:hover {
+    background-color: alpha(@primary, 0.12);
+}
+
+/* Color chooser */
+colordialog {
+    border-radius: 28px;
+}
+
+/* File chooser dialog */
+filechooser .path-bar button {
+    border-radius: 28px;
+    padding: 6px 14px;
+    margin: 2px;
+}
+
+filechooser placessidebar {
+    background-color: @surface_container_low;
+}
+
+filechooser .view {
+    background-color: @surface;
+}
+
+/* Print dialog */
+printdialog {
+    background-color: @surface_container;
+    border-radius: 28px;
+}
+
+/* GtkNotebook */
+notebook > header {
+    background-color: @surface;
+    border-bottom: none;
+}
+
+notebook > header tab {
+    border-radius: 12px 12px 0 0;
+    padding: 8px 16px;
+    border-bottom: 3px solid transparent;
+    transition: all 200ms ease;
+}
+
+notebook > header tab:checked {
+    background-color: @surface_container;
+    border-bottom-color: @primary;
+}
+
+notebook > header tab:checked label {
+    color: @primary;
+    font-weight: 700;
+}
+
+notebook > stack {
+    background-color: @surface;
+}
+
+/* GtkColumnView (used in many apps) */
+columnview {
+    background-color: @surface;
+}
+
+columnview > listview > row {
+    min-height: 40px;
+    padding: 4px 8px;
+    transition: background-color 200ms ease;
+}
+
+columnview > listview > row:hover {
+    background-color: alpha(@on_surface, 0.05);
+}
+
+columnview > listview > row:selected {
+    background-color: alpha(@primary, 0.14);
+}
+
+/* Message dialogs / AdwAlertDialog */
+.alert-dialog {
+    background-color: @surface_container_high;
+    border-radius: 28px;
+}
+
+.alert-dialog .heading {
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+.alert-dialog .body {
+    color: @on_surface_variant;
+}
+
+.alert-dialog .response-area button {
+    border-radius: 20px;
+    padding: 10px 24px;
+    min-width: 80px;
+}
+
+/* Toolbar toggles (bold, italic, etc in text editors) */
+.toolbar button.toggle {
+    border-radius: 12px;
+    padding: 6px 10px;
+    margin: 2px;
+}
+
+.toolbar button.toggle:checked {
+    background-color: @secondary_container;
+    color: @on_secondary_container;
+}
+
+/* AdwMultiLayoutView */
+.multi-layout-view {
+    background-color: @surface;
+}
+
+/* Breadcrumbs */
+.breadcrumbs button {
+    border-radius: 28px;
+    padding: 4px 12px;
+}
+
+/* Application grid (app launcher style) */
+flowbox > child {
+    border-radius: 20px;
+    padding: 8px;
+    margin: 4px;
+    transition: all 200ms ease;
+}
+
+flowbox > child:hover {
+    background-color: alpha(@on_surface, 0.06);
+}
+
+flowbox > child:selected {
+    background-color: alpha(@primary, 0.12);
+}
+
+/* Color swatch in color picker */
+.color-swatch {
+    border-radius: 12px;
+    padding: 4px;
+    margin: 4px;
+}
+
+/* Placeholder / dim images */
+image.dim-label {
+    color: alpha(@on_surface_variant, 0.5);
+}
+
+/* Animations for M3 spring motion */
+@keyframes m3-ripple {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+/* Focus visible ring for accessibility */
+*:focus-visible {
+    outline: 2px solid @primary;
+    outline-offset: 2px;
+}
+
+/* Selected state across all apps */
+*:selected {
+    background-color: alpha(@primary, 0.16);
+}
+
+/* =============================================================================
+ * ADDITIONAL GTK4 POLISH
+ * ============================================================================= */
+
+/* ---- AdwBanner accent bar ---- */
+.banner {
+    border-left: 4px solid @primary;
+}
+
+.banner button {
+    color: @primary;
+    font-weight: 600;
+}
+
+.banner button:hover {
+    background-color: alpha(@primary, 0.12);
+}
+
+/* ---- AdwStatusPage icon orange accent ---- */
+statuspage .icon {
+    color: alpha(@primary, 0.6);
+}
+
+statuspage .title {
+    color: @on_surface;
+}
+
+/* ---- AdwNavigationSplitView sidebar ---- */
+navigationsplitview > .sidebar {
+    background-color: @sidebar_bg_color;
+    border-right: 1px solid @outline_variant;
+}
+
+navigationsplitview > .content {
+    background-color: @surface;
+}
+
+/* ---- AdwMultiLayoutView ---- */
+multilayoutview > .background {
+    background-color: @surface;
+}
+
+/* ---- AdwSpinner explicit color ---- */
+spinner {
+    color: @primary;
+}
+
+/* ---- AdwBreakpointBin ---- */
+breakpointbin > .background {
+    background-color: @surface;
+}
+
+/* ---- Native File Dialog (GTK4) ---- */
+filechooser .path-bar button {
+    border-radius: 8px;
+    padding: 4px 10px;
+}
+
+filechooser .path-bar button:hover {
+    background-color: alpha(@primary, 0.12);
+}
+
+filechooser .path-bar button:checked {
+    background-color: @primary_container;
+    color: @on_primary_container;
+}
+
+filechooser placessidebar row {
+    border-radius: 24px;
+    margin: 2px 6px;
+}
+
+filechooser placessidebar row:selected {
+    background-color: @primary_container;
+    color: @on_primary_container;
+}
+
+filechooser placessidebar row image {
+    color: @on_surface_variant;
+}
+
+filechooser placessidebar row:selected image {
+    color: @primary;
+}
+
+/* ---- Print Dialog (GTK4) ---- */
+printdialog paper {
+    background-color: @surface_bright;
+    border: 1px solid @outline_variant;
+    border-radius: 4px;
+}
+
+printdialog .dialog-action-area {
+    background-color: @surface_container;
+    border-top: 1px solid @outline_variant;
+}
+
+/* ---- Color Dialog (GTK4) ---- */
+colordialog colorswatch {
+    border-radius: 8px;
+    border: 2px solid transparent;
+}
+
+colordialog colorswatch:selected {
+    border-color: @primary;
+    box-shadow: 0 0 0 2px alpha(@primary, 0.3);
+}
+
+colordialog .color-editor scale trough highlight {
+    background-color: @primary;
+}
+
+colordialog entry {
+    border-radius: 12px;
+    background-color: @surface_container_high;
+}
+
+/* ---- Font Dialog (GTK4) ---- */
+fontdialog list row {
+    border-radius: 8px;
+    margin: 2px;
+}
+
+fontdialog list row:selected {
+    background-color: @primary_container;
+    color: @on_primary_container;
+}
+
+fontdialog searchentry {
+    border-radius: 24px;
+}
+
+/* ---- AdwAboutDialog ---- */
+.about-page .app-icon {
+    margin: 16px 0;
+}
+
+.about-page .app-name {
+    font-weight: 800;
+    font-size: 1.5em;
+    color: @on_surface;
+}
+
+.about-page .developer-name {
+    color: @primary;
+}
+
+.about-page .link {
+    color: @primary;
+}
+
+.about-page .credits-page row {
+    border-radius: 12px;
+}
+
+/* ---- Column view improvements ---- */
+columnview > header > button {
+    font-weight: 600;
+    color: @on_surface_variant;
+    border-bottom: 2px solid @outline_variant;
+    padding: 8px 12px;
+}
+
+columnview > header > button:hover {
+    color: @primary;
+    background-color: alpha(@primary, 0.08);
+}
+
+columnview row:selected {
+    background-color: alpha(@primary, 0.16);
+}
+
+columnview row:selected checkbutton check:checked {
+    background-color: @primary;
+    color: @on_primary;
+}
+
+/* ---- Emoji picker ---- */
+.emoji-section label {
+    color: @on_surface_variant;
+    font-weight: 600;
+}
+
+.emoji-section flowboxchild:hover {
+    background-color: alpha(@primary, 0.12);
+    border-radius: 8px;
+}
+
+/* ---- AdwAnimation / transition polish ---- */
+revealer > * {
+    transition: opacity 200ms ease-out;
+}
+
+/* ---- Placeholder/empty states ---- */
+.large-title {
+    font-weight: 800;
+    font-size: 2em;
+    color: @on_surface;
+}
+
+/* ---- Selection mode header ---- */
+.selection-mode headerbar {
+    background-color: @primary;
+    color: @on_primary;
+}
+
+.selection-mode headerbar button {
+    color: @on_primary;
+}
+
+.selection-mode headerbar button:hover {
+    background-color: alpha(@on_primary, 0.12);
+}
+
+/* =============================================================================
+ * FINAL 100% COVERAGE - Missing libadwaita widgets
+ * ============================================================================= */
+
+/* ---- AdwTabBar ---- */
+tabbar {
+    background-color: @surface;
+    border-bottom: 1px solid @outline_variant;
+}
+
+tabbar tab {
+    background-color: transparent;
+    border-bottom: 2px solid transparent;
+    padding: 6px 12px;
+    color: @on_surface_variant;
+    transition: all 200ms ease;
+}
+
+tabbar tab:selected {
+    border-bottom-color: @primary;
+    color: @primary;
+}
+
+tabbar tab:hover:not(:selected) {
+    background-color: alpha(@primary, 0.06);
+}
+
+tabbar tab button.flat {
+    color: @on_surface_variant;
+    border-radius: 50%;
+    min-width: 20px;
+    min-height: 20px;
+}
+
+tabbar tab button.flat:hover {
+    background-color: alpha(@on_surface, 0.12);
+}
+
+tabbar .start-action,
+tabbar .end-action {
+    padding: 0 6px;
+}
+
+tabbar tabbox > separator {
+    background-color: @outline_variant;
+}
+
+/* ---- AdwViewStack ---- */
+viewstack > * {
+    background-color: @surface;
+}
+
+/* ---- AdwPreferencesPage / Group ---- */
+preferencespage {
+    background-color: @surface;
+    padding: 12px 0;
+}
+
+preferencespage > scrolledwindow > viewport > clamp {
+    margin: 0 12px;
+}
+
+preferencesgroup {
+    margin-bottom: 24px;
+}
+
+preferencesgroup > box > box > label.title {
+    color: @primary;
+    font-weight: 700;
+    font-size: 0.9em;
+    padding: 8px 16px 4px;
+}
+
+preferencesgroup > box > box > label.description {
+    color: @on_surface_variant;
+    font-size: 0.85em;
+    padding: 0 16px 8px;
+}
+
+preferencesgroup > box > listbox {
+    background-color: @surface_container;
+    border-radius: 16px;
+    border: 1px solid @outline_variant;
+}
+
+preferencesgroup > box > listbox > row {
+    padding: 12px 16px;
+    min-height: 48px;
+}
+
+preferencesgroup > box > listbox > row:not(:last-child) {
+    border-bottom: 1px solid alpha(@outline_variant, 0.5);
+}
+
+/* ---- AdwViewSwitcher ---- */
+viewswitcher button {
+    border-radius: 0;
+    padding: 8px 16px;
+    border-bottom: 2px solid transparent;
+    background: transparent;
+    transition: all 200ms ease;
+}
+
+viewswitcher button:checked {
+    border-bottom-color: @primary;
+    color: @primary;
+    background-color: alpha(@primary, 0.08);
+}
+
+viewswitcher button:hover:not(:checked) {
+    background-color: alpha(@on_surface, 0.06);
+}
+
+viewswitcher button image {
+    color: inherit;
+}
+
+viewswitcher button label {
+    color: inherit;
+    font-weight: 600;
+}
+
+/* ---- AdwEntryRow / AdwPasswordEntryRow ---- */
+row.entry {
+    background-color: @surface_container;
+    border-radius: 12px;
+    border: 1px solid @outline_variant;
+    transition: border-color 200ms ease;
+}
+
+row.entry:focus-within {
+    border-color: @primary;
+    box-shadow: 0 0 0 2px alpha(@primary, 0.2);
+}
+
+row.entry .entry-row-title {
+    color: @on_surface_variant;
+    font-size: 0.85em;
+}
+
+row.entry:focus-within .entry-row-title {
+    color: @primary;
+}
+
+/* ---- AdwComboRow ---- */
+row.combo image.dropdown-arrow {
+    color: @on_surface_variant;
+}
+
+row.combo:hover image.dropdown-arrow {
+    color: @primary;
+}
+
+/* ---- AdwActionRow subtitle ---- */
+row .subtitle {
+    color: @on_surface_variant;
+    font-size: 0.85em;
+}
+
+/* ---- AdwExpanderRow ---- */
+row.expander .expander-row-arrow {
+    color: @on_surface_variant;
+    transition: all 200ms ease;
+}
+
+row.expander:checked .expander-row-arrow {
+    color: @primary;
+}
+
+/* ---- AdwSwitchRow ---- */
+switch {
+    background-color: @outline !important;
+    border-radius: 8px !important;
+    min-width: 28px !important;
+    min-height: 16px !important;
+    max-height: 16px !important;
+}
+
+switch:checked {
+    background-color: @primary !important;
+}
+
+switch slider {
+    background-color: @surface_bright !important;
+    border-radius: 50% !important;
+    min-width: 12px !important;
+    min-height: 12px !important;
+    max-width: 12px !important;
+    max-height: 12px !important;
+}
+
+switch:checked slider {
+    background-color: @on_primary !important;
+}
+
+/* ---- AdwSpinRow ---- */
+row.spin button {
+    background: transparent;
+    border-radius: 50%;
+    min-width: 36px;
+    min-height: 36px;
+    color: @primary;
+}
+
+row.spin button:hover {
+    background-color: alpha(@primary, 0.12);
+}
+
+/* ---- AdwToast overlay ---- */
+.toast-overlay toast {
+    background-color: @inverse_surface;
+    color: @inverse_on_surface;
+    border-radius: 16px;
+    padding: 12px 20px;
+    margin: 12px;
+}
+
+.toast-overlay toast button {
+    color: @inverse_primary;
+    font-weight: 600;
+}
+
+.toast-overlay toast button:hover {
+    background-color: alpha(@inverse_primary, 0.12);
+}
+
+
+/* ---- Toolbar View ---- */
+toolbarview > .top-bar,
+toolbarview > .bottom-bar {
+    background-color: #141010;
+    border: none;
+    box-shadow: none;
+}

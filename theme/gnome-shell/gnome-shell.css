@@ -1,0 +1,2913 @@
+/* =============================================================================
+ * Material You Theme for GNOME Shell 49
+ * Color: Orange Dark Mode
+ * ============================================================================= */
+
+/* -----------------------------------------------------------------------------
+ * Color Variables (Material You Orange Dark Palette)
+ * ----------------------------------------------------------------------------- */
+
+/* Note: GNOME Shell CSS doesn't support CSS variables in all contexts,
+ * so we use the colors directly throughout */
+
+/* Primary: #ffb86c | On Primary: #4a2800 | Primary Container: #6a3c00
+ * Secondary: #e4bfa8 | Surface: #1a1110 | Surface Container: #2d2220
+ * Surface Container High: #3d312e | On Surface: #efe0db
+ * Outline: #a08c84 | Error: #ffb4ab */
+
+/* =============================================================================
+ * NUCLEAR OVERRIDE: Kill ALL default GNOME Shell grays
+ * These selectors match the GNOME Shell 49 default dark theme (gnome-shell-dark.css)
+ * and override every gray (#47474c, #36363a, #2e2e33, #38383b, #222226, etc.)
+ * ============================================================================= */
+
+/* Card-style widgets: GNOME Shell 49 sets these to #47474c */
+.quick-toggle-menu,
+.events-button,
+.world-clocks-button,
+.datemenu-today-button {
+    background-color: #1e1514;
+    color: #efe0db;
+    border-radius: 12px;
+    border: none;
+    box-shadow: none;
+}
+
+.quick-toggle-menu:hover,
+.events-button:hover,
+.world-clocks-button:hover,
+.datemenu-today-button:hover {
+    background-color: #2d2220;
+}
+
+.quick-toggle-menu:active,
+.events-button:active,
+.world-clocks-button:active,
+.datemenu-today-button:active {
+    background-color: rgba(255, 184, 108, 0.15);
+}
+
+.quick-toggle-menu:focus,
+.events-button:focus,
+.world-clocks-button:focus,
+.datemenu-today-button:focus {
+    background-color: rgba(255, 184, 108, 0.1);
+    box-shadow: none !important;
+}
+
+.quick-toggle-menu:insensitive,
+.events-button:insensitive,
+.world-clocks-button:insensitive,
+.datemenu-today-button:insensitive {
+    background-color: #1e1514;
+    color: #b89a8a;
+}
+
+/* Date menu popover container */
+.datemenu-popover {
+    border-radius: 18px;
+}
+
+#calendarArea {
+    padding: 4px;
+    background-color: transparent;
+}
+
+/* Events */
+.events-button .events-box .events-title {
+    color: #b89a8a;
+    padding-bottom: 4px;
+}
+
+.events-button .events-box .events-list {
+    spacing: 4px;
+}
+
+.events-button .events-box .events-list .event-box {
+    spacing: 4px;
+    border-radius: 8px;
+}
+
+.events-button .events-box .events-list .event-box .event-time {
+    color: #b89a8a;
+}
+
+.events-button .events-box .events-list .event-placeholder {
+    color: #b89a8a;
+    font-style: italic;
+}
+
+/* World clocks button details */
+.world-clocks-button .world-clocks-header {
+    color: #b89a8a;
+    font-weight: 600;
+}
+
+.world-clocks-button .world-clocks-header.no-world-clocks {
+    color: #efe0db;
+}
+
+.world-clocks-button .world-clocks-grid {
+    spacing-rows: 4px;
+    spacing-columns: 8px;
+}
+
+.world-clocks-button .world-clocks-grid .world-clocks-time {
+    font-weight: bold;
+    color: #efe0db;
+}
+
+.world-clocks-button .world-clocks-grid .world-clocks-timezone {
+    color: #b89a8a;
+}
+
+/* Weather button details */
+.weather-button .weather-box {
+    spacing: 4px;
+}
+
+.weather-button .weather-box .weather-header-box {
+    spacing: 4px;
+}
+
+.weather-button .weather-box .weather-header-box .weather-header {
+    color: #b89a8a;
+}
+
+.weather-button .weather-box .weather-header-box .weather-header.no-location {
+    color: #efe0db;
+}
+
+.weather-button .weather-box .weather-header-box .weather-header.location {
+    font-weight: normal;
+    color: #efe0db;
+}
+
+.weather-button .weather-box .weather-grid {
+    spacing-rows: 4px;
+    spacing-columns: 8px;
+}
+
+.weather-button .weather-box .weather-grid .weather-forecast-time {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    color: #d4c4bd;
+}
+
+.weather-button .weather-box .weather-grid .weather-forecast-icon {
+    icon-size: 24px;
+}
+
+.weather-button .weather-box .weather-grid .weather-forecast-temp {
+    font-weight: bold;
+    color: #efe0db;
+}
+
+/* Quick toggle has-menu (GNOME 49 uses different classes than quick-menu-toggle) */
+.quick-toggle-has-menu {
+    border-radius: 16px;
+    min-height: 28px;
+}
+
+.quick-toggle-has-menu .quick-toggle {
+    min-width: auto;
+    max-width: auto;
+}
+
+.quick-toggle-has-menu .quick-toggle:ltr {
+    border-radius: 16px 0 0 16px;
+}
+
+.quick-toggle-has-menu .quick-toggle:rtl {
+    border-radius: 0 16px 16px 0;
+}
+
+.quick-toggle-has-menu .quick-toggle-menu-button {
+    background-color: #2d2220;
+    color: #b89a8a;
+    padding: 4px 8px;
+}
+
+.quick-toggle-has-menu .quick-toggle-menu-button:ltr {
+    border-radius: 0 16px 16px 0;
+}
+
+.quick-toggle-has-menu .quick-toggle-menu-button:rtl {
+    border-radius: 16px 0 0 16px;
+}
+
+.quick-toggle-has-menu .quick-toggle-menu-button:hover {
+    background-color: #3d312e;
+    color: #efe0db;
+}
+
+.quick-toggle-has-menu .quick-toggle-menu-button:checked {
+    background-color: #5b3200;
+    color: #ffdcbe;
+}
+
+.quick-toggle-has-menu .quick-toggle-menu-button:checked:hover {
+    background-color: #6a3c00;
+}
+
+.quick-toggle-has-menu .quick-toggle-separator {
+    background-color: rgba(160, 140, 132, 0.2);
+    width: 1px;
+}
+
+.quick-toggle-has-menu:checked .quick-toggle-separator {
+    background-color: rgba(255, 184, 108, 0.2);
+}
+
+/* Quick toggle menu header */
+.quick-toggle-menu .header {
+    spacing-rows: 2px;
+    spacing-columns: 8px;
+    padding-bottom: 8px;
+}
+
+.quick-toggle-menu .header .title {
+    color: #efe0db;
+    font-weight: 600;
+}
+
+.quick-toggle-menu .header .subtitle {
+    color: #b89a8a;
+}
+
+.quick-toggle-menu .header .icon {
+    border-radius: 999px;
+    padding: 6px;
+    background-color: rgba(255, 184, 108, 0.15);
+    color: #ffb86c;
+}
+
+.quick-toggle-menu .header .icon.active {
+    background-color: #ffb86c;
+    color: #4a2800;
+}
+
+.quick-toggle-menu .popup-menu-item > StIcon {
+    -st-icon-style: symbolic;
+    color: #efe0db;
+}
+
+/* Message list overrides */
+.message-list {
+    background-color: transparent;
+    border: none;
+    border-color: transparent;
+    padding: 0;
+}
+
+.message-list:ltr {
+    border-right-width: 0;
+    margin-left: 0;
+    padding-right: 4px;
+}
+
+.message-list:rtl {
+    border-left-width: 0;
+    margin-right: 0;
+    padding-left: 4px;
+}
+
+.message-list .message-list-placeholder {
+    color: #b89a8a;
+}
+
+.message-list .message-list-placeholder > StIcon {
+    color: #b89a8a;
+}
+
+.message-view .message {
+    margin: 2px 0;
+}
+
+/* Message list controls (Clear button area) */
+.message-list-controls {
+    background-color: transparent;
+    padding: 4px;
+}
+
+.message-list-controls .message-list-clear-button {
+    background-color: transparent;
+    color: #ffb86c;
+}
+
+.message-list-controls .message-list-clear-button:hover {
+    background-color: rgba(255, 184, 108, 0.12);
+}
+
+/* Message details */
+.message .message-header {
+    spacing: 4px;
+}
+
+.message .message-header .message-source-icon {
+    icon-size: 16px;
+}
+
+.message .message-header .message-header-content .message-source-title {
+    color: #d4c4bd;
+    font-weight: 500;
+}
+
+.message .message-header .message-header-content .event-time {
+    color: #b89a8a;
+}
+
+.message .message-box {
+    spacing: 4px;
+}
+
+.message .message-box .message-icon {
+    icon-size: 32px;
+}
+
+.message .message-box .message-icon.message-themed-icon {
+    border-radius: 50%;
+    background-color: rgba(255, 184, 108, 0.1);
+    padding: 4px;
+    color: #ffb86c;
+}
+
+.message .message-box .message-content .message-title {
+    color: #efe0db;
+    font-weight: 500;
+}
+
+/* Message notification group */
+.message-notification-group .message-group-header .message-group-title {
+    color: #efe0db;
+    font-weight: 600;
+}
+
+.message-notification-group .message-collapse-button {
+    background-color: transparent;
+    color: #b89a8a;
+}
+
+.message-notification-group .message-collapse-button:hover {
+    background-color: rgba(255, 184, 108, 0.12);
+    color: #ffb86c;
+}
+
+/* Overview group */
+#overviewGroup {
+    background-color: #1a1110;
+}
+
+/* Calendar week number */
+.calendar .calendar-week-number {
+    background-color: rgba(255, 184, 108, 0.1);
+    color: #b89a8a;
+    border-radius: 4px;
+}
+
+/* Calendar weekend & today colors */
+.calendar .calendar-day.calendar-weekend {
+    color: #b89a8a;
+}
+
+.calendar .calendar-day.calendar-today {
+    color: #4a2800 !important;
+    background-color: #ffb86c;
+}
+
+/* Date label in datemenu */
+.datemenu-today-button .day-label {
+    font-weight: bold;
+    color: #ffb86c;
+}
+
+.datemenu-today-button .date-label {
+    color: #efe0db;
+    font-weight: 600;
+}
+
+/* StEntry overrides (default is #48484c) */
+StEntry {
+    background-color: #2d2220;
+    color: #efe0db;
+    border-radius: 12px;
+}
+
+StEntry:hover {
+    background-color: #3d312e;
+}
+
+StEntry:focus {
+    background-color: #2d2220;
+    border-color: #ffb86c;
+    color: #efe0db;
+}
+
+/* Background apps quick toggle */
+.background-apps-quick-toggle {
+    min-height: 28px;
+    background-color: transparent;
+}
+
+.background-apps-quick-toggle StIcon {
+    color: #b89a8a;
+}
+
+/* Background app item */
+.background-app-item .popup-menu-icon {
+    -st-icon-style: regular !important;
+}
+
+.background-app-item .subtitle {
+    color: #b89a8a;
+}
+
+/* Network, Bluetooth menu items */
+.nm-network-item .wireless-secure-icon {
+    color: #b89a8a;
+}
+
+.bt-device-item .popup-menu-icon {
+    -st-icon-style: symbolic;
+    color: #efe0db;
+}
+
+.bt-menu-placeholder.popup-menu-item {
+    color: #b89a8a;
+}
+
+.device-subtitle {
+    color: #b89a8a;
+}
+
+/* Keyboard brightness */
+.keyboard-brightness-level {
+    spacing: 4px;
+}
+
+/* Quick settings system item power */
+.quick-settings-system-item .power-item {
+    min-height: 0;
+    min-width: 0;
+    background-color: transparent;
+}
+
+.quick-settings-system-item .power-item:insensitive {
+    background-color: transparent;
+    color: #b89a8a;
+}
+
+/* Notification containers & badges */
+.notification-counter {
+    background-color: #ffb86c;
+    color: #4a2800;
+    border-radius: 999px;
+    font-weight: bold;
+}
+
+/* App menu in panel */
+.app-menu .popup-inactive-menu-item:first-child > StLabel {
+    color: #b89a8a;
+}
+
+/* Prompt dialog */
+.prompt-dialog {
+    background-color: #2d2220;
+    border-radius: 24px;
+}
+
+.prompt-dialog .prompt-dialog-password-entry {
+    background-color: #3d312e;
+    color: #efe0db;
+    border-radius: 12px;
+}
+
+.prompt-dialog .prompt-dialog-error-label {
+    color: #ffcc80;
+    background-color: rgba(255, 184, 108, 0.1);
+    border-radius: 8px;
+}
+
+.prompt-dialog .prompt-dialog-info-label {
+    color: #efe0db;
+    background-color: rgba(255, 184, 108, 0.1);
+    border-radius: 8px;
+}
+
+/* End session dialog */
+.end-session-dialog .end-session-dialog-battery-warning,
+.end-session-dialog .dialog-list-title {
+    color: #ffcc80;
+    background-color: rgba(255, 184, 108, 0.1);
+    border-radius: 8px;
+}
+
+/* Audio device selection */
+.audio-device-selection-dialog .audio-selection-box .audio-selection-device {
+    background-color: transparent;
+    color: #efe0db;
+}
+
+.audio-device-selection-dialog .audio-selection-box .audio-selection-device:hover {
+    background-color: rgba(255, 184, 108, 0.12);
+}
+
+.audio-device-selection-dialog .audio-selection-box .audio-selection-device:active,
+.audio-device-selection-dialog .audio-selection-box .audio-selection-device:checked {
+    background-color: rgba(255, 184, 108, 0.2);
+}
+
+/* Pad OSD */
+.osd-monitor-label, .osd-break-countdown-label {
+    background-color: #ffb86c;
+    color: #4a2800;
+    border-radius: 16px;
+}
+
+/* Quick slider details */
+.quick-slider > StBoxLayout {
+    spacing: 4px;
+}
+
+.quick-slider .slider-bin {
+    padding: 4px;
+    border-radius: 999px;
+    background-color: transparent;
+}
+
+.quick-slider .slider-bin:focus {
+    background-color: rgba(255, 184, 108, 0.08);
+    box-shadow: none !important;
+}
+
+/* Dialog list */
+.dialog-list .dialog-list-box .dialog-list-item .dialog-list-item-description {
+    color: #b89a8a;
+}
+
+/* Message dialog */
+.message-dialog-content .message-dialog-title {
+    color: #efe0db;
+}
+
+.message-dialog-content .message-dialog-description {
+    color: #b89a8a;
+}
+
+/* Shell link */
+.shell-link {
+    color: #ffb86c;
+}
+
+.shell-link:hover {
+    color: #ffc888;
+}
+
+/* Conflicting session dialog */
+.conflicting-session-dialog-content .conflicting-session-dialog-desc-warning {
+    color: #ffcc80;
+    background-color: rgba(255, 184, 108, 0.1);
+    border-radius: 8px;
+}
+
+/* Caps lock warning */
+.caps-lock-warning-label {
+    color: #ffcc80;
+}
+
+/* Secondary monitor workspaces */
+.secondary-monitor-workspaces {
+    background-color: transparent;
+}
+
+/* =============================================================================
+ * END NUCLEAR OVERRIDE
+ * ============================================================================= */
+
+/* -----------------------------------------------------------------------------
+ * Top Panel
+ * ----------------------------------------------------------------------------- */
+
+#panel {
+    background-color: rgba(26, 17, 16, 0.7);
+    border-bottom: none;
+    font-weight: 500;
+}
+
+#panel:overview {
+    background-color: transparent;
+    border-bottom-color: transparent;
+}
+
+#panel .panel-corner {
+    -panel-corner-radius: 0;
+    -panel-corner-background-color: transparent;
+}
+
+#panel .panel-button {
+    color: #efe0db;
+    -natural-hpadding: 4px;
+    -minimum-hpadding: 2px;
+    transition-duration: 200ms;
+}
+
+#panel .panel-button:hover {
+    background-color: rgba(255, 184, 108, 0.12);
+    color: #ffb86c;
+}
+
+#panel .panel-button:active,
+#panel .panel-button:checked,
+#panel .panel-button:focus {
+    background-color: rgba(255, 184, 108, 0.2);
+    color: #ffb86c;
+}
+
+/* Panel indicators */
+#panel .panel-status-indicators-box {
+    spacing: 2px;
+}
+
+#panel .system-status-icon {
+    icon-size: 16px;
+    padding: 2px;
+    color: #efe0db;
+}
+
+#panel .panel-button:hover .system-status-icon {
+    color: #ffb86c;
+}
+
+/* Clock */
+#panel .clock-display {
+    color: #efe0db;
+}
+
+#panel .clock-display:hover {
+    color: #ffb86c;
+}
+
+/* App menu */
+#panel #appMenu {
+    spacing: 8px;
+}
+
+#panel #appMenu .panel-button {
+    font-weight: 500;
+}
+
+/* -----------------------------------------------------------------------------
+ * Overview
+ * ----------------------------------------------------------------------------- */
+
+#overview {
+    background-color: transparent;
+}
+
+.workspace-background {
+    background-color: transparent;
+    border-radius: 16px;
+}
+
+/* Search Entry */
+#searchEntry {
+    background-color: #2d2220;
+    border: 2px solid transparent;
+    border-radius: 999px;
+    color: #efe0db;
+    padding: 14px 28px;
+    caret-color: #ffb86c;
+    selection-background-color: rgba(255, 184, 108, 0.3);
+    font-size: 11pt;
+    min-width: 320px;
+}
+
+#searchEntry:hover {
+    background-color: #3d312e;
+}
+
+#searchEntry:focus {
+    border-color: #ffb86c;
+    background-color: #2d2220;
+}
+
+#searchEntry:insensitive {
+    color: #b89a8a;
+}
+
+#searchEntry .search-entry-icon {
+    color: #b89a8a;
+    icon-size: 20px;
+}
+
+#searchEntry:focus .search-entry-icon {
+    color: #ffb86c;
+}
+
+/* Search Results */
+.search-section {
+    background-color: transparent;
+}
+
+.search-section-content {
+    background-color: #2d2220;
+    border-radius: 16px;
+    padding: 8px;
+    margin: 8px;
+}
+
+.search-provider-icon {
+    background-color: #3d312e;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.search-provider-icon:hover {
+    background-color: rgba(255, 184, 108, 0.15);
+}
+
+.search-provider-icon:focus {
+    background-color: rgba(255, 184, 108, 0.2);
+}
+
+.search-result-content {
+    color: #efe0db;
+}
+
+.search-result-title {
+    color: #efe0db;
+    font-weight: 500;
+}
+
+.search-result-description {
+    color: #b89a8a;
+}
+
+/* Grid Search Results */
+.grid-search-result {
+    border-radius: 12px;
+    padding: 8px;
+    transition-duration: 200ms;
+}
+
+.grid-search-result:hover {
+    background-color: rgba(255, 184, 108, 0.12);
+}
+
+.grid-search-result:focus {
+    background-color: rgba(255, 184, 108, 0.2);
+}
+
+/* List Search Results */
+.list-search-result {
+    border-radius: 12px;
+    padding: 8px 12px;
+    transition-duration: 200ms;
+}
+
+.list-search-result:hover {
+    background-color: rgba(255, 184, 108, 0.12);
+}
+
+.list-search-result:focus {
+    background-color: rgba(255, 184, 108, 0.2);
+}
+
+/* -----------------------------------------------------------------------------
+ * Workspace Switcher & Thumbnails
+ * ----------------------------------------------------------------------------- */
+
+.workspace-thumbnails {
+    background-color: #2d2220;
+    border-radius: 16px;
+    padding: 12px;
+    spacing: 12px;
+}
+
+.workspace-thumbnail {
+    background-color: #1a1110;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    transition-duration: 200ms;
+}
+
+.workspace-thumbnail:hover {
+    border-color: rgba(255, 184, 108, 0.3);
+}
+
+.workspace-thumbnail:active,
+.workspace-thumbnail:selected {
+    border-color: #ffb86c;
+}
+
+/* Workspace indicator dots */
+.ws-switcher-indicator {
+    background-color: rgba(255, 184, 108, 0.3);
+    border-radius: 8px;
+    width: 8px;
+    height: 8px;
+}
+
+.ws-switcher-indicator:active {
+    background-color: #ffb86c;
+}
+
+/* Window Previews */
+.window-caption {
+    background-color: rgba(45, 34, 32, 0.9);
+    border-radius: 20px;
+    padding: 6px 16px;
+    color: #efe0db;
+    font-weight: 500;
+    font-size: 10pt;
+}
+
+.window-close {
+    background-color: #ffb4ab;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+}
+
+.window-close:hover {
+    background-color: #ff897d;
+}
+
+.window-close > StIcon {
+    color: #4a2800;
+}
+
+/* -----------------------------------------------------------------------------
+ * App Grid (Applications View)
+ * ----------------------------------------------------------------------------- */
+
+.icon-grid {
+    spacing: 8px;
+}
+
+.app-folder {
+    background-color: #2d2220;
+    border-radius: 24px;
+    padding: 8px;
+}
+
+.app-folder:hover {
+    background-color: #3d312e;
+}
+
+.app-folder-icon {
+    border-radius: 20px;
+}
+
+.app-well-app {
+    border-radius: 16px;
+    padding: 8px;
+    transition-duration: 200ms;
+}
+
+.app-well-app:hover {
+    background-color: rgba(255, 184, 108, 0.12);
+}
+
+.app-well-app:active,
+.app-well-app:focus,
+.app-well-app:selected {
+    background-color: rgba(255, 184, 108, 0.2);
+}
+
+.app-well-app .overview-icon {
+    color: #efe0db;
+}
+
+/* Folder Popup */
+.app-folder-popup {
+    background-color: #2d2220;
+    border-radius: 24px;
+    padding: 16px;
+}
+
+.app-folder-popup-bin {
+    padding: 8px;
+}
+
+.app-folder-dialog {
+    background-color: #2d2220;
+    border-radius: 24px;
+    padding: 16px;
+}
+
+.app-folder-dialog-container {
+    padding: 16px;
+}
+
+/* Page indicators */
+.page-indicator {
+    padding: 16px;
+}
+
+.page-indicator-icon {
+    background-color: rgba(255, 184, 108, 0.3);
+    border-radius: 8px;
+    width: 8px;
+    height: 8px;
+}
+
+.page-indicator:hover .page-indicator-icon {
+    background-color: rgba(255, 184, 108, 0.5);
+}
+
+.page-indicator:active .page-indicator-icon,
+.page-indicator:checked .page-indicator-icon {
+    background-color: #ffb86c;
+}
+
+/* -----------------------------------------------------------------------------
+ * Popup Menus (Dropdowns)
+ * ----------------------------------------------------------------------------- */
+
+.popup-menu {
+    min-width: 240px;
+}
+
+.popup-menu-boxpointer {
+    -arrow-border-radius: 0;
+    -arrow-background-color: transparent;
+    -arrow-border-width: 0;
+    -arrow-border-color: transparent;
+    -arrow-base: 0;
+    -arrow-rise: 0;
+    -arrow-box-shadow: none;
+}
+
+.popup-menu-content {
+    background-color: rgba(45, 34, 32, 0.92);
+    border-radius: 14px;
+    padding: 4px 0;
+    border: none;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Menu items */
+.popup-menu-item {
+    color: #efe0db;
+    background-color: transparent;
+    padding: 6px 12px;
+    spacing: 8px;
+    border-radius: 10px;
+    margin: 1px 4px;
+    transition-duration: 200ms;
+}
+
+.popup-menu-item:hover,
+.popup-menu-item:focus {
+    background-color: rgba(255, 184, 108, 0.12);
+    color: #efe0db;
+}
+
+.popup-menu-item:active,
+.popup-menu-item:checked {
+    background-color: rgba(255, 184, 108, 0.2);
+    color: #ffb86c;
+}
+
+.popup-menu-item:insensitive {
+    color: #b89a8a;
+    background-color: transparent;
+}
+
+.popup-menu-item > StIcon {
+    color: #efe0db;
+    icon-size: 20px;
+}
+
+.popup-menu-item:checked > StIcon {
+    color: #ffb86c;
+}
+
+/* Popup Submenu */
+.popup-sub-menu {
+    background-color: rgba(26, 17, 16, 0.5);
+    border-radius: 8px;
+    margin: 4px 8px;
+}
+
+/* Popup Separator */
+.popup-separator-menu-item {
+    padding: 4px 0;
+}
+
+.popup-separator-menu-item .popup-menu-ornament {
+    width: 0;
+}
+
+.popup-separator-menu-item .popup-separator-line {
+    background-color: #3d312e;
+    height: 1px;
+    margin: 0 12px;
+}
+
+/* Popup Ornament (checkbox, radio indicators) */
+.popup-menu-ornament {
+    width: 24px;
+}
+
+/* -----------------------------------------------------------------------------
+ * Quick Settings Panel - Material Design 3 / Beer CSS Style
+ * ----------------------------------------------------------------------------- */
+
+/* Main container */
+.quick-settings {
+    background-color: rgba(45, 34, 32, 0.95);
+    border-radius: 18px;
+    padding: 6px;
+    margin: 4px;
+    spacing: 4px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    border: none;
+}
+
+.quick-settings-grid {
+    spacing: 4px;
+}
+
+/* Quick Toggle Buttons - Material You Pills */
+.quick-toggle {
+    background-color: #2d2220;
+    border-radius: 16px;
+    padding: 4px 8px;
+    min-height: 28px;
+    min-width: 100px;
+    transition-duration: 200ms;
+    border: none;
+}
+
+.quick-toggle:hover {
+    background-color: #3d312e;
+}
+
+.quick-toggle:active {
+    background-color: rgba(255, 184, 108, 0.25);
+}
+
+.quick-toggle:checked {
+    background-color: #6a3c00;
+}
+
+.quick-toggle:checked:hover {
+    background-color: #7a4800;
+}
+
+.quick-toggle-label {
+    color: #d4c4bd;
+    font-weight: 500;
+    font-size: 8pt;
+}
+
+.quick-toggle:checked .quick-toggle-label {
+    color: #ffdcbe;
+}
+
+.quick-toggle-icon {
+    color: #d4c4bd;
+    icon-size: 14px;
+    padding-right: 4px;
+}
+
+.quick-toggle:checked .quick-toggle-icon {
+    color: #ffb86c;
+}
+
+.quick-toggle-subtitle {
+    color: #b89a8a;
+    font-size: 7pt;
+}
+
+.quick-toggle:checked .quick-toggle-subtitle {
+    color: #e4bfa8;
+}
+
+/* Quick Toggle with Menu Arrow */
+.quick-toggle-arrow {
+    color: #b89a8a;
+    padding: 4px;
+}
+
+.quick-toggle:checked .quick-toggle-arrow {
+    color: #ffdcbe;
+}
+
+/* Quick Menu Toggle (Split button) */
+.quick-menu-toggle {
+    background-color: transparent;
+    border-radius: 16px;
+    spacing: 0;
+}
+
+.quick-menu-toggle .quick-toggle {
+    border-radius: 16px 0 0 16px;
+    padding-right: 6px;
+}
+
+.quick-menu-toggle .quick-toggle:checked {
+    background-color: #6a3c00;
+}
+
+.quick-menu-toggle .quick-toggle-arrow {
+    background-color: #2d2220;
+    border-radius: 0 16px 16px 0;
+    padding: 4px 8px;
+    border-left: 1px solid rgba(160, 140, 132, 0.2);
+}
+
+.quick-menu-toggle .quick-toggle-arrow:hover {
+    background-color: #3d312e;
+}
+
+.quick-menu-toggle .quick-toggle:checked + .quick-toggle-arrow {
+    background-color: #5b3200;
+    border-left-color: rgba(255, 184, 108, 0.2);
+}
+
+.quick-menu-toggle .quick-toggle:checked + .quick-toggle-arrow:hover {
+    background-color: #6a3c00;
+}
+
+/* Quick Sliders - Volume/Brightness */
+.quick-slider {
+    background-color: #2d2220;
+    border-radius: 16px;
+    padding: 2px 8px;
+    min-height: 28px;
+    spacing: 4px;
+}
+
+.quick-slider:hover {
+    background-color: #3d312e;
+}
+
+.quick-slider .icon-button {
+    color: #efe0db;
+    padding: 6px;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.quick-slider .icon-button:hover {
+    background-color: rgba(255, 184, 108, 0.15);
+}
+
+.quick-slider .icon-button:active {
+    background-color: rgba(255, 184, 108, 0.25);
+}
+
+.quick-slider .icon-button > StIcon {
+    icon-size: 16px;
+    color: #ffb86c;
+}
+
+/* Slider track styling */
+.quick-slider .slider {
+    height: 24px;
+    -slider-height: 8px;
+    -slider-background-color: rgba(255, 184, 108, 0.2);
+    -slider-border-color: transparent;
+    -slider-active-background-color: #ffb86c;
+    -slider-active-border-color: transparent;
+    -slider-border-width: 0;
+    -slider-handle-radius: 12px;
+    -slider-handle-border-width: 0;
+    border-radius: 8px;
+}
+
+/* System Menu Row (Power, Settings, Lock) */
+.quick-settings-system-item {
+    background-color: transparent;
+    border-radius: 12px;
+    padding: 4px 2px;
+    margin-top: 4px;
+    border-top: none;
+}
+
+.quick-settings-system-item .icon-button {
+    background-color: #2d2220;
+    border-radius: 50%;
+    padding: 8px;
+    margin: 0 3px;
+}
+
+.quick-settings-system-item .icon-button:hover {
+    background-color: rgba(255, 184, 108, 0.2);
+}
+
+.quick-settings-system-item .icon-button:active {
+    background-color: rgba(255, 184, 108, 0.3);
+}
+
+.quick-settings-system-item .icon-button > StIcon {
+    color: #efe0db;
+    icon-size: 20px;
+}
+
+.quick-settings-system-item .icon-button:hover > StIcon {
+    color: #ffb86c;
+}
+
+/* Power button special styling */
+.quick-settings-system-item .icon-button.power-button {
+    background-color: rgba(255, 180, 171, 0.15);
+}
+
+.quick-settings-system-item .icon-button.power-button:hover {
+    background-color: rgba(255, 180, 171, 0.25);
+}
+
+.quick-settings-system-item .icon-button.power-button > StIcon {
+    color: #ffb4ab;
+}
+
+/* Background Apps Item */
+.background-apps-item {
+    background-color: #3d312e;
+    border-radius: 16px;
+    padding: 12px 16px;
+    margin-top: 8px;
+}
+
+.background-apps-item:hover {
+    background-color: #4d3a32;
+}
+
+.background-apps-item .title {
+    color: #efe0db;
+    font-weight: 500;
+}
+
+.background-apps-item .subtitle {
+    color: #b89a8a;
+    font-size: 9pt;
+}
+
+/* Other Quick Settings Items */
+.quick-settings-item {
+    background-color: #2d2220;
+    border-radius: 12px;
+    padding: 4px 8px;
+}
+
+.quick-settings-item:hover {
+    background-color: #3d312e;
+}
+
+/* Night Light / DND special items */
+.quick-toggle.night-light:checked {
+    background-color: #4a3c00;
+}
+
+.quick-toggle.night-light:checked .quick-toggle-icon {
+    color: #f6d32d;
+}
+
+.quick-toggle.dnd:checked {
+    background-color: #93000a;
+}
+
+.quick-toggle.dnd:checked .quick-toggle-icon {
+    color: #ffb4ab;
+}
+
+.quick-toggle.dnd:checked .quick-toggle-label {
+    color: #ffb4ab;
+}
+
+/* -----------------------------------------------------------------------------
+ * Sliders (Volume, Brightness) - Material Design 3 Style
+ * ----------------------------------------------------------------------------- */
+
+.slider {
+    height: 24px;
+    -slider-height: 8px;
+    -slider-background-color: rgba(255, 184, 108, 0.25);
+    -slider-border-color: transparent;
+    -slider-active-background-color: #ffb86c;
+    -slider-active-border-color: transparent;
+    -slider-border-width: 0;
+    -slider-handle-radius: 12px;
+    -slider-handle-border-width: 0;
+    -slider-handle-border-color: transparent;
+    border-radius: 12px;
+}
+
+.slider:hover {
+    -slider-background-color: rgba(255, 184, 108, 0.35);
+}
+
+.slider:active {
+    -slider-handle-radius: 14px;
+}
+
+/* -----------------------------------------------------------------------------
+ * Notifications
+ * ----------------------------------------------------------------------------- */
+
+.notification-banner {
+    background-color: #2d2220;
+    border-radius: 16px;
+    padding: 16px;
+    margin: 8px;
+    border: 1px solid #3d312e;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.notification-banner:hover {
+    background-color: #3d312e;
+}
+
+.notification-banner:focus {
+    border-color: #ffb86c;
+}
+
+.notification-icon-button {
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 8px;
+}
+
+.notification-icon-button:hover {
+    background-color: rgba(255, 184, 108, 0.15);
+}
+
+.notification-icon-button > StIcon {
+    color: #efe0db;
+}
+
+/* Notification content */
+.notification-title {
+    color: #efe0db;
+    font-weight: 600;
+}
+
+.notification-body {
+    color: #b89a8a;
+}
+
+/* Notification buttons */
+.notification-button {
+    background-color: #3d312e;
+    border-radius: 20px;
+    padding: 8px 16px;
+    color: #efe0db;
+    font-weight: 500;
+    border: none;
+}
+
+.notification-button:hover {
+    background-color: rgba(255, 184, 108, 0.2);
+    color: #ffb86c;
+}
+
+.notification-button:active {
+    background-color: rgba(255, 184, 108, 0.3);
+}
+
+/* Expand button */
+.notification-expand-button {
+    background-color: transparent;
+    color: #b89a8a;
+}
+
+.notification-expand-button:hover {
+    color: #ffb86c;
+}
+
+/* Message List (Notification Center) */
+.message-list {
+    background-color: rgba(45, 34, 32, 0.92);
+    border-radius: 14px;
+    padding: 4px;
+}
+
+.message-list-section {
+    margin: 2px 0;
+}
+
+.message-list-section-title {
+    color: #d4c4bd;
+    font-weight: 600;
+    font-size: 8pt;
+    padding: 2px 8px;
+}
+
+.message-list-section-title:focus {
+    color: #ffb86c;
+}
+
+.message {
+    background-color: #1e1514;
+    border-radius: 12px;
+    padding: 6px 8px;
+    margin: 2px 0;
+}
+
+.message:hover {
+    background-color: rgba(255, 184, 108, 0.12);
+}
+
+.message:focus {
+    background-color: rgba(255, 184, 108, 0.2);
+}
+
+.message-title {
+    color: #efe0db;
+    font-weight: 500;
+}
+
+.message-body {
+    color: #b89a8a;
+}
+
+.message-secondary-bin {
+    color: #b89a8a;
+}
+
+.message-close-button {
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 4px;
+}
+
+.message-close-button:hover {
+    background-color: rgba(255, 184, 108, 0.2);
+}
+
+.message-close-button > StIcon {
+    color: #b89a8a;
+    icon-size: 16px;
+}
+
+.message-close-button:hover > StIcon {
+    color: #ffb86c;
+}
+
+/* Media Controls in Notifications */
+.message-media-control {
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 8px;
+}
+
+.message-media-control:hover {
+    background-color: rgba(255, 184, 108, 0.15);
+}
+
+.message-media-control:active {
+    background-color: rgba(255, 184, 108, 0.25);
+}
+
+.message-media-control > StIcon {
+    color: #efe0db;
+}
+
+.message-media-control:hover > StIcon {
+    color: #ffb86c;
+}
+
+/* Calendar */
+.calendar {
+    background-color: rgba(45, 34, 32, 0.92);
+    border-radius: 14px;
+    padding: 4px;
+    -st-blur-style: background;
+    -st-blur-brightness: 0.8;
+    -st-blur-sigma: 40;
+}
+
+.calendar-month-label {
+    color: #efe0db;
+    font-weight: 600;
+    font-size: 9pt;
+    padding: 2px 4px;
+}
+
+.calendar-change-month-back,
+.calendar-change-month-forward {
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 2px;
+}
+
+.calendar-change-month-back:hover,
+.calendar-change-month-forward:hover {
+    background-color: rgba(255, 184, 108, 0.15);
+}
+
+.calendar-change-month-back > StIcon,
+.calendar-change-month-forward > StIcon {
+    color: #efe0db;
+}
+
+.calendar-day-heading {
+    color: #b89a8a;
+    font-weight: 500;
+    font-size: 7pt;
+    padding: 1px;
+}
+
+.calendar-day {
+    background-color: transparent;
+    border-radius: 50%;
+    color: #efe0db;
+    font-size: 7.5pt;
+    padding: 1px;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+}
+
+.calendar-day:hover {
+    background-color: rgba(255, 184, 108, 0.15);
+}
+
+.calendar-day:active,
+.calendar-day:selected {
+    background-color: #ffb86c;
+    color: #4a2800;
+}
+
+.calendar-day-with-events {
+    font-weight: 600;
+}
+
+.calendar-today {
+    border: 2px solid #ffb86c;
+}
+
+.calendar-today:selected {
+    background-color: #ffb86c;
+    color: #4a2800;
+}
+
+.calendar-other-month-day {
+    color: #b89a8a;
+}
+
+.calendar-week-number {
+    color: #b89a8a;
+    font-weight: 500;
+}
+
+/* World Clocks */
+.world-clocks-header {
+    color: #b89a8a;
+    font-weight: 600;
+}
+
+.world-clocks-grid {
+    spacing: 8px;
+}
+
+.world-clocks-city {
+    color: #efe0db;
+}
+
+.world-clocks-time {
+    color: #b89a8a;
+}
+
+/* Date Menu Panel (central popup) */
+.datemenu-calendar-column,
+.datemenu-displays-section,
+.datemenu-displays-box {
+    background-color: transparent;
+    padding: 0;
+}
+
+.datemenu-calendar-column .pane-separator {
+    background-color: #3d312e;
+    height: 1px;
+    margin: 4px 8px;
+}
+
+/* Weather */
+.weather-button {
+    background-color: #1e1514;
+    border-radius: 14px;
+    padding: 4px 8px;
+}
+
+.weather-button:hover {
+    background-color: #2d2220;
+}
+
+.weather-header {
+    color: #d4c4bd;
+    font-weight: 600;
+}
+
+.weather-header.location {
+    color: #efe0db;
+}
+
+.weather-info {
+    color: #efe0db;
+}
+
+.weather-forecast-icon {
+    icon-size: 32px;
+}
+
+.weather-grid,
+.weather-forecast-time {
+    color: #d4c4bd;
+}
+
+/* -----------------------------------------------------------------------------
+ * OSD (On-Screen Display - Volume/Brightness indicators)
+ * ----------------------------------------------------------------------------- */
+
+.osd-window {
+    background-color: #2d2220;
+    border-radius: 24px;
+    padding: 20px;
+    margin: 32px;
+    border: 1px solid #3d312e;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.osd-window .osd-icon {
+    icon-size: 48px;
+    color: #ffb86c;
+}
+
+.osd-window .level {
+    height: 8px;
+    border-radius: 4px;
+    background-color: rgba(255, 184, 108, 0.2);
+}
+
+.osd-window .level-bar {
+    border-radius: 4px;
+    background-color: #ffb86c;
+}
+
+/* -----------------------------------------------------------------------------
+ * Modal Dialogs
+ * ----------------------------------------------------------------------------- */
+
+.modal-dialog {
+    background-color: #2d2220;
+    border-radius: 24px;
+    padding: 24px;
+    border: 1px solid #3d312e;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.modal-dialog-content {
+    spacing: 16px;
+}
+
+.modal-dialog-title {
+    color: #efe0db;
+    font-weight: 600;
+    font-size: 14pt;
+}
+
+.modal-dialog-description {
+    color: #b89a8a;
+}
+
+/* Dialog Buttons */
+.modal-dialog-button-box {
+    spacing: 12px;
+}
+
+.modal-dialog-button {
+    background-color: #3d312e;
+    border-radius: 20px;
+    padding: 10px 24px;
+    color: #efe0db;
+    font-weight: 500;
+    border: none;
+    min-width: 80px;
+}
+
+.modal-dialog-button:hover {
+    background-color: rgba(255, 184, 108, 0.2);
+}
+
+.modal-dialog-button:active {
+    background-color: rgba(255, 184, 108, 0.3);
+}
+
+.modal-dialog-button:focus {
+    border: 2px solid #ffb86c;
+}
+
+/* Default/Primary button */
+.modal-dialog-button.default {
+    background-color: #ffb86c;
+    color: #4a2800;
+}
+
+.modal-dialog-button.default:hover {
+    background-color: #ffc78c;
+}
+
+.modal-dialog-button.default:active {
+    background-color: #e5a45f;
+}
+
+/* Destructive button */
+.modal-dialog-button.destructive-action {
+    background-color: #93000a;
+    color: #ffb4ab;
+}
+
+.modal-dialog-button.destructive-action:hover {
+    background-color: #a5000c;
+}
+
+/* -----------------------------------------------------------------------------
+ * Run Dialog (Alt+F2)
+ * ----------------------------------------------------------------------------- */
+
+#run-dialog {
+    background-color: #2d2220;
+    border-radius: 24px;
+    padding: 24px;
+    border: 1px solid #3d312e;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+#run-dialog .run-dialog-entry {
+    background-color: #3d312e;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    color: #efe0db;
+    caret-color: #ffb86c;
+    padding: 12px 16px;
+}
+
+#run-dialog .run-dialog-entry:focus {
+    border-color: #ffb86c;
+}
+
+#run-dialog .run-dialog-error-label,
+#run-dialog .run-dialog-error-box {
+    color: #ffb4ab;
+}
+
+/* -----------------------------------------------------------------------------
+ * Screenshot UI
+ * ----------------------------------------------------------------------------- */
+
+.screenshot-ui-panel {
+    background-color: #2d2220;
+    border-radius: 24px;
+    padding: 16px;
+    border: 1px solid #3d312e;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.screenshot-ui-type-button {
+    background-color: #3d312e;
+    border-radius: 12px;
+    padding: 12px 20px;
+    color: #efe0db;
+}
+
+.screenshot-ui-type-button:hover {
+    background-color: rgba(255, 184, 108, 0.15);
+}
+
+.screenshot-ui-type-button:checked {
+    background-color: #ffb86c;
+    color: #4a2800;
+}
+
+.screenshot-ui-capture-button {
+    background-color: #ffb86c;
+    border-radius: 50%;
+    padding: 16px;
+}
+
+.screenshot-ui-capture-button:hover {
+    background-color: #ffc78c;
+}
+
+.screenshot-ui-capture-button > StIcon {
+    color: #4a2800;
+}
+
+/* -----------------------------------------------------------------------------
+ * Dash (Dock)
+ * ----------------------------------------------------------------------------- */
+
+#dash {
+    background-color: transparent;
+    border-radius: 20px;
+    padding: 12px;
+    margin: 8px;
+}
+
+#dash .dash-item-container .app-well-app .overview-icon,
+#dash .show-apps .overview-icon {
+    icon-size: 52px;
+}
+
+#dash .dash-background {
+    background-color: transparent;
+}
+
+#dash .dash-item-container .app-well-app {
+    background-color: transparent;
+    border-radius: 14px;
+    padding: 8px;
+}
+
+#dash .dash-item-container .app-well-app:hover {
+    background-color: rgba(255, 184, 108, 0.15);
+}
+
+#dash .dash-item-container .app-well-app:active,
+#dash .dash-item-container .app-well-app:focus {
+    background-color: rgba(255, 184, 108, 0.25);
+}
+
+/* Running indicator */
+.dash-item-container .app-well-app.running .overview-icon {
+    background-color: transparent;
+}
+
+#dash .dash-item-container .app-well-app-running-dot {
+    background-color: #ffb86c;
+    border-radius: 3px;
+    width: 6px;
+    height: 6px;
+    margin-bottom: 2px;
+}
+
+/* Show Apps button */
+#dash .show-apps {
+    background-color: transparent;
+    border-radius: 14px;
+    padding: 8px;
+    margin-bottom: 12px;
+}
+
+#dash .show-apps:hover {
+    background-color: rgba(255, 184, 108, 0.15);
+}
+
+#dash .show-apps:active,
+#dash .show-apps:focus,
+#dash .show-apps:checked {
+    background-color: transparent;
+}
+
+#dash .show-apps > StIcon {
+    color: #efe0db;
+}
+
+#dash .show-apps:checked > StIcon {
+    color: #ffb86c;
+}
+
+/* Dash separator */
+.dash-separator {
+    background-color: #3d312e;
+    width: 2px;
+    height: 24px;
+    margin: 8px 4px;
+    border-radius: 1px;
+}
+
+/* -----------------------------------------------------------------------------
+ * Looking Glass (Debug console)
+ * ----------------------------------------------------------------------------- */
+
+#LookingGlassDialog {
+    background-color: #1a1110;
+    border-radius: 16px;
+    border: 1px solid #3d312e;
+}
+
+#LookingGlassDialog .lg-dialog-entry {
+    background-color: #2d2220;
+    border-radius: 8px;
+    color: #efe0db;
+    caret-color: #ffb86c;
+    padding: 8px 12px;
+}
+
+/* -----------------------------------------------------------------------------
+ * Keyboard Layouts
+ * ----------------------------------------------------------------------------- */
+
+.keyboard-layout {
+    color: #efe0db;
+    font-weight: 500;
+}
+
+/* -----------------------------------------------------------------------------
+ * Accessibility Menu
+ * ----------------------------------------------------------------------------- */
+
+.popup-menu-item.accessibility-item {
+    spacing: 12px;
+}
+
+/* -----------------------------------------------------------------------------
+ * Switches
+ * ----------------------------------------------------------------------------- */
+
+.toggle-switch {
+    background-color: #3d312e;
+    border-radius: 14px;
+    width: 52px;
+    height: 28px;
+}
+
+.toggle-switch:checked {
+    background-color: #ffb86c;
+}
+
+.toggle-switch-slider {
+    background-color: #b89a8a;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin: 4px;
+}
+
+.toggle-switch:checked .toggle-switch-slider {
+    background-color: #4a2800;
+}
+
+/* -----------------------------------------------------------------------------
+ * Check and Radio Boxes
+ * ----------------------------------------------------------------------------- */
+
+.check-box StBoxLayout {
+    spacing: 8px;
+}
+
+.check-box StBin {
+    background-color: transparent;
+    border: 2px solid #a08c84;
+    border-radius: 4px;
+    width: 20px;
+    height: 20px;
+}
+
+.check-box:hover StBin {
+    border-color: #ffb86c;
+}
+
+.check-box:checked StBin {
+    background-color: #ffb86c;
+    border-color: #ffb86c;
+}
+
+.check-box:checked StBin > StIcon {
+    color: #4a2800;
+}
+
+/* -----------------------------------------------------------------------------
+ * Entry Fields
+ * ----------------------------------------------------------------------------- */
+
+.entry {
+    background-color: #2d2220;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    color: #efe0db;
+    caret-color: #ffb86c;
+    padding: 8px 12px;
+    selection-background-color: rgba(255, 184, 108, 0.3);
+}
+
+.entry:hover {
+    background-color: #3d312e;
+}
+
+.entry:focus {
+    border-color: #ffb86c;
+    background-color: #2d2220;
+}
+
+.entry:insensitive {
+    color: #b89a8a;
+}
+
+/* -----------------------------------------------------------------------------
+ * Buttons
+ * ----------------------------------------------------------------------------- */
+
+.button {
+    background-color: #3d312e;
+    border-radius: 20px;
+    padding: 8px 16px;
+    color: #efe0db;
+    font-weight: 500;
+    border: none;
+    transition-duration: 150ms;
+}
+
+.button:hover {
+    background-color: rgba(255, 184, 108, 0.2);
+}
+
+.button:active {
+    background-color: rgba(255, 184, 108, 0.3);
+}
+
+.button:focus {
+    border: 2px solid #ffb86c;
+}
+
+.button:insensitive {
+    background-color: #2d2220;
+    color: #b89a8a;
+}
+
+/* Icon Button */
+.icon-button {
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 8px;
+    icon-size: 20px;
+}
+
+.icon-button:hover {
+    background-color: rgba(255, 184, 108, 0.15);
+}
+
+.icon-button:active {
+    background-color: rgba(255, 184, 108, 0.25);
+}
+
+.icon-button > StIcon {
+    color: #efe0db;
+}
+
+.icon-button:hover > StIcon {
+    color: #ffb86c;
+}
+
+/* Suggested Action Button */
+.button.suggested-action {
+    background-color: #ffb86c;
+    color: #4a2800;
+}
+
+.button.suggested-action:hover {
+    background-color: #ffc78c;
+}
+
+.button.suggested-action:active {
+    background-color: #e5a45f;
+}
+
+/* Destructive Action Button */
+.button.destructive-action {
+    background-color: #93000a;
+    color: #ffb4ab;
+}
+
+.button.destructive-action:hover {
+    background-color: #a5000c;
+}
+
+/* -----------------------------------------------------------------------------
+ * Scrollbars
+ * ----------------------------------------------------------------------------- */
+
+.vfade {
+    -st-vfade-offset: 0;
+}
+
+.hfade {
+    -st-hfade-offset: 0;
+}
+
+StScrollBar {
+    padding: 4px;
+}
+
+StScrollBar StBin#trough {
+    background-color: transparent;
+    border-radius: 8px;
+}
+
+StScrollBar StButton#vhandle,
+StScrollBar StButton#hhandle {
+    background-color: rgba(160, 140, 132, 0.4);
+    border-radius: 8px;
+    margin: 0;
+}
+
+StScrollBar StButton#vhandle:hover,
+StScrollBar StButton#hhandle:hover {
+    background-color: rgba(255, 184, 108, 0.5);
+}
+
+StScrollBar StButton#vhandle:active,
+StScrollBar StButton#hhandle:active {
+    background-color: #ffb86c;
+}
+
+/* =============================================================================
+ * LOCK SCREEN - Material 3 Expressive
+ * ============================================================================= */
+
+/* Lock screen shield background */
+.screen-shield-background {
+    background-color: #1a1110;
+    background-gradient-direction: vertical;
+    background-gradient-start: #1a1110;
+    background-gradient-end: #140f0e;
+}
+
+#lockDialogGroup {
+    background-color: #1a1110;
+}
+
+/* Lock screen clock - BIG and prominent */
+.screen-shield-clock {
+    color: #efe0db;
+    font-weight: 300;
+}
+
+.screen-shield-clock-time {
+    font-size: 96px;
+    font-weight: 200;
+    color: #ffb86c;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.screen-shield-clock-date {
+    font-size: 28px;
+    font-weight: 400;
+    color: #d4c4bd;
+    margin-top: 4px;
+}
+
+/* Unlock dialog - the password prompt */
+.unlock-dialog {
+    background-color: #2d2220;
+    border-radius: 28px;
+    border: 1px solid #524540;
+    padding: 32px;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+}
+
+.unlock-dialog .unlock-dialog-prompt-label {
+    color: #d4c4bd;
+    font-size: 14px;
+    font-weight: 500;
+    padding-bottom: 8px;
+}
+
+.unlock-dialog .unlock-dialog-prompt-entry {
+    background-color: #3d312e;
+    color: #efe0db;
+    border: 2px solid #524540;
+    border-radius: 28px;
+    padding: 12px 20px;
+    font-size: 16px;
+    min-height: 24px;
+}
+
+.unlock-dialog .unlock-dialog-prompt-entry:focus {
+    border-color: #ffb86c;
+}
+
+/* Unlock button */
+.unlock-dialog-button {
+    background-color: #ffb86c;
+    color: #4a2800;
+    border-radius: 28px;
+    padding: 12px 32px;
+    font-weight: 700;
+    font-size: 14px;
+    border: none;
+    min-height: 24px;
+}
+
+.unlock-dialog-button:hover {
+    background-color: #ffc888;
+}
+
+.unlock-dialog-button:active {
+    background-color: #e5a050;
+}
+
+/* Other auth buttons */
+.unlock-dialog-button:default {
+    background-color: #ffb86c;
+    color: #4a2800;
+}
+
+/* User widget on lock screen */
+.unlock-dialog .user-widget {
+    padding: 16px 0;
+}
+
+.unlock-dialog .user-widget .user-widget-label {
+    color: #efe0db;
+    font-size: 24px;
+    font-weight: 600;
+    padding-left: 16px;
+}
+
+.unlock-dialog .user-widget .user-icon {
+    border-radius: 9999px;
+    border: 3px solid #ffb86c;
+    background-color: #6a3c00;
+    icon-size: 80px;
+}
+
+/* Notifications on lock screen */
+.screen-shield-notifications-container {
+    padding: 8px 16px;
+}
+
+.screen-shield-notifications-container .notification {
+    background-color: rgba(45, 34, 32, 0.9);
+    border-radius: 20px;
+    padding: 12px 16px;
+    margin: 4px 0;
+    border: 1px solid rgba(82, 69, 64, 0.5);
+}
+
+.screen-shield-notifications-container .notification .notification-title {
+    color: #efe0db;
+    font-weight: 600;
+}
+
+.screen-shield-notifications-container .notification .notification-body {
+    color: #d4c4bd;
+}
+
+/* Arrow / hint to swipe up */
+.screen-shield-arrow {
+    color: #ffb86c;
+}
+
+/* Login dialog (GDM uses same classes when running user theme) */
+.login-dialog {
+    background-color: transparent;
+}
+
+.login-dialog .modal-dialog-button-box .modal-dialog-button {
+    background-color: #3d312e;
+    color: #efe0db;
+    border-radius: 28px;
+    padding: 10px 24px;
+    border: none;
+    font-weight: 600;
+}
+
+.login-dialog .modal-dialog-button-box .modal-dialog-button:default {
+    background-color: #ffb86c;
+    color: #4a2800;
+}
+
+.login-dialog .modal-dialog-button-box .modal-dialog-button:hover {
+    background-color: rgba(255, 184, 108, 0.15);
+}
+
+.login-dialog .modal-dialog-button-box .modal-dialog-button:default:hover {
+    background-color: #ffc888;
+}
+
+.login-dialog StEntry {
+    background-color: #3d312e;
+    color: #efe0db;
+    border: 2px solid #524540;
+    border-radius: 28px;
+    padding: 12px 20px;
+    font-size: 16px;
+}
+
+.login-dialog StEntry:focus {
+    border-color: #ffb86c;
+}
+
+/* Login dialog user list */
+.login-dialog-user-list {
+    padding: 8px 0;
+}
+
+.login-dialog-user-list-item {
+    border-radius: 20px;
+    padding: 12px 16px;
+    margin: 4px 0;
+}
+
+.login-dialog-user-list-item:hover {
+    background-color: rgba(255, 184, 108, 0.08);
+}
+
+.login-dialog-user-list-item:selected,
+.login-dialog-user-list-item:focus {
+    background-color: rgba(255, 184, 108, 0.16);
+}
+
+.login-dialog-user-list-item .login-dialog-timed-login-indicator {
+    background-color: #ffb86c;
+    border-radius: 9999px;
+    height: 3px;
+}
+
+.login-dialog-user-list-item .user-widget .user-widget-label {
+    color: #efe0db;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.login-dialog-user-list-item .user-icon {
+    border-radius: 9999px;
+    border: 2px solid #ffb86c;
+    background-color: #6a3c00;
+}
+
+/* Session / power buttons on login */
+.login-dialog-not-listed-label {
+    color: #ffb86c;
+    font-weight: 500;
+}
+
+.login-dialog-not-listed-label:hover {
+    color: #ffc888;
+}
+
+/* Auth prompt messages */
+.login-dialog-message {
+    color: #d4c4bd;
+    font-size: 13px;
+}
+
+.login-dialog-message-warning {
+    color: #ffcc80;
+}
+
+.login-dialog-message-hint {
+    color: #b89a8a;
+}
+
+/* Banner message on login screen */
+.login-dialog-banner {
+    color: #d4c4bd;
+    font-size: 13px;
+}
+
+/* =============================================================================
+ * EXTENSION UI OVERRIDES
+ * ============================================================================= */
+
+/* ---- Logo Menu Extension ---- */
+.menu-button {
+    margin: 1px !important;
+    padding: 2px 6px !important;
+}
+
+.menu-button:hover,
+.menu-button-hover {
+    background-color: #2d2220 !important;
+    border-radius: 8px !important;
+}
+
+/* Logo Menu popup items */
+.menu-button StIcon {
+    color: #ffb86c;
+}
+
+/* ---- GSConnect Extension ---- */
+.gsconnect-device-indicator {
+    -st-icon-style: symbolic;
+    color: #efe0db;
+}
+
+.gsconnect-device-indicator:hover {
+    color: #ffb86c;
+}
+
+.gsconnect-device-name {
+    font-weight: bold;
+    color: #ffb86c !important;
+}
+
+.gsconnect-device-battery StLabel {
+    font-size: 0.75em;
+    color: #d5c4bc;
+}
+
+.gsconnect-device-battery StIcon {
+    icon-size: 16px;
+    color: #ffb86c;
+}
+
+.gsconnect-device-signal-strength StLabel {
+    color: #d5c4bc;
+}
+
+.gsconnect-device-signal-strength StIcon {
+    color: #ffb86c;
+}
+
+.gsconnect-icon-box {
+    margin: 0em 2em 0.5em;
+    spacing: 6px;
+}
+
+.gsconnect-icon-button {
+    border-radius: 20px;
+    padding: 8px;
+    background-color: #2d2220;
+}
+
+.gsconnect-icon-button:hover,
+.gsconnect-icon-button:focus {
+    background-color: #3d312e;
+}
+
+.gsconnect-icon-button:active {
+    background-color: #ffb86c;
+}
+
+.gsconnect-icon-button:active StIcon {
+    color: #1a1110;
+}
+
+.gsconnect-icon-button StIcon {
+    icon-size: 16px;
+    color: #ffb86c;
+}
+
+.gsconnect-tooltip {
+    border-radius: 12px;
+    min-width: 0;
+    min-height: 0;
+    padding: 8px 12px;
+    background-color: #2d2220;
+    color: #efe0db;
+    border: 1px solid #51443e;
+}
+
+.gsconnect-tooltip StIcon {
+    color: #ffb86c;
+}
+
+/* ---- Caffeine Extension ---- */
+/* Caffeine uses standard system-status-icon, highlight when active */
+.panel-status-indicators-box .system-status-icon.caffeine-icon-active {
+    color: #ffb86c !important;
+}
+
+/* Generic caffeine quick toggle in system menu */
+.quick-toggle .caffeine-toggle {
+    background-color: #ffb86c !important;
+    color: #1a1110 !important;
+}
+
+/* ---- Hot Edge Extension ---- */
+.hot-edge-ripple {
+    background-color: rgba(255, 184, 108, 0.3) !important;
+    border: 2px solid rgba(255, 184, 108, 0.6) !important;
+    border-radius: 50% !important;
+}
+
+/* ---- Lockscreen Extension ---- */
+.lockscreen-extension-widget {
+    background-color: rgba(30, 21, 20, 0.8);
+    border-radius: 20px;
+    padding: 16px;
+    color: #efe0db;
+}
+
+.lockscreen-extension-widget StLabel {
+    color: #ffb86c;
+}
+
+/* ---- App Indicator Support ---- */
+.appindicator-icon {
+    color: #efe0db;
+}
+
+.appindicator-icon:hover {
+    color: #ffb86c;
+}
+
+/* App indicator menu items inherit popup menu styles */
+.appindicator-menu .popup-menu-item:hover {
+    background-color: #2d2220;
+    color: #ffb86c;
+}
+
+/* =============================================================================
+ * GNOME SHELL POLISH & ANIMATIONS
+ * ============================================================================= */
+
+/* ---- Notification group accent bar ---- */
+.message-notification-group {
+    border-left: 3px solid #ffb86c;
+    padding-left: 8px;
+}
+
+.message-notification-group .message-group-header {
+    padding: 4px 0;
+}
+
+/* ---- Notification banner slide-in ---- */
+.notification-banner {
+    transition: opacity 200ms ease-out, translate-y 200ms ease-out;
+}
+
+/* ---- Focus ring animation ---- */
+*:focus {
+    transition: box-shadow 150ms ease-in-out;
+}
+
+/* ---- Workspace switch flash ---- */
+.workspace-animation {
+    transition: opacity 250ms ease-out;
+}
+
+/* ---- Overview gesture swipe indicator ---- */
+.gesture-hint {
+    background-color: rgba(255, 184, 108, 0.2);
+    border-radius: 24px;
+}
+
+/* ---- Drag and drop feedback ---- */
+.drag-over {
+    background-color: rgba(255, 184, 108, 0.15) !important;
+    border: 2px dashed rgba(255, 184, 108, 0.5) !important;
+    border-radius: 16px !important;
+}
+
+/* ---- App folder dialog in overview ---- */
+.app-folder-dialog {
+    background-color: #1e1514;
+    border-radius: 24px;
+    border: 1px solid #51443e;
+    padding: 12px;
+}
+
+.app-folder-dialog .folder-name-entry {
+    background-color: #2d2220;
+    color: #efe0db;
+    border-radius: 12px;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+}
+
+.app-folder-dialog .folder-name-entry:focus {
+    border-color: #ffb86c;
+}
+
+/* ---- Screenshot UI ---- */
+.screenshot-ui-panel {
+    background-color: rgba(30, 21, 20, 0.9);
+    border-radius: 20px;
+    border: 1px solid #51443e;
+}
+
+.screenshot-ui-panel .screenshot-ui-type-button:checked {
+    background-color: #ffb86c;
+    color: #1a1110;
+}
+
+.screenshot-ui-panel .screenshot-ui-type-button {
+    background-color: #2d2220;
+    color: #efe0db;
+    border-radius: 12px;
+    border: none;
+}
+
+.screenshot-ui-panel .screenshot-ui-type-button:hover {
+    background-color: #3d312e;
+}
+
+.screenshot-ui-shot-button {
+    background-color: #ffb86c !important;
+    color: #1a1110 !important;
+    border-radius: 50% !important;
+}
+
+.screenshot-ui-shot-button:hover {
+    background-color: #ffc88a !important;
+}
+
+.screenshot-ui-show-pointer-button:checked {
+    background-color: #ffb86c;
+    color: #1a1110;
+}
+
+/* ---- Pad OSD (drawing tablet) ---- */
+.pad-osd-window {
+    background-color: rgba(30, 21, 20, 0.9);
+    border-radius: 20px;
+    border: 1px solid #51443e;
+    color: #efe0db;
+}
+
+/* ---- Ripple / click effect ---- */
+.ripple-box {
+    background-color: rgba(255, 184, 108, 0.2);
+    border-radius: 50%;
+}
+
+/* ---- Keyboard shortcuts overlay ---- */
+.keyboard-shortcuts-section-title {
+    color: #ffb86c;
+    font-weight: bold;
+}
+
+.keyboard-shortcuts-section .keyboard-shortcut-label {
+    background-color: #2d2220;
+    border-radius: 6px;
+    padding: 2px 8px;
+    color: #efe0db;
+    border: 1px solid #51443e;
+}
+
+/* ---- Accessibility menu ---- */
+.popup-menu .toggle-switch:checked {
+    background-color: #ffb86c !important;
+}
+
+/* ---- Power off / restart dialog ---- */
+.end-session-dialog {
+    background-color: #1e1514;
+    border-radius: 24px;
+    border: 1px solid #51443e;
+}
+
+.end-session-dialog .dialog-content-box {
+    padding: 24px;
+}
+
+.end-session-dialog .end-session-dialog-battery-warning {
+    color: #ffcc80;
+}
+
+/* ---- Network / VPN dialog ---- */
+.network-dialog-secret-table {
+    spacing: 8px;
+}
+
+.nm-dialog-header-icon {
+    color: #ffb86c;
+}
+
+/* =============================================================================
+ * FINAL 100% COVERAGE - Missing selectors
+ * ============================================================================= */
+
+/* ---- Window frame & decorations ---- */
+.window-frame {
+    background-color: #2d2220;
+    border: 1px solid #51443e;
+    border-radius: 12px;
+}
+
+.window-picker {
+    border: 2px solid rgba(255, 184, 108, 0.25);
+    border-radius: 12px;
+}
+
+.window-picker:hover {
+    border-color: rgba(255, 184, 108, 0.5);
+    box-shadow: 0 0 0 2px rgba(255, 184, 108, 0.15);
+}
+
+/* ---- Alt-Tab switcher ---- */
+.switcher-list {
+    background-color: #1e1514;
+    border-radius: 20px;
+    border: 1px solid #51443e;
+    padding: 12px;
+}
+
+.switcher-list .item-box {
+    padding: 8px;
+    border-radius: 12px;
+}
+
+.switcher-list .item-box:outlined {
+    background-color: rgba(255, 184, 108, 0.15);
+    border: 2px solid #ffb86c;
+    border-radius: 12px;
+}
+
+.switcher-list .item-box:selected {
+    background-color: rgba(255, 184, 108, 0.2);
+    border: 2px solid #ffb86c;
+    border-radius: 12px;
+}
+
+.switcher-arrow {
+    color: #ffb86c;
+}
+
+.switcher-list .separator {
+    background-color: #51443e;
+    width: 1px;
+}
+
+.input-source-switcher-symbol {
+    color: #efe0db;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* ---- Drag & Drop indicators ---- */
+.dnd-copy-indicator {
+    background-color: rgba(255, 184, 108, 0.2);
+    border: 2px dashed #ffb86c;
+    border-radius: 8px;
+    padding: 4px 8px;
+    color: #ffb86c;
+}
+
+.drop-target {
+    background-color: rgba(255, 184, 108, 0.12);
+    border: 2px solid #ffb86c;
+    border-radius: 12px;
+}
+
+/* ---- Overview missing pieces ---- */
+.window-clone-border {
+    border: 2px solid rgba(255, 184, 108, 0.2);
+    border-radius: 12px;
+}
+
+.window-clone-border:hover {
+    border-color: rgba(255, 184, 108, 0.5);
+}
+
+.overview-icon {
+    color: #efe0db;
+}
+
+.overview-icon:hover {
+    color: #ffb86c;
+}
+
+.dash-background {
+    background-color: transparent;
+    border: none;
+}
+
+/* ---- Notification sub-elements ---- */
+.notification > StIcon {
+    color: #efe0db;
+}
+
+.notification > StLabel {
+    color: #efe0db;
+}
+
+.message-notification-group > .message {
+    background-color: #1e1514;
+    border-radius: 12px;
+    padding: 8px;
+    margin: 4px 0;
+}
+
+.message > StIcon {
+    color: #d5c4bc;
+}
+
+/* ---- Quick toggle sub-elements ---- */
+.quick-toggle-menu .popup-menu-item StLabel {
+    color: #efe0db;
+}
+
+.quick-toggle-menu .popup-menu-item StIcon {
+    color: #ffb86c;
+}
+
+/* ---- Shell link ---- */
+.shell-link {
+    color: #ffb86c;
+}
+
+.shell-link:hover {
+    color: #ffc88a;
+}
+
+/* ---- Looking Glass (debug console) ---- */
+#LookingGlassDialog {
+    background-color: #1e1514;
+    border: 1px solid #51443e;
+    border-radius: 16px;
+    color: #efe0db;
+}
+
+#LookingGlassDialog .lg-dialog-entry {
+    background-color: #2d2220;
+    color: #efe0db;
+    border-radius: 8px;
+    border: 1px solid #51443e;
+    padding: 8px;
+}
+
+#LookingGlassDialog .lg-dialog-entry:focus {
+    border-color: #ffb86c;
+}
+
+#LookingGlassDialog .lg-completions-text {
+    color: #ffb86c;
+}
+
+#LookingGlassDialog .lg-obj-inspector-title {
+    color: #ffb86c;
+    font-weight: bold;
+}
+
+#LookingGlassDialog .lg-obj-inspector-button {
+    background-color: #2d2220;
+    border-radius: 8px;
+    color: #efe0db;
+}
+
+#LookingGlassDialog .lg-obj-inspector-button:hover {
+    background-color: #3d312e;
+}
+
+/* ---- Run dialog (Alt+F2) ---- */
+.run-dialog {
+    background-color: #1e1514;
+    border-radius: 24px;
+    border: 1px solid #51443e;
+    padding: 16px;
+}
+
+.run-dialog .run-dialog-entry {
+    background-color: #2d2220;
+    color: #efe0db;
+    border-radius: 12px;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+}
+
+.run-dialog .run-dialog-entry:focus {
+    border-color: #ffb86c;
+}
+
+.run-dialog .run-dialog-description {
+    color: #d5c4bc;
+}
+
+.run-dialog .run-dialog-error-label {
+    color: #ffb4ab;
+}
+
+/* ---- Volume/Brightness OSD enhancement ---- */
+.osd-window .level {
+    background-color: #ffb86c;
+    border-radius: 4px;
+}
+
+.osd-window .level-bar .empty-bar-area {
+    background-color: #3d312e;
+    border-radius: 4px;
+}
+
+/* ---- Weather button in clock menu ---- */
+.weather-button {
+    background-color: #1e1514 !important;
+    border-radius: 16px;
+    border: 1px solid #51443e;
+}
+
+.weather-button:hover {
+    background-color: #2d2220 !important;
+}
+
+.weather-button .weather-header-icon {
+    color: #ffb86c;
+}
+
+/* ---- Window overlay close button ---- */
+.window-close {
+    background-color: rgba(255, 180, 171, 0.9);
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+}
+
+.window-close:hover {
+    background-color: #ffb4ab;
+}
+
+.window-close StIcon {
+    color: #1a1110;
+}
+
+/* =============================================================================
+ * End of Material You Theme
+ * ============================================================================= */

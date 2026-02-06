@@ -1,0 +1,116 @@
+{
+    // Material You Orange Dark theme for Fastfetch
+    // Based on Bazzite's default config with warm orange color palette
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "type": "file",
+        "source": "/usr/share/ublue-os/bazzite/logo.txt",
+        "color": {
+            "1": "33",
+            "2": "93",
+            "3": "91",
+            "4": "0",
+            "5": "8",
+            "6": "33"
+        }
+    },
+    "display": {
+        "separator": " → ",
+        "color": {
+            "keys": "yellow",
+            "separator": "red"
+        }
+    },
+    "modules": [
+        {
+            "type": "title",
+            "key": " ",
+            "color": {
+                "user": "yellow",
+                "at": "white",
+                "host": "red"
+            }
+        },
+        "break",
+        {
+            "type": "command",
+            "key": " 󱋩",
+            "text": "/usr/libexec/bazzite-fetch-image"
+        },
+        {
+            "type": "os",
+            "key": " 󰣛",
+            "format": "{pretty-name}"
+        },
+        {
+            "type": "kernel",
+            "key": " ",
+            "format": "{1} {2}"
+        },
+        {
+            "type": "uptime",
+            "key": " 󰅐"
+        },
+        "break",
+        {
+            "type": "host",
+            "key": " 󰾰"
+        },
+        {
+            "type": "cpu",
+            "key": " 󰻠"
+        },
+        {
+            "type": "gpu",
+            "key": " 󰍛"
+        },
+        {
+            "type": "memory",
+            "key": " "
+        },
+        {
+            "type": "disk",
+            "key": " ",
+            "hideFS": "overlay"
+        },
+        {
+            "type": "display",
+            "key": " 󰍹"
+        },
+        {
+            "type": "battery",
+            "key": " "
+        },
+        {
+            "type": "gamepad",
+            "key": " 󰖺"
+        },
+        "break",
+        {
+            "type": "de",
+            "key": " 󰕮"
+        },
+        {
+            "type": "wm",
+            "key": " "
+        },
+        {
+            "type": "shell",
+            "key": " "
+        },
+        {
+            "type": "terminal",
+            "key": " "
+        },
+        {
+            "type": "packages",
+            "key": " 󰏖"
+        },
+        "break",
+        {
+            "type": "colors",
+            "paddingLeft": 2,
+            "symbol": "circle"
+        }
+    ]
+}

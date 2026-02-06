@@ -1,0 +1,1526 @@
+/* =============================================================================
+ * Material 3 Expressive - GTK3 Theme
+ * Orange Dark Mode - Material You
+ * ============================================================================= */
+
+/* =============================================================================
+ * COLORS - Override EVERY GTK3 default color to kill blue
+ * ============================================================================= */
+
+/* GTK3 built-in color names - MUST override these or blue leaks */
+@define-color theme_bg_color #1a1110;
+@define-color theme_fg_color #efe0db;
+@define-color theme_base_color #1a1110;
+@define-color theme_text_color #efe0db;
+@define-color theme_selected_bg_color #ffb86c;
+@define-color theme_selected_fg_color #4a2800;
+@define-color theme_unfocused_bg_color #1a1110;
+@define-color theme_unfocused_fg_color #d4c4bd;
+@define-color theme_unfocused_base_color #1a1110;
+@define-color theme_unfocused_text_color #d4c4bd;
+@define-color theme_unfocused_selected_bg_color #6a3c00;
+@define-color theme_unfocused_selected_fg_color #efe0db;
+@define-color selected_bg_color #ffb86c;
+@define-color selected_fg_color #4a2800;
+@define-color link_color #ffb86c;
+@define-color visited_link_color #e4a050;
+@define-color tooltip_bg_color #3d312e;
+@define-color tooltip_fg_color #efe0db;
+@define-color content_view_bg #1a1110;
+@define-color borders #524540;
+@define-color unfocused_borders #524540;
+@define-color insensitive_bg_color #241a18;
+@define-color insensitive_fg_color alpha(#efe0db, 0.38);
+@define-color insensitive_base_color #1a1110;
+
+/* Accent / semantic */
+@define-color accent_color #ffb86c;
+@define-color accent_bg_color #6a3c00;
+@define-color error_color #ffb4ab;
+@define-color error_bg_color #93000a;
+@define-color warning_color #ffcc80;
+@define-color warning_bg_color #e65100;
+@define-color success_color #8cd48c;
+@define-color success_bg_color #1b5e20;
+@define-color destructive_color #ffb4ab;
+@define-color destructive_bg_color #93000a;
+
+/* Material You palette */
+@define-color primary #ffb86c;
+@define-color on_primary #4a2800;
+@define-color primary_container #6a3c00;
+@define-color on_primary_container #ffdcbe;
+@define-color secondary #e4bfa8;
+@define-color on_secondary #422b1b;
+@define-color secondary_container #5b412f;
+@define-color on_secondary_container #ffdcbe;
+@define-color tertiary #c8bfff;
+@define-color on_tertiary #2f2d5e;
+@define-color tertiary_container #464490;
+@define-color on_tertiary_container #e4dfff;
+@define-color surface #1a1110;
+@define-color surface_dim #141010;
+@define-color surface_bright #3d3230;
+@define-color surface_container_lowest #140f0e;
+@define-color surface_container_low #231a18;
+@define-color surface_container #2d2220;
+@define-color surface_container_high #3d312e;
+@define-color surface_container_highest #494240;
+@define-color on_surface #efe0db;
+@define-color on_surface_variant #d4c4bd;
+@define-color outline #a08c84;
+@define-color outline_variant #524540;
+@define-color inverse_surface #efe0db;
+@define-color inverse_on_surface #362a28;
+@define-color inverse_primary #8a5100;
+
+/* =============================================================================
+ * GLOBAL NUCLEAR RESET - Remove all blue/gradients
+ * ============================================================================= */
+
+* {
+    -GtkWidget-link-color: #ffb86c;
+    -GtkWidget-visited-link-color: #e4a050;
+    -GtkIMHtml-hyperlink-color: #ffb86c;
+    outline-color: alpha(#ffb86c, 0.5);
+    -gtk-secondary-caret-color: #ffb86c;
+    text-decoration-color: #ffb86c;
+    icon-shadow: none;
+}
+
+/* Kill background-image globally - GTK3 themes use gradients that sneak in */
+*:not(googlechromemain) {
+    background-image: none;
+}
+
+/* Caret everywhere */
+* { caret-color: @primary; }
+
+.background {
+    background-color: @surface;
+    color: @on_surface;
+}
+
+/* DING desktop icons - keep transparent */
+window.desktopwindow,
+window.desktopwindow.background {
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+
+/* =============================================================================
+ * HEADERBAR / TITLEBAR
+ * ============================================================================= */
+
+.titlebar,
+headerbar,
+.header-bar {
+    background-color: @surface;
+    background-image: none;
+    color: @on_surface;
+    border-bottom: none;
+    box-shadow: inset 0 -1px @outline_variant;
+    padding: 4px 8px;
+    min-height: 40px;
+}
+
+.titlebar:backdrop,
+headerbar:backdrop {
+    background-color: @surface;
+    background-image: none;
+}
+
+headerbar .title,
+.titlebar .title {
+    font-weight: 600;
+    color: @on_surface;
+}
+
+headerbar .subtitle,
+.titlebar .subtitle {
+    font-size: 0.85em;
+    color: @on_surface_variant;
+}
+
+/* Headerbar buttons - flat style */
+headerbar button,
+.titlebar button {
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    border-radius: 8px;
+    color: @on_surface;
+    padding: 6px 10px;
+    box-shadow: none;
+}
+
+headerbar button:hover,
+.titlebar button:hover {
+    background-color: alpha(@primary, 0.12);
+    background-image: none;
+}
+
+headerbar button:active,
+headerbar button:checked,
+.titlebar button:active,
+.titlebar button:checked {
+    background-color: alpha(@primary, 0.2);
+    background-image: none;
+}
+
+/* Window controls - only colors, no size forcing */
+headerbar button.titlebutton,
+.titlebar button.titlebutton {
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    border-radius: 9999px;
+    padding: 4px;
+    margin: 0 2px;
+    box-shadow: none;
+}
+
+headerbar button.titlebutton:hover {
+    background-color: alpha(@primary, 0.15);
+}
+
+headerbar button.titlebutton.close:hover {
+    background-color: alpha(@error_color, 0.2);
+}
+
+/* =============================================================================
+ * BUTTONS
+ * ============================================================================= */
+
+button {
+    background-color: @surface_container_high;
+    background-image: none;
+    border: none;
+    border-radius: 20px;
+    color: @on_surface;
+    padding: 8px 16px;
+    min-height: 24px;
+    box-shadow: none;
+    text-shadow: none;
+    -gtk-icon-shadow: none;
+    transition: all 200ms ease;
+}
+
+button:hover {
+    background-color: alpha(@primary, 0.15);
+    background-image: none;
+}
+
+button:active {
+    background-color: alpha(@primary, 0.25);
+    background-image: none;
+}
+
+button:checked {
+    background-color: @primary;
+    background-image: none;
+    color: @on_primary;
+}
+
+button:disabled {
+    background-color: alpha(@surface_container_high, 0.38);
+    background-image: none;
+    color: alpha(@on_surface, 0.38);
+}
+
+button.suggested-action {
+    background-color: @primary;
+    background-image: none;
+    color: @on_primary;
+    font-weight: 600;
+}
+
+button.suggested-action:hover {
+    background-color: shade(@primary, 1.08);
+    background-image: none;
+}
+
+button.suggested-action:active {
+    background-color: shade(@primary, 0.92);
+    background-image: none;
+}
+
+button.destructive-action {
+    background-color: @destructive_bg_color;
+    background-image: none;
+    color: @destructive_color;
+    font-weight: 600;
+}
+
+button.destructive-action:hover {
+    background-color: shade(@destructive_bg_color, 1.15);
+    background-image: none;
+}
+
+button.flat {
+    background-color: transparent;
+    background-image: none;
+    color: @primary;
+    font-weight: 500;
+}
+
+button.flat:hover {
+    background-color: alpha(@primary, 0.08);
+    background-image: none;
+}
+
+button.flat:active {
+    background-color: alpha(@primary, 0.16);
+    background-image: none;
+}
+
+button.circular {
+    border-radius: 9999px;
+    padding: 8px;
+}
+
+button.image-button {
+    border-radius: 9999px;
+    padding: 8px;
+}
+
+button.toggle:checked {
+    background-color: @primary;
+    background-image: none;
+    color: @on_primary;
+}
+
+/* Linked / segmented buttons */
+.linked > button {
+    border-radius: 0;
+    border: 1px solid @outline_variant;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.linked > button:first-child { border-top-left-radius: 20px; border-bottom-left-radius: 20px; }
+.linked > button:last-child { border-top-right-radius: 20px; border-bottom-right-radius: 20px; }
+.linked > button:only-child { border-radius: 20px; }
+
+.linked > button:checked {
+    background-color: @secondary_container;
+    color: @on_secondary_container;
+    border-color: @secondary_container;
+}
+
+button.link {
+    background: none;
+    color: @primary;
+    font-weight: 500;
+    box-shadow: none;
+}
+
+/* =============================================================================
+ * ENTRY FIELDS
+ * ============================================================================= */
+
+entry {
+    background-color: @surface_container;
+    background-image: none;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    color: @on_surface;
+    padding: 8px 12px;
+    caret-color: @primary;
+    transition: all 200ms ease;
+}
+
+entry:hover {
+    background-color: @surface_container_high;
+}
+
+entry:focus {
+    border-color: @primary;
+    background-color: @surface_container;
+}
+
+entry:disabled {
+    background-color: alpha(@surface_container, 0.38);
+    color: alpha(@on_surface, 0.38);
+}
+
+entry selection { background-color: alpha(@primary, 0.3); }
+entry image { color: @outline; }
+entry image:hover { color: @primary; }
+
+entry.search {
+    border-radius: 28px;
+    padding: 10px 20px;
+}
+
+/* =============================================================================
+ * LABELS & TEXT
+ * ============================================================================= */
+
+label { color: @on_surface; }
+label.dim-label { color: @outline; }
+label.title { font-weight: 700; }
+
+*:link, *:visited { color: @primary; }
+*:link:hover, *:visited:hover { color: shade(@primary, 1.15); }
+
+/* =============================================================================
+ * LISTS & ROWS
+ * ============================================================================= */
+
+list, listbox { background-color: transparent; }
+
+list row, listbox row {
+    background-color: transparent;
+    padding: 8px 12px;
+    border-radius: 12px;
+    margin: 2px 0;
+    transition: background-color 200ms ease;
+}
+
+list row:hover, listbox row:hover { background-color: alpha(@primary, 0.08); }
+list row:active, listbox row:active { background-color: alpha(@primary, 0.15); }
+list row:selected, listbox row:selected { background-color: alpha(@primary, 0.2); }
+list row:selected:hover, listbox row:selected:hover { background-color: alpha(@primary, 0.25); }
+
+row.activatable:hover { background-color: alpha(@primary, 0.08); }
+row.activatable:selected { background-color: alpha(@primary, 0.2); }
+
+/* =============================================================================
+ * SIDEBAR / NAVIGATION
+ * ============================================================================= */
+
+.sidebar, placessidebar {
+    background-color: @surface_container;
+    background-image: none;
+    color: @on_surface;
+    padding: 4px;
+}
+
+.sidebar row, placessidebar row {
+    border-radius: 28px;
+    margin: 2px 8px;
+    padding: 8px 14px;
+}
+
+.sidebar row:hover, placessidebar row:hover { background-color: alpha(@primary, 0.08); }
+.sidebar row:selected, placessidebar row:selected {
+    background-color: @primary_container;
+    color: @on_primary_container;
+}
+
+.sidebar row:selected label, placessidebar row:selected label { color: @on_primary_container; font-weight: 600; }
+.sidebar row:selected image, placessidebar row:selected image { color: @on_primary_container; }
+
+/* =============================================================================
+ * SWITCHES - M3 pill
+ * ============================================================================= */
+
+switch {
+    background-color: @surface_container_highest;
+    background-image: none;
+    border: 2px solid @outline;
+    border-radius: 9999px;
+    min-width: 52px;
+    min-height: 32px;
+}
+
+switch:hover { background-color: shade(@surface_container_highest, 1.05); }
+
+switch:checked {
+    background-color: @primary;
+    background-image: none;
+    border-color: @primary;
+}
+
+switch:checked:hover {
+    background-color: shade(@primary, 1.08);
+    border-color: shade(@primary, 1.08);
+}
+
+switch slider {
+    background-color: @outline;
+    background-image: none;
+    border: none;
+    border-radius: 9999px;
+    min-width: 16px;
+    min-height: 16px;
+    margin: 8px;
+}
+
+switch:checked slider {
+    background-color: @on_primary;
+    min-width: 24px;
+    min-height: 24px;
+    margin: 4px;
+}
+
+/* =============================================================================
+ * CHECKBOXES & RADIO
+ * ============================================================================= */
+
+checkbutton, radiobutton { padding: 4px; border-radius: 8px; }
+checkbutton:hover, radiobutton:hover { background-color: alpha(@primary, 0.08); }
+
+check, radio {
+    background-color: transparent;
+    background-image: none;
+    border: 2px solid @outline;
+    min-width: 20px;
+    min-height: 20px;
+    color: transparent;
+    -gtk-icon-source: none;
+}
+
+check { border-radius: 6px; }
+radio { border-radius: 50%; }
+
+check:hover, radio:hover { border-color: @primary; }
+
+check:checked, radio:checked {
+    background-color: @primary;
+    background-image: none;
+    border-color: @primary;
+    color: @on_primary;
+}
+
+check:indeterminate {
+    background-color: @primary;
+    background-image: none;
+    border-color: @primary;
+}
+
+check:disabled, radio:disabled {
+    border-color: alpha(@outline, 0.38);
+}
+
+/* =============================================================================
+ * SCALES (SLIDERS) - M3
+ * ============================================================================= */
+
+scale { padding: 12px 0; }
+
+scale trough {
+    background-color: @surface_container_highest;
+    background-image: none;
+    border: none;
+    border-radius: 10px;
+    min-height: 16px;
+}
+
+scale highlight {
+    background-color: @primary;
+    background-image: none;
+    border-radius: 10px;
+}
+
+scale slider {
+    background-color: @primary;
+    background-image: none;
+    border: none;
+    border-radius: 50%;
+    min-width: 20px;
+    min-height: 20px;
+    margin: -2px;
+    box-shadow: 0 1px 4px alpha(black, 0.25);
+}
+
+scale slider:hover {
+    background-color: shade(@primary, 1.08);
+    background-image: none;
+}
+
+/* =============================================================================
+ * PROGRESS BARS
+ * ============================================================================= */
+
+progressbar { color: @primary; }
+
+progressbar trough {
+    background-color: @surface_container_highest;
+    background-image: none;
+    border: none;
+    border-radius: 10px;
+    min-height: 8px;
+}
+
+progressbar progress {
+    background-color: @primary;
+    background-image: none;
+    border: none;
+    border-radius: 10px;
+}
+
+/* =============================================================================
+ * SCROLLBARS
+ * ============================================================================= */
+
+scrollbar {
+    background-color: transparent;
+    background-image: none;
+}
+
+scrollbar slider {
+    background-color: alpha(@outline, 0.3);
+    background-image: none;
+    border-radius: 9999px;
+    min-width: 4px;
+    min-height: 4px;
+    margin: 4px 2px;
+    border: none;
+}
+
+scrollbar slider:hover {
+    background-color: alpha(@primary, 0.5);
+    min-width: 8px;
+}
+
+scrollbar slider:active { background-color: @primary; }
+
+scrollbar.vertical slider { min-height: 40px; }
+scrollbar.horizontal slider { min-width: 40px; }
+
+/* Overlay */
+scrollbar.overlay-indicator slider { min-width: 4px; min-height: 4px; }
+scrollbar.overlay-indicator:hover slider { min-width: 8px; min-height: 8px; }
+
+/* =============================================================================
+ * MENUS & POPOVERS
+ * ============================================================================= */
+
+menu, .menu, .popup {
+    background-color: @surface_container;
+    background-image: none;
+    border: 1px solid @outline_variant;
+    border-radius: 16px;
+    padding: 4px;
+}
+
+menu menuitem, .menu menuitem {
+    border-radius: 12px;
+    padding: 10px 14px;
+    min-height: 24px;
+    background-image: none;
+}
+
+menu menuitem:hover, .menu menuitem:hover {
+    background-color: alpha(@primary, 0.08);
+    background-image: none;
+}
+
+menu menuitem:disabled { color: alpha(@on_surface, 0.38); }
+menu separator { background-color: @outline_variant; margin: 4px 12px; min-height: 1px; }
+menuitem accelerator { color: @outline; }
+
+menubar {
+    background-color: @surface;
+    background-image: none;
+}
+
+menubar > menuitem {
+    padding: 6px 10px;
+    border-radius: 8px;
+    background-image: none;
+}
+
+menubar > menuitem:hover {
+    background-color: alpha(@primary, 0.08);
+    background-image: none;
+}
+
+popover, popover.background {
+    background-color: @surface_container;
+    background-image: none;
+    border: 1px solid @outline_variant;
+    border-radius: 20px;
+    padding: 4px;
+    box-shadow: 0 8px 24px alpha(black, 0.3);
+}
+
+popover.menu, popover.menu.background {
+    background-color: @surface_container;
+    background-image: none;
+    border-radius: 16px;
+    padding: 4px;
+    border: none;
+}
+
+popover.menu > contents, popover.menu.background > contents {
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+popover.menu menu, popover.menu .menu {
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+    border: none;
+}
+
+popover separator { background-color: @outline_variant; margin: 4px 12px; }
+
+popover modelbutton {
+    border-radius: 12px;
+    padding: 10px 14px;
+    background-image: none;
+}
+
+popover modelbutton:hover {
+    background-color: alpha(@primary, 0.08);
+    background-image: none;
+}
+
+/* =============================================================================
+ * NOTEBOOKS / TABS
+ * ============================================================================= */
+
+notebook { background-color: @surface; }
+
+notebook > header {
+    background-color: @surface;
+    background-image: none;
+    border-bottom: 1px solid @outline_variant;
+}
+
+notebook > header tab {
+    background-color: transparent;
+    background-image: none;
+    border-bottom: 3px solid transparent;
+    padding: 8px 16px;
+}
+
+notebook > header tab:hover {
+    background-color: alpha(@primary, 0.08);
+    background-image: none;
+}
+
+notebook > header tab:checked {
+    border-bottom-color: @primary;
+    background-image: none;
+}
+
+notebook > header tab:checked label { color: @primary; font-weight: 700; }
+
+/* =============================================================================
+ * TOOLBAR
+ * ============================================================================= */
+
+toolbar, .toolbar {
+    background-color: @surface;
+    background-image: none;
+    padding: 4px 6px;
+}
+
+toolbar separator { background-color: @outline_variant; margin: 4px 2px; }
+
+toolbar button, .toolbar button {
+    background-color: transparent;
+    background-image: none;
+    border: none;
+}
+
+toolbar button:hover, .toolbar button:hover {
+    background-color: alpha(@primary, 0.08);
+    background-image: none;
+}
+
+toolbar button:active, toolbar button:checked,
+.toolbar button:active, .toolbar button:checked {
+    background-color: alpha(@primary, 0.16);
+    background-image: none;
+}
+
+/* =============================================================================
+ * INFO BARS
+ * ============================================================================= */
+
+infobar {
+    border: none;
+    border-radius: 16px;
+    margin: 4px 8px;
+    background-image: none;
+}
+
+infobar.info { background-color: alpha(@primary, 0.12); border-left: 4px solid @primary; }
+infobar.question { background-color: alpha(@primary, 0.12); border-left: 4px solid @primary; }
+infobar.warning { background-color: alpha(@warning_color, 0.12); border-left: 4px solid @warning_color; }
+infobar.error { background-color: alpha(@error_color, 0.12); border-left: 4px solid @error_color; }
+
+/* =============================================================================
+ * DIALOGS
+ * ============================================================================= */
+
+dialog, messagedialog {
+    background-color: @surface_container_high;
+    background-image: none;
+    border-radius: 28px;
+}
+
+messagedialog .dialog-content { padding: 24px; }
+messagedialog .dialog-action-area { padding: 8px 24px 24px; }
+messagedialog .dialog-action-area button { min-width: 80px; }
+
+/* =============================================================================
+ * TREEVIEW & ICONVIEW
+ * ============================================================================= */
+
+treeview, iconview {
+    background-color: @surface;
+    background-image: none;
+}
+
+treeview:hover, iconview:hover { background-color: alpha(@primary, 0.06); }
+treeview:selected, iconview:selected { background-color: alpha(@primary, 0.16); }
+treeview:selected:focus, iconview:selected:focus { background-color: alpha(@primary, 0.22); }
+
+treeview header button {
+    background-color: @surface;
+    background-image: none;
+    border: none;
+    border-bottom: 1px solid @outline_variant;
+    padding: 8px 12px;
+    color: @on_surface_variant;
+    font-weight: 600;
+}
+
+/* =============================================================================
+ * TEXTVIEW
+ * ============================================================================= */
+
+textview, textview text { background-color: @surface; color: @on_surface; }
+textview text selection { background-color: alpha(@primary, 0.3); }
+
+/* =============================================================================
+ * FRAME, EXPANDER, SEPARATOR
+ * ============================================================================= */
+
+frame { border: 1px solid @outline_variant; border-radius: 12px; }
+frame > border { border: none; }
+
+expander title { padding: 8px; border-radius: 8px; }
+expander title:hover { background-color: alpha(@primary, 0.08); }
+
+separator { background-color: @outline_variant; min-width: 1px; min-height: 1px; }
+
+/* =============================================================================
+ * TOOLTIP
+ * ============================================================================= */
+
+tooltip, tooltip.background {
+    background-color: #2d2220;
+    color: #efe0db;
+    border-radius: 12px;
+    padding: 8px 14px;
+}
+
+/* =============================================================================
+ * SPINBUTTON & COMBOBOX
+ * ============================================================================= */
+
+spinbutton { background-color: @surface_container; border-radius: 12px; }
+spinbutton entry { background-color: transparent; border: none; background-image: none; }
+spinbutton button { background-color: transparent; border: none; border-radius: 8px; padding: 4px 8px; background-image: none; }
+spinbutton button:hover { background-color: alpha(@primary, 0.12); background-image: none; }
+
+combobox button { background-color: @surface_container; border-radius: 12px; padding: 8px 12px; background-image: none; }
+combobox button:hover { background-color: @surface_container_high; background-image: none; }
+combobox arrow { color: @outline; }
+combobox window menu { background-color: @surface_container; border-radius: 12px; }
+
+/* =============================================================================
+ * STACKSWITCHER & LEVELBAR
+ * ============================================================================= */
+
+stackswitcher button { border-radius: 20px; padding: 8px 16px; }
+stackswitcher button:checked { background-color: @primary; color: @on_primary; background-image: none; }
+
+levelbar trough { background-color: alpha(@primary, 0.15); border-radius: 8px; }
+levelbar block.filled { background-color: @primary; border-radius: 8px; }
+levelbar block.low { background-color: @error_color; }
+levelbar block.full { background-color: @success_color; }
+levelbar block.empty { background-color: transparent; }
+
+/* =============================================================================
+ * CALENDAR
+ * ============================================================================= */
+
+calendar {
+    background-color: @surface_container;
+    border-radius: 16px;
+    padding: 8px;
+}
+
+calendar:selected { background-color: @primary; color: @on_primary; border-radius: 50%; }
+calendar.header { font-weight: 600; }
+calendar.button { background-color: transparent; border-radius: 50%; background-image: none; }
+calendar.button:hover { background-color: alpha(@primary, 0.12); background-image: none; }
+calendar:indeterminate { color: @outline; }
+
+/* =============================================================================
+ * PANED
+ * ============================================================================= */
+
+paned separator { background-color: @outline_variant; min-width: 1px; min-height: 1px; }
+paned separator:hover { background-color: @primary; }
+
+/* =============================================================================
+ * FILE CHOOSER
+ * ============================================================================= */
+
+filechooser placessidebar { background-color: @surface_container; }
+filechooser placessidebar row { border-radius: 28px; margin: 2px 8px; }
+filechooser placessidebar row:selected { background-color: @primary_container; }
+filechooser actionbar { background-color: @surface; background-image: none; border-top: 1px solid @outline_variant; }
+
+.path-bar button { border-radius: 28px; padding: 4px 12px; background-image: none; }
+.path-bar button:checked { background-color: @secondary_container; color: @on_secondary_container; background-image: none; }
+
+/* =============================================================================
+ * OSD, SPINNER, COLOR SWATCH, APP NOTIFICATION
+ * ============================================================================= */
+
+.osd {
+    background-color: alpha(@surface_container, 0.85);
+    background-image: none;
+    border-radius: 20px;
+    color: @on_surface;
+}
+
+.osd button { background-color: transparent; background-image: none; }
+.osd button:hover { background-color: alpha(@primary, 0.15); background-image: none; }
+.osd progressbar trough { background-color: alpha(@on_surface, 0.2); }
+.osd progressbar progress { background-color: @primary; background-image: none; }
+
+spinner { color: @primary; }
+
+colorswatch { border-radius: 8px; }
+colorswatch:selected { box-shadow: 0 0 0 3px @primary; }
+
+.app-notification {
+    background-color: @inverse_surface;
+    color: @inverse_on_surface;
+    border-radius: 16px;
+    padding: 12px 16px;
+    margin: 8px;
+}
+
+printdialog paper { background-color: @surface_container; border: 1px solid @outline_variant; }
+
+/* =============================================================================
+ * SELECTION - No blue anywhere
+ * ============================================================================= */
+
+.view:selected, *:selected { background-color: alpha(@primary, 0.2); }
+.view:selected:focus, *:selected:focus { background-color: alpha(@primary, 0.28); }
+
+rubberband, .rubberband {
+    background-color: alpha(@primary, 0.12);
+    border: 1px solid alpha(@primary, 0.5);
+}
+
+/* Focus ring */
+*:focus { outline-color: alpha(@primary, 0.5); }
+
+/* =============================================================================
+ * FIREFOX / THUNDERBIRD
+ * ============================================================================= */
+
+#MozillaGtkWidget { background-color: @surface; }
+#MozillaGtkWidget menubar { background-color: @surface; background-image: none; }
+#MozillaGtkWidget menubar > menuitem { padding: 4px 8px; background-image: none; }
+#MozillaGtkWidget menu { background-color: @surface_container; }
+#MozillaGtkWidget menu menuitem:hover { background-color: alpha(@primary, 0.08); }
+#MozillaGtkWidget entry { background-color: @surface_container; border-color: @outline_variant; }
+#MozillaGtkWidget entry:focus { border-color: @primary; }
+#MozillaGtkWidget button { background-image: none; }
+
+/* =============================================================================
+ * GIMP
+ * ============================================================================= */
+
+GimpDock, GimpToolbox, GimpMenuDock {
+    background-color: @surface_container;
+    background-image: none;
+}
+
+/* =============================================================================
+ * LIBREOFFICE
+ * ============================================================================= */
+
+.libreoffice-toolbar { background-color: @surface; background-image: none; }
+
+/* =============================================================================
+ * LUTRIS - Nuclear override
+ * ============================================================================= */
+
+.lutris, .lutris * {
+    background-image: none;
+    text-shadow: none;
+    -gtk-icon-shadow: none;
+}
+
+.lutris .background { background-color: @surface; }
+
+.lutris .titlebar,
+.lutris headerbar {
+    background-color: @surface;
+    box-shadow: inset 0 -1px @outline_variant;
+}
+
+.lutris toolbar, .lutris .toolbar {
+    background-color: @surface;
+}
+
+.lutris .sidebar {
+    background-color: @surface_container;
+}
+
+.lutris .sidebar row:selected,
+.lutris treeview:selected,
+.lutris *:selected {
+    background-color: alpha(@primary, 0.2);
+}
+
+.lutris button.suggested-action {
+    background-color: @primary;
+    color: @on_primary;
+}
+
+.lutris notebook > header tab:checked {
+    border-bottom-color: @primary;
+}
+
+.lutris notebook > header tab:checked label {
+    color: @primary;
+}
+
+.lutris progressbar progress { background-color: @primary; }
+.lutris scale highlight { background-color: @primary; }
+.lutris check:checked, .lutris radio:checked { background-color: @primary; border-color: @primary; }
+.lutris switch:checked { background-color: @primary; border-color: @primary; }
+
+/* =============================================================================
+ * STEAM - Override blue
+ * ============================================================================= */
+
+.steam *, window.steam * {
+    background-image: none;
+}
+
+/* =============================================================================
+ * GENERIC - Catch anything else with blue
+ * ============================================================================= */
+
+/* Catch any remaining :selected that apps define */
+GtkTreeView:selected,
+GtkIconView:selected,
+GtkListBox row:selected,
+GtkFlowBox > child:selected {
+    background-color: alpha(@primary, 0.2);
+}
+
+GtkTreeView:selected:focus,
+GtkIconView:selected:focus {
+    background-color: alpha(@primary, 0.28);
+}
+
+/* All suggested-action buttons everywhere */
+.suggested-action {
+    background-color: @primary;
+    background-image: none;
+    color: @on_primary;
+}
+
+/* All destructive-action buttons everywhere */
+.destructive-action {
+    background-color: @destructive_bg_color;
+    background-image: none;
+    color: @destructive_color;
+}
+
+/* Catch any stack-switcher / view-switcher */
+.view-switcher button:checked,
+viewswitcher button:checked {
+    background-color: @secondary_container;
+    background-image: none;
+    color: @on_secondary_container;
+}
+
+/* =============================================================================
+ * ADDITIONAL GTK3 WIDGET COVERAGE
+ * ============================================================================= */
+
+/* ---- Search Bar & Entry ---- */
+searchbar {
+    background-color: @surface_container;
+    border-bottom: 1px solid @outline_variant;
+    padding: 4px 8px;
+}
+
+searchbar entry,
+.search-entry {
+    background-color: @surface_container_high;
+    border: 1px solid transparent;
+    border-radius: 24px;
+    padding: 6px 12px;
+    color: @on_surface;
+    background-image: none;
+}
+
+searchbar entry:focus,
+.search-entry:focus {
+    border-color: @primary;
+    box-shadow: 0 0 0 2px alpha(@primary, 0.2);
+    background-image: none;
+}
+
+searchbar entry image,
+.search-entry image {
+    color: @outline;
+}
+
+searchbar entry image:first-child,
+.search-entry image:first-child {
+    color: @primary;
+}
+
+/* ---- Calendar weekend colors ---- */
+calendar.highlight {
+    color: @primary;
+    font-weight: 600;
+}
+
+/* ---- Expander arrow improvement ---- */
+expander arrow {
+    color: @outline;
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+    transition: all 200ms ease;
+}
+
+expander arrow:checked {
+    color: @primary;
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
+expander title:checked {
+    background-color: alpha(@primary, 0.08);
+}
+
+/* ---- Combobox popup refinement ---- */
+combobox window menu menuitem {
+    border-radius: 8px;
+    margin: 2px 4px;
+    padding: 6px 12px;
+}
+
+combobox window menu menuitem:hover {
+    background-color: alpha(@primary, 0.12);
+    background-image: none;
+}
+
+combobox window menu menuitem:selected {
+    background-color: @primary_container;
+    color: @on_primary_container;
+    background-image: none;
+}
+
+/* ---- Spinbutton refinement ---- */
+spinbutton button image {
+    color: @primary;
+}
+
+spinbutton button:disabled image {
+    color: alpha(@on_surface, 0.38);
+}
+
+spinbutton entry:focus {
+    border-bottom: 2px solid @primary;
+}
+
+/* ---- Treeview header refinement ---- */
+treeview header button {
+    background-image: none;
+    border-bottom: 2px solid @outline_variant;
+    font-weight: 600;
+    color: @on_surface_variant;
+    padding: 6px 12px;
+}
+
+treeview header button:hover {
+    background-color: alpha(@primary, 0.08);
+    color: @primary;
+    background-image: none;
+}
+
+treeview header button:active {
+    background-color: alpha(@primary, 0.16);
+    border-bottom-color: @primary;
+    background-image: none;
+}
+
+/* ---- File Chooser improvements ---- */
+filechooser .path-bar button {
+    border-radius: 8px;
+    padding: 4px 10px;
+    background-image: none;
+}
+
+filechooser .path-bar button:hover {
+    background-color: alpha(@primary, 0.12);
+    background-image: none;
+}
+
+filechooser .path-bar button:checked {
+    background-color: @primary_container;
+    color: @on_primary_container;
+    background-image: none;
+}
+
+filechooser #pathbarbox {
+    background-color: @surface_container;
+    border-radius: 12px;
+    padding: 2px;
+}
+
+filechooser paned {
+    background-color: @surface;
+}
+
+filechooser .view {
+    background-color: @surface;
+}
+
+filechooser .sidebar-row {
+    border-radius: 24px;
+    margin: 2px 6px;
+    padding: 6px 12px;
+}
+
+filechooser .sidebar-row:selected {
+    background-color: @primary_container;
+    color: @on_primary_container;
+}
+
+filechooser .sidebar-row image {
+    color: @on_surface_variant;
+}
+
+filechooser .sidebar-row:selected image {
+    color: @primary;
+}
+
+/* ---- GtkInfoBar ---- */
+infobar {
+    background-color: @surface_container_high;
+    border: none;
+    border-left: 4px solid @primary;
+    padding: 8px 12px;
+}
+
+infobar.info {
+    border-left-color: @primary;
+}
+
+infobar.warning {
+    border-left-color: #ffcc80;
+}
+
+infobar.error {
+    border-left-color: @destructive_bg_color;
+}
+
+infobar.question {
+    border-left-color: @primary;
+}
+
+infobar label {
+    color: @on_surface;
+}
+
+infobar button {
+    background-image: none;
+}
+
+/* ---- GtkActionBar ---- */
+actionbar {
+    background-color: @surface_container;
+    border-top: 1px solid @outline_variant;
+    padding: 6px;
+    background-image: none;
+}
+
+/* ---- Linked buttons ---- */
+.linked button {
+    border-radius: 0;
+    border: 1px solid @outline_variant;
+    background-image: none;
+}
+
+.linked button:first-child {
+    border-radius: 12px 0 0 12px;
+}
+
+.linked button:last-child {
+    border-radius: 0 12px 12px 0;
+}
+
+.linked button:only-child {
+    border-radius: 12px;
+}
+
+.linked button:checked {
+    background-color: @primary_container;
+    color: @on_primary_container;
+    background-image: none;
+}
+
+/* ---- Placeholder text ---- */
+entry:disabled,
+textview:disabled {
+    color: alpha(@on_surface, 0.38);
+}
+
+label.dim-label {
+    color: @on_surface_variant;
+}
+
+/* ---- GtkPrint dialog ---- */
+printdialog paper {
+    background-color: white;
+    border: 1px solid @outline_variant;
+}
+
+printdialog .dialog-action-box {
+    background-color: @surface_container;
+    border-top: 1px solid @outline_variant;
+}
+
+/* ---- GtkColorChooser ---- */
+colorchooserdialog colorswatch {
+    border-radius: 8px;
+    border: 2px solid transparent;
+}
+
+colorchooserdialog colorswatch:selected {
+    border-color: @primary;
+}
+
+colorchooserdialog .color-active-badge {
+    border-radius: 50%;
+    border: 2px solid @primary;
+}
+
+/* ---- GtkFontChooser ---- */
+fontchooserdialog searchentry {
+    border-radius: 24px;
+    background-color: @surface_container_high;
+    background-image: none;
+}
+
+fontchooserdialog list row {
+    border-radius: 8px;
+    margin: 2px;
+}
+
+fontchooserdialog list row:selected {
+    background-color: @primary_container;
+    color: @on_primary_container;
+}
+
+/* =============================================================================
+ * FINAL 100% COVERAGE - Missing GTK3 widgets
+ * ============================================================================= */
+
+/* ---- GtkStack ---- */
+GtkStack,
+stack {
+    background-color: @surface;
+    color: @on_surface;
+}
+
+/* ---- GtkNotebook (explicit class target) ---- */
+GtkNotebook {
+    background-color: @surface;
+    background-image: none;
+}
+
+GtkNotebook tab {
+    background-image: none;
+}
+
+/* ---- GtkPaned (splitter) ---- */
+GtkPaned,
+paned {
+    background-color: @surface;
+}
+
+GtkPaned > separator,
+paned > separator {
+    background-color: @outline_variant;
+    min-width: 1px;
+    min-height: 1px;
+    background-image: none;
+}
+
+paned > separator:hover {
+    background-color: @primary;
+}
+
+/* ---- GtkExpander (explicit class target) ---- */
+GtkExpander {
+    padding: 4px;
+}
+
+GtkExpander title {
+    padding: 8px;
+    border-radius: 8px;
+}
+
+GtkExpander title:hover {
+    background-color: alpha(@primary, 0.08);
+}
+
+/* ---- GtkFrame (explicit class target) ---- */
+GtkFrame,
+frame {
+    border: 1px solid @outline_variant;
+    border-radius: 12px;
+}
+
+GtkFrame > border,
+frame > border {
+    border: none;
+}
+
+/* ---- GtkSeparator (explicit class target) ---- */
+GtkSeparator,
+separator {
+    background-color: @outline_variant;
+    min-width: 1px;
+    min-height: 1px;
+    background-image: none;
+}
+
+/* ---- GtkPopover ---- */
+GtkPopover,
+popover {
+    background-color: @surface_container;
+    border-radius: 12px;
+    border: 1px solid @outline_variant;
+    padding: 4px;
+    background-image: none;
+}
+
+popover modelbutton {
+    border-radius: 8px;
+    padding: 6px 12px;
+    background-image: none;
+}
+
+popover modelbutton:hover {
+    background-color: alpha(@primary, 0.12);
+    background-image: none;
+}
+
+/* ---- GtkRevealer (transition containers) ---- */
+GtkRevealer,
+revealer {
+    transition: all 200ms ease;
+}
+
+/* ---- GtkOverlay ---- */
+overlay {
+    background-color: transparent;
+}
+
+/* ---- GtkStackSwitcher ---- */
+stackswitcher button {
+    border-radius: 0;
+    border-bottom: 2px solid transparent;
+    padding: 8px 16px;
+    background-image: none;
+}
+
+stackswitcher button:first-child {
+    border-radius: 12px 0 0 12px;
+}
+
+stackswitcher button:last-child {
+    border-radius: 0 12px 12px 0;
+}
+
+stackswitcher button:checked {
+    background-color: @primary_container;
+    color: @on_primary_container;
+    border-bottom-color: @primary;
+    background-image: none;
+}
+
+/* ---- GtkLevelBar ---- */
+levelbar trough {
+    background-color: @surface_container_high;
+    border-radius: 4px;
+    min-height: 6px;
+}
+
+levelbar block.filled {
+    background-color: @primary;
+    border-radius: 4px;
+}
+
+levelbar block.empty {
+    background-color: @surface_container_high;
+}
+
+/* ---- GtkStatusbar ---- */
+statusbar {
+    background-color: @surface_container;
+    color: @on_surface_variant;
+    padding: 4px 8px;
+    border-top: 1px solid @outline_variant;
+    background-image: none;
+}
+
+/* ---- GtkToolbar ---- */
+toolbar {
+    background-image: none;
+}
+
+/* ---- GtkPlacesSidebar ---- */
+.sidebar,
+placessidebar {
+    background-color: @sidebar_bg_color;
+    background-image: none;
+}
+
+.sidebar row,
+placessidebar row {
+    border-radius: 24px;
+    margin: 2px 6px;
+    padding: 6px 12px;
+    background-image: none;
+}
+
+.sidebar row:selected,
+placessidebar row:selected {
+    background-color: @primary_container;
+    color: @on_primary_container;
+    background-image: none;
+}
+
+.sidebar row:selected image,
+placessidebar row:selected image {
+    color: @primary;
+}
+
+.sidebar row:hover,
+placessidebar row:hover {
+    background-color: alpha(@on_surface, 0.06);
+    background-image: none;
+}
+
+/* =============================================================================
+ * End
+ * ============================================================================= */

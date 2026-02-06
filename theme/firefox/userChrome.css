@@ -1,0 +1,377 @@
+/* ============================================================
+   Material You Orange Dark - Firefox userChrome.css
+   ============================================================ */
+
+/* Color Palette */
+:root {
+  --material-surface: #1a1110;
+  --material-surface-container: #1e1514;
+  --material-surface-container-high: #2d2220;
+  --material-surface-container-highest: #3d312e;
+  --material-primary: #ffb86c;
+  --material-on-primary: #1a1110;
+  --material-on-surface: #efe0db;
+  --material-on-surface-variant: #d5c4bc;
+  --material-outline: #9e8e86;
+  --material-outline-variant: #51443e;
+  --material-error: #ffb4ab;
+  --material-secondary: #e4bfa8;
+
+  /* Override Firefox's built-in variables */
+  --toolbar-bgcolor: var(--material-surface-container) !important;
+  --toolbar-color: var(--material-on-surface) !important;
+  --toolbar-field-background-color: var(--material-surface-container-high) !important;
+  --toolbar-field-color: var(--material-on-surface) !important;
+  --toolbar-field-focus-background-color: var(--material-surface-container-highest) !important;
+  --toolbar-field-focus-color: var(--material-on-surface) !important;
+  --toolbar-field-border-color: transparent !important;
+  --toolbar-field-focus-border-color: var(--material-primary) !important;
+  --urlbarView-highlight-background: var(--material-surface-container-highest) !important;
+  --urlbarView-highlight-color: var(--material-on-surface) !important;
+  --tab-selected-bgcolor: var(--material-surface-container-high) !important;
+  --tab-selected-textcolor: var(--material-primary) !important;
+  --lwt-sidebar-background-color: var(--material-surface) !important;
+  --lwt-sidebar-text-color: var(--material-on-surface) !important;
+  --arrowpanel-background: var(--material-surface-container) !important;
+  --arrowpanel-color: var(--material-on-surface) !important;
+  --arrowpanel-border-color: var(--material-outline-variant) !important;
+  --panel-separator-color: var(--material-outline-variant) !important;
+}
+
+/* ---- TOOLBAR / NAVBAR ---- */
+#navigator-toolbox {
+  background: var(--material-surface) !important;
+  border-bottom: none !important;
+}
+
+#nav-bar {
+  background: var(--material-surface-container) !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 2px 4px !important;
+}
+
+/* ---- TABS ---- */
+#titlebar {
+  background: var(--material-surface) !important;
+}
+
+#TabsToolbar {
+  background: var(--material-surface) !important;
+}
+
+.tab-background {
+  border-radius: 12px 12px 0 0 !important;
+  margin-block: 4px 0 !important;
+  border: none !important;
+}
+
+.tabbrowser-tab[selected] .tab-background {
+  background: var(--material-surface-container-high) !important;
+  box-shadow: none !important;
+}
+
+.tabbrowser-tab:not([selected]):hover .tab-background {
+  background: var(--material-surface-container) !important;
+}
+
+.tab-text {
+  color: var(--material-on-surface-variant) !important;
+  font-family: "Inter", sans-serif !important;
+}
+
+.tabbrowser-tab[selected] .tab-text {
+  color: var(--material-primary) !important;
+}
+
+.tab-close-button {
+  border-radius: 50% !important;
+}
+
+.tab-close-button:hover {
+  background: var(--material-surface-container-highest) !important;
+}
+
+/* Tab line indicator - orange */
+.tab-line {
+  background: var(--material-primary) !important;
+  height: 2px !important;
+}
+
+/* New tab button */
+#tabs-newtab-button,
+#new-tab-button {
+  color: var(--material-primary) !important;
+  border-radius: 50% !important;
+}
+
+#tabs-newtab-button:hover,
+#new-tab-button:hover {
+  background: var(--material-surface-container-high) !important;
+}
+
+/* ---- URL BAR ---- */
+#urlbar-background {
+  background: var(--material-surface-container-high) !important;
+  border: 1px solid transparent !important;
+  border-radius: 24px !important;
+  box-shadow: none !important;
+}
+
+#urlbar[focused] #urlbar-background {
+  border-color: var(--material-primary) !important;
+}
+
+#urlbar-input {
+  color: var(--material-on-surface) !important;
+  font-family: "Inter", sans-serif !important;
+}
+
+/* URL bar results */
+.urlbarView-row[selected] {
+  background: var(--material-surface-container-highest) !important;
+  border-radius: 12px !important;
+}
+
+.urlbarView-row:hover {
+  background: var(--material-surface-container-high) !important;
+  border-radius: 12px !important;
+}
+
+/* ---- SIDEBAR ---- */
+#sidebar-header {
+  background: var(--material-surface) !important;
+  border-bottom: 1px solid var(--material-outline-variant) !important;
+}
+
+#sidebar-box {
+  background: var(--material-surface) !important;
+}
+
+/* ---- BOOKMARKS BAR ---- */
+#PersonalToolbar {
+  background: var(--material-surface-container) !important;
+  border: none !important;
+  padding: 2px 4px !important;
+}
+
+#PlacesToolbarItems .bookmark-item {
+  border-radius: 8px !important;
+  padding: 4px 8px !important;
+  color: var(--material-on-surface-variant) !important;
+}
+
+#PlacesToolbarItems .bookmark-item:hover {
+  background: var(--material-surface-container-high) !important;
+  color: var(--material-primary) !important;
+}
+
+/* ---- MENUS & PANELS ---- */
+menupopup,
+panel {
+  --panel-background: var(--material-surface-container) !important;
+  --panel-color: var(--material-on-surface) !important;
+  --panel-border-radius: 16px !important;
+}
+
+menupopup {
+  background: var(--material-surface-container) !important;
+  border-radius: 12px !important;
+  border: 1px solid var(--material-outline-variant) !important;
+  padding: 4px !important;
+}
+
+menuitem,
+menu {
+  border-radius: 8px !important;
+  color: var(--material-on-surface) !important;
+}
+
+menuitem:hover,
+menu:hover,
+menuitem[_moz-menuactive="true"],
+menu[_moz-menuactive="true"] {
+  background: var(--material-surface-container-high) !important;
+  color: var(--material-primary) !important;
+}
+
+menuseparator {
+  border-color: var(--material-outline-variant) !important;
+  margin: 4px 8px !important;
+}
+
+/* ---- BUTTONS ---- */
+.toolbarbutton-1 {
+  border-radius: 50% !important;
+  color: var(--material-on-surface-variant) !important;
+}
+
+.toolbarbutton-1:hover {
+  background: var(--material-surface-container-high) !important;
+  color: var(--material-primary) !important;
+}
+
+.toolbarbutton-1[checked="true"],
+.toolbarbutton-1[open="true"] {
+  background: var(--material-surface-container-highest) !important;
+  color: var(--material-primary) !important;
+}
+
+/* Back / Forward buttons */
+#back-button,
+#forward-button {
+  color: var(--material-on-surface) !important;
+}
+
+#back-button:hover,
+#forward-button:hover {
+  background: var(--material-surface-container-high) !important;
+  color: var(--material-primary) !important;
+}
+
+/* ---- FINDBAR ---- */
+.findbar-container {
+  background: var(--material-surface-container) !important;
+  color: var(--material-on-surface) !important;
+  border-radius: 16px 16px 0 0 !important;
+}
+
+.findbar-textbox {
+  background: var(--material-surface-container-high) !important;
+  color: var(--material-on-surface) !important;
+  border: 1px solid var(--material-outline-variant) !important;
+  border-radius: 8px !important;
+}
+
+.findbar-textbox:focus {
+  border-color: var(--material-primary) !important;
+}
+
+/* Findbar highlight */
+.findbar-highlight {
+  background: var(--material-primary) !important;
+  color: var(--material-on-primary) !important;
+}
+
+/* ---- SCROLLBARS ---- */
+* {
+  scrollbar-color: var(--material-outline-variant) transparent !important;
+  scrollbar-width: thin !important;
+}
+
+/* ---- NOTIFICATION BAR ---- */
+notification,
+.notificationbox-stack {
+  background: var(--material-surface-container) !important;
+  color: var(--material-on-surface) !important;
+}
+
+/* ---- AUTOCOMPLETE POPUP ---- */
+#PopupAutoComplete {
+  background: var(--material-surface-container) !important;
+  border: 1px solid var(--material-outline-variant) !important;
+  border-radius: 12px !important;
+}
+
+/* ---- DOWNLOADS PANEL ---- */
+#downloadsPanel {
+  background: var(--material-surface-container) !important;
+}
+
+#downloadsListBox .downloadButton:hover {
+  background: var(--material-surface-container-high) !important;
+  border-radius: 8px !important;
+}
+
+/* Progress bar */
+.downloadProgress {
+  background: var(--material-surface-container-highest) !important;
+  border-radius: 4px !important;
+}
+
+.downloadProgress .progress-bar {
+  background: var(--material-primary) !important;
+  border-radius: 4px !important;
+}
+
+/* ---- ABOUT PAGES ---- */
+@-moz-document url-prefix("about:") {
+  :root {
+    --in-content-page-background: var(--material-surface) !important;
+    --in-content-page-color: var(--material-on-surface) !important;
+    --in-content-box-background: var(--material-surface-container) !important;
+    --in-content-primary-button-background: var(--material-primary) !important;
+    --in-content-primary-button-text-color: var(--material-on-primary) !important;
+    --in-content-primary-button-background-hover: #ffc88a !important;
+    --in-content-focus-outline-color: var(--material-primary) !important;
+    --card-background-color: var(--material-surface-container) !important;
+    --link-color: var(--material-primary) !important;
+  }
+}
+
+/* ---- SIDEBAR TREE / BOOKMARKS ---- */
+treechildren::-moz-tree-row(selected) {
+  background: var(--material-surface-container-high) !important;
+  border-radius: 8px !important;
+}
+
+treechildren::-moz-tree-cell-text(selected) {
+  color: var(--material-primary) !important;
+}
+
+treechildren::-moz-tree-row(hover) {
+  background: var(--material-surface-container) !important;
+}
+
+/* ---- TAB MANAGER PANEL ---- */
+#allTabsMenu-allTabsView {
+  background: var(--material-surface-container) !important;
+}
+
+.all-tabs-button:hover {
+  background: var(--material-surface-container-high) !important;
+  border-radius: 8px !important;
+}
+
+.all-tabs-button[selected] {
+  background: var(--material-surface-container-highest) !important;
+  color: var(--material-primary) !important;
+}
+
+/* ---- EXTENSION POPUP ---- */
+#unified-extensions-panel {
+  background: var(--material-surface-container) !important;
+}
+
+.unified-extensions-item:hover {
+  background: var(--material-surface-container-high) !important;
+  border-radius: 8px !important;
+}
+
+/* ---- IDENTITY / SITE INFO ---- */
+#identity-box {
+  border-radius: 8px !important;
+}
+
+#identity-box:hover {
+  background: var(--material-surface-container-high) !important;
+}
+
+#identity-icon-box {
+  color: var(--material-primary) !important;
+}
+
+/* Secure connection - green/orange */
+#identity-box.verifiedIdentity #identity-icon-box,
+#identity-box.chromeUI #identity-icon-box {
+  color: var(--material-primary) !important;
+}
+
+/* ---- TOOLTIP ---- */
+tooltip {
+  background: var(--material-surface-container-highest) !important;
+  color: var(--material-on-surface) !important;
+  border: 1px solid var(--material-outline-variant) !important;
+  border-radius: 8px !important;
+  padding: 4px 8px !important;
+}

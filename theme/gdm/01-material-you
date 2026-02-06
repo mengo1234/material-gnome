@@ -1,0 +1,26 @@
+[org/gnome/desktop/interface]
+font-name="Inter 14"
+text-scaling-factor=1.4
+cursor-size=36
+cursor-theme="Bibata-Modern-Classic"
+icon-theme="Papirus-Dark"
+gtk-theme="adw-gtk3-dark"
+color-scheme="prefer-dark"
+accent-color="orange"
+
+[org/gnome/desktop/a11y/interface]
+high-contrast=false
+
+[org/gnome/login-screen]
+logo=""
+
+[org/gnome/desktop/background]
+primary-color="#1a1110"
+picture-uri=""
+picture-uri-dark=""
+color-shading-type="solid"
+
+[org/gnome/desktop/screensaver]
+primary-color="#1a1110"
+picture-uri=""
+color-shading-type="solid"

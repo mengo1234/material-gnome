@@ -1,0 +1,189 @@
+/* ============================================================
+   Material You Orange Dark - Firefox userContent.css
+   Styles for about: pages and internal Firefox UI
+   ============================================================ */
+
+@-moz-document url-prefix("about:") {
+  :root {
+    --in-content-page-background: #1a1110 !important;
+    --in-content-page-color: #efe0db !important;
+    --in-content-box-background: #1e1514 !important;
+    --in-content-box-background-hover: #2d2220 !important;
+    --in-content-box-border-color: #51443e !important;
+    --in-content-primary-button-background: #ffb86c !important;
+    --in-content-primary-button-background-hover: #ffc88a !important;
+    --in-content-primary-button-text-color: #1a1110 !important;
+    --in-content-focus-outline-color: #ffb86c !important;
+    --in-content-button-background: #2d2220 !important;
+    --in-content-button-background-hover: #3d312e !important;
+    --in-content-text-color: #efe0db !important;
+    --card-background-color: #1e1514 !important;
+    --card-outline-color: #51443e !important;
+    --link-color: #ffb86c !important;
+    --link-color-hover: #ffc88a !important;
+    --link-color-visited: #e4bfa8 !important;
+    --color-accent-primary: #ffb86c !important;
+    --color-accent-primary-hover: #ffc88a !important;
+    --color-accent-primary-active: #ffa94d !important;
+  }
+
+  body {
+    background-color: #1a1110 !important;
+    color: #efe0db !important;
+  }
+}
+
+/* New Tab page */
+@-moz-document url("about:newtab"), url("about:home") {
+  :root {
+    --newtab-background-color: #1a1110 !important;
+    --newtab-background-color-secondary: #1e1514 !important;
+    --newtab-text-primary-color: #efe0db !important;
+    --newtab-primary-action-background: #ffb86c !important;
+    --newtab-element-hover-color: #2d2220 !important;
+    --newtab-element-active-color: #3d312e !important;
+    --newtab-card-background-color: #1e1514 !important;
+    --newtab-card-placeholder-color: #2d2220 !important;
+    --newtab-link-primary-color: #ffb86c !important;
+    --newtab-focus-outline: #ffb86c !important;
+  }
+
+  body {
+    background-color: #1a1110 !important;
+  }
+
+  /* Top sites cards */
+  .top-site-outer .tile {
+    background-color: #1e1514 !important;
+    border-radius: 16px !important;
+  }
+
+  .top-site-outer:hover .tile {
+    background-color: #2d2220 !important;
+  }
+
+  /* Search bar on new tab */
+  .search-wrapper input {
+    background: #1e1514 !important;
+    color: #efe0db !important;
+    border: 1px solid #51443e !important;
+    border-radius: 24px !important;
+  }
+
+  .search-wrapper input:focus {
+    border-color: #ffb86c !important;
+    box-shadow: 0 0 0 2px rgba(255, 184, 108, 0.3) !important;
+  }
+
+  /* Highlights / cards */
+  .card-outer {
+    background: #1e1514 !important;
+    border-radius: 16px !important;
+    border: 1px solid #51443e !important;
+  }
+
+  .card-outer:hover {
+    background: #2d2220 !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4) !important;
+  }
+
+  /* Section headers */
+  .section-title span {
+    color: #d5c4bc !important;
+  }
+}
+
+/* Preferences / Settings */
+@-moz-document url-prefix("about:preferences") {
+  :root {
+    --in-content-categories-background: #1a1110 !important;
+  }
+
+  .category:hover {
+    background: #2d2220 !important;
+    border-radius: 12px !important;
+  }
+
+  .category[selected] {
+    background: #2d2220 !important;
+    color: #ffb86c !important;
+    border-radius: 12px !important;
+  }
+
+  .category .category-icon {
+    filter: brightness(0) saturate(100%) invert(77%) sepia(45%) saturate(600%) hue-rotate(340deg) brightness(100%) contrast(100%) !important;
+  }
+
+  groupbox {
+    background: #1e1514 !important;
+    border-radius: 16px !important;
+    border: 1px solid #51443e !important;
+  }
+
+  button {
+    background: #2d2220 !important;
+    color: #efe0db !important;
+    border: 1px solid #51443e !important;
+    border-radius: 8px !important;
+  }
+
+  button:hover {
+    background: #3d312e !important;
+  }
+
+  button.primary {
+    background: #ffb86c !important;
+    color: #1a1110 !important;
+    border: none !important;
+  }
+
+  button.primary:hover {
+    background: #ffc88a !important;
+  }
+
+  /* Toggle switches */
+  input[type="checkbox"].toggle-button {
+    background: #51443e !important;
+  }
+
+  input[type="checkbox"].toggle-button:checked {
+    background: #ffb86c !important;
+  }
+
+  /* Scrollbar */
+  * {
+    scrollbar-color: #51443e transparent !important;
+  }
+}
+
+/* Addons / Extensions page */
+@-moz-document url-prefix("about:addons") {
+  :root {
+    --in-content-box-background: #1e1514 !important;
+  }
+
+  .card {
+    background: #1e1514 !important;
+    border: 1px solid #51443e !important;
+    border-radius: 16px !important;
+  }
+
+  .card:hover {
+    background: #2d2220 !important;
+  }
+
+  addon-card[expanded] {
+    background: #1e1514 !important;
+  }
+}
+
+/* DevTools */
+@-moz-document url-prefix("about:devtools") {
+  :root {
+    --theme-toolbar-background: #1e1514 !important;
+    --theme-body-background: #1a1110 !important;
+    --theme-selection-background: #ffb86c !important;
+    --theme-selection-color: #1a1110 !important;
+    --theme-highlight-blue: #ffb86c !important;
+  }
+}
