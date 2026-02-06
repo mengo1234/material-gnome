@@ -1,41 +1,32 @@
 <p align="center">
-  <img src="screenshots/icon.png" width="120" alt="Material Gnome">
-</p>
-
-<h1 align="center">Material Gnome</h1>
-
-<p align="center">
-  <strong>Turn your GNOME desktop into a pixel-perfect Material You experience.</strong><br>
-  Dark theme. 8 accent colors. 19 components. One click.
+  <img src="screenshots/banner.svg" width="900" alt="Material Gnome">
 </p>
 
 <p align="center">
   <a href="#quick-start"><img src="https://img.shields.io/badge/-Download-ffb86c?style=for-the-badge&logoColor=1a1110" alt="Download"></a>&nbsp;
   <img src="https://img.shields.io/badge/GNOME-45%2B-4a86cf?style=for-the-badge&logo=gnome&logoColor=white" alt="GNOME 45+">&nbsp;
-  <img src="https://img.shields.io/badge/License-MIT-9e8e86?style=for-the-badge" alt="MIT License">&nbsp;
-  <img src="https://img.shields.io/badge/v1.0.0-ffb86c?style=for-the-badge" alt="v1.0.0">
+  <img src="https://img.shields.io/badge/GTK4-libadwaita-ffb86c?style=for-the-badge" alt="GTK4">&nbsp;
+  <img src="https://img.shields.io/badge/License-MIT-9e8e86?style=for-the-badge" alt="MIT">
 </p>
 
 ---
 
-The installer ships as a native **GTK4 / libadwaita** app with adaptive layout, live color preview, and a Material 3 interface. Every color, every icon, every pixel is designed to feel cohesive across your entire system -- from the GNOME Shell top bar down to the boot screen.
+<br>
 
-Built for **Bazzite / Fedora Silverblue** but works on any GNOME 45+ distribution.
+### Your desktop deserves better than default Adwaita.
+
+Material Gnome is a full-system Material You dark theme for GNOME. It replaces the look of every surface you interact with daily -- the top bar, the app grid, Nautilus, Settings, Firefox, your terminal, even the boot screen -- with a cohesive, warm, Material Design 3 aesthetic.
+
+The project ships as a **native GTK4 / libadwaita installer** with an adaptive layout that feels at home on both a laptop and a widescreen monitor. Pick one of **8 accent colors**, toggle the **19 components** you want, hit install, and walk away. Everything is backed up automatically. Nothing is irreversible.
+
+Need to change your mind later? Open the installer, pick a new color, press **Aggiorna**, and watch your entire desktop -- CSS files, Papirus folder icons, terminal palette, GNOME accent color, running GTK apps -- shift hue in real time. No logout. No restart.
+
+Built and tested on **Bazzite / Fedora Silverblue** (GNOME 49.1, Wayland, immutable root), but works on any distribution running GNOME 45 or later.
 
 <br>
 
 <p align="center">
-  <img src="screenshots/welcome-expanded.png" width="720" alt="Material Gnome — Home">
-</p>
-
-<p align="center">
-  <img src="screenshots/colors.png" width="720" alt="Material Gnome — Color Picker">
-</p>
-
-<p align="center">
-  <img src="screenshots/welcome.png" width="280" alt="Material Gnome — Compact">
-  &nbsp;&nbsp;&nbsp;
-  <img src="screenshots/components.png" width="280" alt="Material Gnome — Components">
+  <img src="screenshots/features.svg" width="900" alt="Feature highlights">
 </p>
 
 <br>
@@ -44,51 +35,94 @@ Built for **Bazzite / Fedora Silverblue** but works on any GNOME 45+ distributio
 
 <br>
 
-## What you get
+<p align="center">
+  <img src="screenshots/welcome-expanded.png" width="780" alt="Material Gnome — Home">
+</p>
 
-| Area | Details |
-|---|---|
-| **GNOME Shell** | Top bar, quick settings, notifications, OSD, overview, calendar, lock screen |
-| **GTK4 / libadwaita** | Nautilus, Settings, Text Editor, and every modern GNOME app |
-| **GTK3** | Legacy applications |
-| **Firefox** | Custom `userChrome.css` and `userContent.css` |
-| **Terminal** | Ptyxis palette with matched background, cursor, and ANSI colors |
-| **Fonts** | Inter, Fira Code, Noto Serif |
-| **Icons** | Papirus-Dark with colored folders |
-| **Cursors** | Bibata Modern Classic |
-| **Extensions** | 12 GNOME Shell extensions, pre-configured |
-| **dconf** | 57 system settings -- accent color, Flatpak overrides, night light, keybindings |
-| **Boot** | rEFInd theme and Plymouth spinner |
-| **GDM** | Login screen with matching colors and font |
-| **Wallpaper** | Dark lockscreen wallpaper |
-| **Burn My Windows** | Close animation profile |
-| **Fastfetch** | Styled terminal system info |
-| **Backup** | Full undo with timestamped backups |
+<p align="center">
+  <sub>Home screen -- system detection, feature overview, and the hero card. Adaptive two-column layout.</sub>
+</p>
+
+<br>
+
+<p align="center">
+  <img src="screenshots/colors.png" width="780" alt="Material Gnome — Color Picker">
+</p>
+
+<p align="center">
+  <sub>Color picker -- 8 Material You palettes with live preview of primary, container, and surface tokens.</sub>
+</p>
+
+<br>
+
+<p align="center">
+  <img src="screenshots/welcome.png" width="300" alt="Material Gnome — Compact">
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="screenshots/components.png" width="300" alt="Material Gnome — Components">
+</p>
+
+<p align="center">
+  <sub>Compact layout with bottom navigation and component selection with per-step install detection.</sub>
+</p>
+
+<br>
+
+---
+
+<br>
+
+## What gets installed
+
+| | Component | What it does |
+|:---:|---|---|
+| <img src="https://img.shields.io/badge/%20-5c3a1a?style=flat-square" width="8"> | **GNOME Shell** | Top bar, quick settings, notifications, OSD, overview, calendar, lock screen |
+| <img src="https://img.shields.io/badge/%20-5c3a1a?style=flat-square" width="8"> | **GTK4 / libadwaita** | Nautilus, Settings, Text Editor, and every modern GNOME app |
+| <img src="https://img.shields.io/badge/%20-5c3a1a?style=flat-square" width="8"> | **GTK3** | Legacy application styling |
+| <img src="https://img.shields.io/badge/%20-5c3a1a?style=flat-square" width="8"> | **Ptyxis Terminal** | Palette with matched background, cursor, selection, and ANSI colors |
+| <img src="https://img.shields.io/badge/%20-5c3a1a?style=flat-square" width="8"> | **Fastfetch** | Styled terminal system info display |
+| <img src="https://img.shields.io/badge/%20-5c3a1a?style=flat-square" width="8"> | **Burn My Windows** | Window close animation profile |
+| <img src="https://img.shields.io/badge/%20-5c3a1a?style=flat-square" width="8"> | **Wallpaper** | Dark lockscreen wallpaper |
+| <img src="https://img.shields.io/badge/%20-5c3a1a?style=flat-square" width="8"> | **Fonts** | Inter, Fira Code, Noto Serif |
+| <img src="https://img.shields.io/badge/%20-5c3a1a?style=flat-square" width="8"> | **Papirus Icons** | Papirus-Dark with accent-colored folders |
+| <img src="https://img.shields.io/badge/%20-5c3a1a?style=flat-square" width="8"> | **Bibata Cursors** | Bibata Modern Classic cursor theme |
+| <img src="https://img.shields.io/badge/%20-5c3a1a?style=flat-square" width="8"> | **12 Extensions** | Logo Menu, Blur, AppIndicator, Tiling, Compiz effects, and more |
+| <img src="https://img.shields.io/badge/%20-5c3a1a?style=flat-square" width="8"> | **57 dconf Settings** | Accent color, Flatpak overrides, night light, keybindings |
+| <img src="https://img.shields.io/badge/%20-5c3a1a?style=flat-square" width="8"> | **Flatpak Overrides** | Global GTK theme override for sandboxed apps |
+| <img src="https://img.shields.io/badge/%20-5c3a1a?style=flat-square" width="8"> | **Flatpak Symlinks** | Per-app CSS symlinks for theme consistency |
+| <img src="https://img.shields.io/badge/%20-5c3a1a?style=flat-square" width="8"> | **Firefox** | Custom `userChrome.css` and `userContent.css` |
+| <img src="https://img.shields.io/badge/%20-5c3a1a?style=flat-square" width="8"> | **GDM** | Login screen with matching colors and font |
+| <img src="https://img.shields.io/badge/%20-5c3a1a?style=flat-square" width="8"> | **DING** | Desktop icons priority fix |
+| <img src="https://img.shields.io/badge/%20-5c3a1a?style=flat-square" width="8"> | **rEFInd** | Boot manager theme |
+| <img src="https://img.shields.io/badge/%20-5c3a1a?style=flat-square" width="8"> | **rEFInd Theme** | Background, selection icons, and OS logos for the boot screen |
 
 <br>
 
 ## Accent colors
 
-Pick your accent at install time. Switch anytime with the **Aggiorna** button -- all CSS files, Papirus folder icons, terminal palette, dconf settings, and running apps update live. No restart needed.
+Pick once, change anytime. The **Aggiorna** engine uses HSL hue-shifting to remap every color in every CSS file -- not just the 24 palette tokens, but all derived and intermediate shades. Papirus folder symlinks, dconf accent keys, and terminal palettes are updated in the same pass.
 
-<table align="center">
-<tr>
-<td align="center"><img src="https://img.shields.io/badge/%20%20%20%20%20%20%20%20-ffb86c?style=flat-square" alt="#ffb86c"><br><sub>Orange</sub></td>
-<td align="center"><img src="https://img.shields.io/badge/%20%20%20%20%20%20%20%20-82b1ff?style=flat-square" alt="#82b1ff"><br><sub>Blue</sub></td>
-<td align="center"><img src="https://img.shields.io/badge/%20%20%20%20%20%20%20%20-a8c77a?style=flat-square" alt="#a8c77a"><br><sub>Green</sub></td>
-<td align="center"><img src="https://img.shields.io/badge/%20%20%20%20%20%20%20%20-ce93d8?style=flat-square" alt="#ce93d8"><br><sub>Purple</sub></td>
-<td align="center"><img src="https://img.shields.io/badge/%20%20%20%20%20%20%20%20-ef9a9a?style=flat-square" alt="#ef9a9a"><br><sub>Red</sub></td>
-<td align="center"><img src="https://img.shields.io/badge/%20%20%20%20%20%20%20%20-80cbc4?style=flat-square" alt="#80cbc4"><br><sub>Teal</sub></td>
-<td align="center"><img src="https://img.shields.io/badge/%20%20%20%20%20%20%20%20-f48fb1?style=flat-square" alt="#f48fb1"><br><sub>Pink</sub></td>
-<td align="center"><img src="https://img.shields.io/badge/%20%20%20%20%20%20%20%20-fff176?style=flat-square" alt="#fff176"><br><sub>Yellow</sub></td>
-</tr>
-</table>
+<p align="center">
+<img src="https://img.shields.io/badge/%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B-ffb86c?style=flat-square&logoColor=white" height="32" alt="Orange">&nbsp;
+<img src="https://img.shields.io/badge/%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B-82b1ff?style=flat-square" height="32" alt="Blue">&nbsp;
+<img src="https://img.shields.io/badge/%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B-a8c77a?style=flat-square" height="32" alt="Green">&nbsp;
+<img src="https://img.shields.io/badge/%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B-ce93d8?style=flat-square" height="32" alt="Purple">&nbsp;
+<img src="https://img.shields.io/badge/%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B-ef9a9a?style=flat-square" height="32" alt="Red">&nbsp;
+<img src="https://img.shields.io/badge/%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B-80cbc4?style=flat-square" height="32" alt="Teal">&nbsp;
+<img src="https://img.shields.io/badge/%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B-f48fb1?style=flat-square" height="32" alt="Pink">&nbsp;
+<img src="https://img.shields.io/badge/%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8B-fff176?style=flat-square" height="32" alt="Yellow">
+</p>
+
+<p align="center">
+  <sub>Orange &nbsp;&middot;&nbsp; Blue &nbsp;&middot;&nbsp; Green &nbsp;&middot;&nbsp; Purple &nbsp;&middot;&nbsp; Red &nbsp;&middot;&nbsp; Teal &nbsp;&middot;&nbsp; Pink &nbsp;&middot;&nbsp; Yellow</sub>
+</p>
+
+<br>
+
+---
 
 <br>
 
 ## Quick start
-
-### GUI installer
 
 ```bash
 git clone https://github.com/mengo1234/material-gnome.git
@@ -96,28 +130,26 @@ cd material-gnome
 python3 material-you-installer-gui.py
 ```
 
-### TUI installer
+Or run the TUI installer in any terminal:
 
 ```bash
 python3 material_you_installer.py
 ```
 
-The TUI walks through the same 19 steps with interactive prompts. Works in any terminal.
-
 <br>
 
 ## Requirements
 
-- GNOME 45 or later (tested on GNOME 49.1)
-- Python 3.10+
-- `gtk4` + `libadwaita` (GUI only)
-- `sudo` access for system-level steps (GDM, rEFInd, Plymouth, DING)
+| | |
+|---|---|
+| **Desktop** | GNOME 45+ (tested on 49.1) |
+| **Python** | 3.10+ |
+| **GUI deps** | `gtk4`, `libadwaita` |
+| **Elevated** | `sudo` for GDM, rEFInd, Plymouth, DING |
 
 <br>
 
 ## How it works
-
-The installer copies pre-built CSS and config files from `theme/` into the right locations:
 
 ```
 theme/
@@ -132,34 +164,35 @@ theme/
   refind/        ->  /boot/efi/EFI/refind/
 ```
 
-Components that are already installed show a checkmark. Nothing is overwritten without a backup first.
-
-<br>
-
-## Immutable distro support
-
-On Bazzite, Fedora Silverblue, and other ostree-based systems the installer automatically uses `/etc` overlays instead of writing to the read-only `/usr` partition. System-level steps (GDM, Plymouth, rEFInd) are handled transparently.
+Already-installed components show a checkmark. Every step creates a timestamped backup before touching anything. On immutable distros (Bazzite, Silverblue, Kinoite) the installer uses `/etc` overlays automatically.
 
 <br>
 
 ## Uninstall
 
-Every step creates a timestamped backup in `~/.local/share/material-you-orange/backups/`. Run the TUI and select restore to roll back individual components or everything at once.
+```bash
+python3 material_you_installer.py
+# Select "Restore" to roll back individual components or everything at once
+```
+
+Backups live in `~/.local/share/material-you-orange/backups/`.
 
 <br>
 
 ## Project structure
 
 ```
-material-you-installer-gui.py    GTK4/libadwaita GUI application
-material_you_installer.py        TUI installer and core step definitions
+material-you-installer-gui.py    GTK4 / libadwaita GUI application
+material_you_installer.py        TUI installer and core step engine
 material-you-installer.py        Legacy TUI entry point
 theme/                           Pre-built CSS, configs, and assets
-screenshots/                     App screenshots
+screenshots/                     App screenshots and visual assets
 ```
 
 <br>
 
-## License
+---
 
-MIT
+<p align="center">
+  <sub>MIT License</sub>
+</p>

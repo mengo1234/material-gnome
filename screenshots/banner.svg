@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="280" viewBox="0 0 900 280">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1110"/>
+      <stop offset="100%" style="stop-color:#2d2220"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5c3a1a"/>
+      <stop offset="100%" style="stop-color:#7a4e24"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="280" rx="16" fill="url(#bg)"/>
+
+  <!-- Hero card -->
+  <rect x="40" y="30" width="380" height="220" rx="24" fill="url(#card)"/>
+
+  <!-- Title text -->
+  <text x="72" y="100" font-family="system-ui, -apple-system, sans-serif" font-size="48" font-weight="800" fill="#ffdcbe" letter-spacing="-1">Material</text>
+  <text x="72" y="155" font-family="system-ui, -apple-system, sans-serif" font-size="48" font-weight="800" fill="#ffdcbe" letter-spacing="-1">Gnome</text>
+  <text x="72" y="190" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="400" fill="#ffdcbe" opacity="0.7">Install Material You on your PC</text>
+  <text x="72" y="218" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="400" fill="#ffdcbe" opacity="0.4">v1.0.0</text>
+
+  <!-- Color circles -->
+  <circle cx="490" cy="80" r="28" fill="#ffb86c"/>
+  <circle cx="556" cy="80" r="28" fill="#82b1ff"/>
+  <circle cx="622" cy="80" r="28" fill="#a8c77a"/>
+  <circle cx="688" cy="80" r="28" fill="#ce93d8"/>
+  <circle cx="490" cy="150" r="28" fill="#ef9a9a"/>
+  <circle cx="556" cy="150" r="28" fill="#80cbc4"/>
+  <circle cx="622" cy="150" r="28" fill="#f48fb1"/>
+  <circle cx="688" cy="150" r="28" fill="#fff176"/>
+
+  <!-- Labels -->
+  <text x="490" y="125" font-family="system-ui, sans-serif" font-size="10" fill="#efe0db" text-anchor="middle">Orange</text>
+  <text x="556" y="125" font-family="system-ui, sans-serif" font-size="10" fill="#efe0db" text-anchor="middle">Blue</text>
+  <text x="622" y="125" font-family="system-ui, sans-serif" font-size="10" fill="#efe0db" text-anchor="middle">Green</text>
+  <text x="688" y="125" font-family="system-ui, sans-serif" font-size="10" fill="#efe0db" text-anchor="middle">Purple</text>
+  <text x="490" y="195" font-family="system-ui, sans-serif" font-size="10" fill="#efe0db" text-anchor="middle">Red</text>
+  <text x="556" y="195" font-family="system-ui, sans-serif" font-size="10" fill="#efe0db" text-anchor="middle">Teal</text>
+  <text x="622" y="195" font-family="system-ui, sans-serif" font-size="10" fill="#efe0db" text-anchor="middle">Pink</text>
+  <text x="688" y="195" font-family="system-ui, sans-serif" font-size="10" fill="#efe0db" text-anchor="middle">Yellow</text>
+
+  <!-- Tagline -->
+  <text x="490" y="248" font-family="system-ui, sans-serif" font-size="13" fill="#d5c4bc" opacity="0.8">8 accent colors  /  19 components  /  one click</text>
+
+  <!-- Decorative pill -->
+  <rect x="750" y="60" width="110" height="40" rx="20" fill="#ffb86c"/>
+  <text x="805" y="85" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#1a1110" text-anchor="middle">Get Started</text>
+
+  <!-- Bottom accent line -->
+  <rect x="40" y="268" width="820" height="3" rx="1.5" fill="#ffb86c" opacity="0.3"/>
+</svg>
