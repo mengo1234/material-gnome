@@ -611,21 +611,54 @@ class FastfetchInstaller(InstallerStep):
         super().__init__(5, "Fastfetch Config")
 
     def is_installed(self, sys_info: SystemInfo) -> bool:
-        return (sys_info.home / ".config" / "fastfetch" / "config.jsonc").exists()
+        cfg = sys_info.home / ".config" / "fastfetch" / "config.jsonc"
+        logo = sys_info.home / ".config" / "fastfetch" / "material-logo.txt"
+        return cfg.exists() and logo.exists()
 
     def install(self, sys_info: SystemInfo, backup: BackupManager, dry_run: bool) -> ComponentResult:
-        src = THEME_DIR / "fastfetch" / "config.jsonc"
-        dst = sys_info.home / ".config" / "fastfetch" / "config.jsonc"
+        src_cfg = THEME_DIR / "fastfetch" / "config.jsonc"
+        src_logo = THEME_DIR / "fastfetch" / "material-logo.txt"
+        dst_dir = sys_info.home / ".config" / "fastfetch"
+        dst_cfg = dst_dir / "config.jsonc"
+        dst_logo = dst_dir / "material-logo.txt"
 
-        if not src.exists():
+        if not src_cfg.exists():
             return ComponentResult(self.number, self.name, Status.FAILED, "Source config.jsonc not found")
 
-        backup.backup_file(dst)
+        backup.backup_file(dst_cfg)
+        backup.backup_file(dst_logo)
 
         if dry_run:
-            return ComponentResult(self.number, self.name, Status.SUCCESS, f"Would copy to {dst}")
+            return ComponentResult(self.number, self.name, Status.SUCCESS, f"Would copy to {dst_dir}")
 
-        copy_file(src, dst)
+        copy_file(src_cfg, dst_cfg)
+        if src_logo.exists():
+            copy_file(src_logo, dst_logo)
+
+        # Disable Bazzite motd and add Material Terminal greeting to .bashrc
+        motd_flag = sys_info.home / ".config" / "no-show-user-motd"
+        if not motd_flag.exists():
+            motd_flag.touch()
+
+        bashrc = sys_info.home / ".bashrc"
+        marker = "# Material Gnome Terminal"
+        if bashrc.exists():
+            content = bashrc.read_text()
+            if marker not in content:
+                greeting = (
+                    "\n"
+                    f"{marker}\n"
+                    "if [[ $- == *i* ]] && [[ ! -v MATERIAL_TERMINAL ]]; then\n"
+                    "    export MATERIAL_TERMINAL=1\n"
+                    "    printf '\\n'\n"
+                    "    /usr/bin/fastfetch -c ~/.config/fastfetch/config.jsonc\n"
+                    "    printf '\\n'\n"
+                    "fi\n"
+                )
+                backup.backup_file(bashrc)
+                with open(bashrc, "a") as f:
+                    f.write(greeting)
+
         return ComponentResult(self.number, self.name, Status.SUCCESS, "Installed")
 
 

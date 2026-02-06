@@ -1,24 +1,20 @@
 {
-    // Material You Orange Dark theme for Fastfetch
-    // Based on Bazzite's default config with warm orange color palette
+    // Material Gnome — fastfetch config
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
     "logo": {
         "type": "file",
-        "source": "/usr/share/ublue-os/bazzite/logo.txt",
+        "source": "~/.config/fastfetch/material-logo.txt",
         "color": {
-            "1": "33",
-            "2": "93",
-            "3": "91",
-            "4": "0",
-            "5": "8",
-            "6": "33"
+            "1": "38;2;255;184;108",
+            "2": "38;2;239;224;219",
+            "3": "38;2;158;142;134"
         }
     },
     "display": {
         "separator": " → ",
         "color": {
             "keys": "yellow",
-            "separator": "red"
+            "separator": "38;2;92;58;26"
         }
     },
     "modules": [
@@ -26,9 +22,9 @@
             "type": "title",
             "key": " ",
             "color": {
-                "user": "yellow",
-                "at": "white",
-                "host": "red"
+                "user": "38;2;255;184;108",
+                "at": "38;2;158;142;134",
+                "host": "38;2;213;196;188"
             }
         },
         "break",

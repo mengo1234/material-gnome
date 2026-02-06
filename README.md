@@ -43,6 +43,16 @@ Built and tested on **Bazzite / Fedora Silverblue** (GNOME 49.1, Wayland, immuta
 <br>
 
 <p align="center">
+  <img src="screenshots/desktop.png" width="780" alt="Material Gnome — Desktop">
+</p>
+
+<p align="center">
+  <sub>GNOME desktop with Material You applied -- Settings, Papirus icons, themed top bar, and wallpaper.</sub>
+</p>
+
+<br>
+
+<p align="center">
   <img src="screenshots/welcome-expanded.png" width="780" alt="Material Gnome — Home">
 </p>
 
