@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <clipPath id="squircle">
+      <rect x="4" y="4" width="120" height="120" rx="28" ry="28"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background squircle -->
+  <rect x="4" y="4" width="120" height="120" rx="28" ry="28" fill="#5c3a1a"/>
+
+  <!-- Inner glow circle -->
+  <circle cx="64" cy="60" r="36" fill="#7a4e24" opacity="0.5"/>
+
+  <!-- Brush / palette icon shape -->
+  <!-- Drop shape (paint drop) -->
+  <path d="M64 28 C64 28 42 52 42 66 C42 78.15 51.85 88 64 88 C76.15 88 86 78.15 86 66 C86 52 64 28 64 28Z"
+        fill="#ffb86c" opacity="0.9"/>
+
+  <!-- Inner highlight on drop -->
+  <circle cx="56" cy="68" r="6" fill="#ffdcbe" opacity="0.6"/>
+
+  <!-- Small accent dot -->
+  <circle cx="72" cy="74" r="3.5" fill="#e65100" opacity="0.7"/>
+
+  <!-- Bottom label bar -->
+  <rect x="28" y="94" width="72" height="8" rx="4" ry="4" fill="#ffdcbe" opacity="0.35"/>
+</svg>
