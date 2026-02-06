@@ -1,5 +1,12 @@
 <p align="center">
-  <img src="screenshots/banner.svg" width="900" alt="Material Gnome">
+  <img src="screenshots/icon.png" width="128" alt="Material Gnome">
+</p>
+
+<h1 align="center">Material Gnome</h1>
+
+<p align="center">
+  <strong>Turn your GNOME desktop into a pixel-perfect Material You experience.</strong><br>
+  Dark theme. 8 accent colors. 19 components. One click.
 </p>
 
 <p align="center">
